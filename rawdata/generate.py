@@ -4,7 +4,9 @@ import random
 import binascii
 import string
 
-dat_fldr = os.getcwd() + os.sep + 'data' 
+root_fldr = os.path.abspath(os.path.dirname(os.path.abspath(__file__)) )
+
+dat_fldr = root_fldr + os.sep + 'data' 
 names    = dat_fldr + os.sep + 'names.csv'  # http://www.cs.princeton.edu/introcs/data/names.csv
 places   = dat_fldr + os.sep + 'countries.csv'  
 wordList = dat_fldr + os.sep + 'nouns.txt'
@@ -32,7 +34,8 @@ def random_letters(sze=20):
 
 def generate_password(sze=18):
     if sze < 8: sze = 8
-    return random_letters(sze-3).lower() + str(random_int(10,99)) + random_letters(sze-6).upper()
+    first_half = sze - 6
+    return random_letters(first_half).lower() + str(random_int(10,99)) + random_letters(4).upper()
     
 def random_hex_string(sze=30):
     return binascii.b2a_hex(os.urandom(sze))
