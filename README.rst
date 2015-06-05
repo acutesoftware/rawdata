@@ -10,6 +10,7 @@ To install run
 
     pip install rawdata
 
+::
 
 Basic Usage
 ----------------
@@ -45,6 +46,7 @@ Basic Usage
         > 2003,Forster,ui7VbzGG8wdGk9gUqAyb,Asia,suborder percoidea,47
         > 1997,Aldona,RsKN8hyL8MyxZ0E5Mjqq,Mozambique,apresoline,41
 
+::        
         
 Adding Errors to the data
 
@@ -55,6 +57,7 @@ Adding Errors to the data
     t = create.Table(tbl, generate.random_letters(6))
     print(t.tbl)
 
+::
 
 =====   =====   ======================  ============ ================ =============   
 DATE    name    password                Born         Quote            Score
@@ -70,6 +73,7 @@ DATE    name    password                Born         Quote            Score
     t.add_errors(2)
     print(t.tbl)
 
+::
     
 =====   =====   ======================  ============ ================ =============   
 DATE    name    password                Born         Quote            Score
