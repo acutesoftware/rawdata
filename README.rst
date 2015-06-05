@@ -10,7 +10,7 @@ To install run
 
     pip install rawdata
 
-::
+
 
 Basic Usage
 ----------------
@@ -40,13 +40,10 @@ Basic Usage
     tbl = generate.random_table(6,4, colTypes, colLabel)
     generate.show_table(tbl)
 
-        > DATE,name,password,Born,Quote,Score
-        > 1989,Ugo,qzMkTrHwQeNas3enkCYO,Yemen,mallow,94
-        > 2009,Taffy,TDFz9BgjqRJLyPGyLKkW,Kenya,masquerade party,72
-        > 2003,Forster,ui7VbzGG8wdGk9gUqAyb,Asia,suborder percoidea,47
-        > 1997,Aldona,RsKN8hyL8MyxZ0E5Mjqq,Mozambique,apresoline,41
-
-::        
+        > DATE,name,Born
+        > 2013,Douglas,Scandinavia
+        > 1999,Hunter,Sierra Leone
+        > 2005,Shubha,Madagascar
         
 Adding Errors to the data
 
@@ -57,33 +54,29 @@ Adding Errors to the data
     t = create.Table(tbl, generate.random_letters(6))
     print(t.tbl)
 
-::
 
-=====   =====   ======================  ============ ================ =============   
-DATE    name    password                Born         Quote            Score
-=====   =====   ======================  ============ ================ =============   
-2011    Jerusha O96CpTp5aFqWNIAO22qP    Cuba         ileocecal valve  68
-2003    Qabil   UeDJwgQa1WNnV39REH8a    Afghanistan  nominative case  96
-2003    Zazu    rfQ8OXGz8j9p5YJOijs5    Ukraine      reading lamp     39
-1997    Koda    EhEZvNtJcTTVtBd0mECc    Gibraltar    sangay           99
-=====   =====   ======================  ============ ================ =============   
-  
+
+=====   =====    ======================
+DATE    name     Born
+=====   =====    ======================
+2013	Douglas	 Scandinavia
+1999	Hunter	 Sierra Leone
+2005	Shubha	 Madagascar
+=====   =======  ======================
+
 .. code:: python
     
     t.add_errors(2)
     print(t.tbl)
 
-::
-    
-=====   =====   ======================  ============ ================ =============   
-DATE    name    password                Born         Quote            Score
-=====   =====   ======================  ============ ================ =============   
-2011    Jerusha O96CpTp5aFqWNIAO22qP    u6YWTW       ileocecal valve  68
-2003    Qabil    UeDJwgQa1WNnV39REH8a   Afghanista   nominative case  96
-2003    Zazu    rfQ8OXGz8j9p5YJOijs5    Ukraine      reading lamp     39
-1997    Koda    EhEZvNtJcTTVtBd0mECc    Gibraltar    sangay           99
-=====   =====   ======================  ============ ================ =============   
 
+=====   ========  ======================
+DATE    name      Born
+=====   ========  ======================
+2013     Douglas  Scandinavia
+1999    Hunter      
+2005    Shubha    Madagascar
+=====   =======   ======================
 
 
 
