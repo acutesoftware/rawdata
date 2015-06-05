@@ -28,7 +28,9 @@ print('tbl[1][0] = ', tbl[1][0] )
 # now add some DQ issues
 import create
 t = create.Table(tbl, generate.random_letters(6))
-t.swap_columns(0,3)
+#t.swap_columns(0,3)
 print(t.tbl)
+generate.save_table(tbl, 'tbl_orig.csv')
 t.add_errors(2)
 print(t.tbl)
+generate.save_table(tbl, 'tbl_errors.csv')
