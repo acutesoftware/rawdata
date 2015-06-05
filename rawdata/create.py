@@ -18,7 +18,7 @@ class Table(object):
         for i in range(1, num+1):
             col = random.randint(0,len(self.tbl))
             print('col = ', col)
-            self.tbl[i][col] = self.glitch.random_error(self.tbl[i][col])
+            self.tbl[col][i] = self.glitch.random_error(self.tbl[col][i])
             
     def swap_columns(self, c1, c2):  
         #self.tbl[c1][:], self.tbl[c2][:] = self.tbl[c2][:], self.tbl[c1][:] 

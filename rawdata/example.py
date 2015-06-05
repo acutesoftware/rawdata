@@ -7,8 +7,8 @@ print('Random Number    = ', generate.random_int(1,100))
 print('Random Letters   = ', generate.random_letters(40))
 print('Random Password  = ', generate.generate_password())
 
-colLabel = ['DATE', 'name', 'password', 'Born',  'Quote', 'Score']
-colTypes = ['DATE', 'PEOPLE', 'STRING', 'PLACE', 'WORD',  'INT']
+colLabel = ['DATE', 'name',   'Born']
+colTypes = ['DATE', 'PEOPLE', 'PLACE']
 
 words = generate.get_list_words()
 print(len(words), ' words : ', words[500:502])
@@ -16,7 +16,7 @@ print(len(words), ' words : ', words[500:502])
 places = generate.get_list_places()
 print(len(places), ' places : ', places[58:60])
 
-tbl = generate.random_table(6,4, colTypes, colLabel)
+tbl = generate.random_table(3,3, colTypes, colLabel)
 generate.show_table(tbl)
 print('Random Table     = ', len(colLabel), 'cols by ', len(tbl), ' rows')
 print('tbl[0][0] = ', tbl[0][0] )
