@@ -45,39 +45,27 @@ Basic Usage
         > 1999,Hunter,Sierra Leone
         > 2005,Shubha,Madagascar
         
-Adding Errors to the data
+Adding Errors to a table
 
 
 .. code:: python
 
     import create
     t = create.Table(tbl, generate.random_letters(6))
-    print(t.tbl)
-
-The basic table created is below
-
-=====   =====    ======================
-DATE    name     Born
-=====   =====    ======================
-2013	Douglas	 Scandinavia
-1999	Hunter	 Sierra Leone
-2005	Shubha	 Madagascar
-=====   =======  ======================
-
-.. code:: python
-    
     t.add_errors(2)
     print(t.tbl)
 
 And after adding 2 random errors there are additional spaces in Douglas, and the Born column is missing for Hunter
 
-=====   ========  ======================
-DATE    name      Born
-=====   ========  ======================
-2013     Douglas  Scandinavia
-1999    Hunter      
-2005    Shubha    Madagascar
-=====   =======   ======================
+
+.. code:: python
+
+    DATE    name       Born
+    -----   ---------  ----------
+    2013     Douglas   Scandinavia
+    1999    Hunter      
+    2005    Shubha     Madagascar
+
 
 
 
