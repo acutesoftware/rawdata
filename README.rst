@@ -55,28 +55,30 @@ Adding Errors to the data
     t = create.Table(tbl, generate.random_letters(6))
     print(t.tbl)
 
+
 =====   =====   ======================  ============ ================ =============   
-DATE	name	password	            Born	     Quote	          Score
+DATE    name    password                Born         Quote            Score
 =====   =====   ======================  ============ ================ =============   
-2011	Jerusha	O96CpTp5aFqWNIAO22qP	Cuba	     ileocecal valve	68
-2003	Qabil	UeDJwgQa1WNnV39REH8a	Afghanistan	 nominative case	96
-2003	Zazu	rfQ8OXGz8j9p5YJOijs5	Ukraine	     reading lamp	    39
-1997	Koda	EhEZvNtJcTTVtBd0mECc	Gibraltar	 sangay	            99
+2011    Jerusha O96CpTp5aFqWNIAO22qP    Cuba         ileocecal valve  68
+2003    Qabil   UeDJwgQa1WNnV39REH8a    Afghanistan  nominative case  96
+2003    Zazu    rfQ8OXGz8j9p5YJOijs5    Ukraine      reading lamp     39
+1997    Koda    EhEZvNtJcTTVtBd0mECc    Gibraltar    sangay           99
 =====   =====   ======================  ============ ================ =============   
-    
+  
 .. code:: python
     
     t.add_errors(2)
     print(t.tbl)
+
     
-=====   =====   ======================      ============ ================ =============   
-DATE	name	password	                Born	     Quote	          Score
-=====   =====   ======================      ============ ================ =============   
-2011	Jerusha	O96CpTp5aFqWNIAO22qP	    ``u6YWTW``	 ileocecal valve	68
-2003	Qabil	`` UeDJwgQa1WNnV39REH8a  ``  Afghanista  nominative case	96
-2003	Zazu	rfQ8OXGz8j9p5YJOijs5	    Ukraine	     reading lamp	    39
-1997	Koda	EhEZvNtJcTTVtBd0mECc	    Gibraltar	 sangay	            99
-=====   =====   ======================      ============ ================ =============   
+=====   =====   ======================  ============ ================ =============   
+DATE    name    password                Born         Quote            Score
+=====   =====   ======================  ============ ================ =============   
+2011    Jerusha O96CpTp5aFqWNIAO22qP    u6YWTW       ileocecal valve  68
+2003    Qabil    UeDJwgQa1WNnV39REH8a   Afghanista   nominative case  96
+2003    Zazu    rfQ8OXGz8j9p5YJOijs5    Ukraine      reading lamp     39
+1997    Koda    EhEZvNtJcTTVtBd0mECc    Gibraltar    sangay           99
+=====   =====   ======================  ============ ================ =============   
 
 
 
