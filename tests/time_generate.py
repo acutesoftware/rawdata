@@ -1,20 +1,20 @@
-# time_generateTestData.py	written by Duncan Murray 18/4/2014
+# time_generate.py
 # script to check times of generating data using various methods
 
 import sys
 import time_utils as tst
 
 import os
-import rawdata.generate as src
+sys.path.append('..\\rawdata')
+import generate
 
-#
 
 def main():
 	tst.time_function('generate', 9000, 'generate_password', 80)
-	tst.time_function('generate', 90, 'random_letters', 100000)
-	tst.time_function('generatea', 9000, 'random_letters', 1000)
-	tst.time_function('generate', 90, 'random_hex_string', 100000)   # much faster than random_letters
-	tst.time_function('generate', 9000, 'random_hex_string', 1000)
+	tst.time_function('generate', 90, 'random_letters', 10000)
+	tst.time_function('generate', 900, 'random_letters', 1000)
+	tst.time_function('generate', 90, 'random_hex_string', 10000)   # much faster than random_letters
+	tst.time_function('generate', 900, 'random_hex_string', 1000)
 	
 	# test table creation
 	colLabel = ['Start', 'Finish', 'Purch_YR', 'password', 'born', 'lives', 'name', 'Friend',  'Quote', 'Interest', 'Height', 'Weight', 'Score']
@@ -31,7 +31,7 @@ def main():
 
 def check_timings_list_comprehension_vs_loops(colTypes, colLabel):
 	# get a table and time different methods of display
-	tbl = src.random_table( 13, 60, colTypes, colLabel)
+	tbl = generate.random_table( 13, 60, colTypes, colLabel)
 	results = []
 	avgTime, totTime, minTime, maxTime = tst.time_function('generate', 10, 'show_table', tbl)
 	results.append({'function':'show_table', 'avgTime': avgTime})

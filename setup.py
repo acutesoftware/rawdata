@@ -2,11 +2,11 @@ from distutils.core import setup
 
 setup(
     name='rawdata',
-    version='0.0.1',
+    version='0.0.2',
     author='Duncan Murray',
     author_email='djmurray@acutesoftware.com.au',
     packages=['rawdata', 'rawdata.data'],
-    url='https://github.com/acutesoftware/virtual-AI-simulator',
+    url='https://github.com/acutesoftware/rawdata',
     license='LICENSE.txt',
     description='Generate realistic raw datasets with optional DQ issues',
     long_description=open('README.rst').read(),

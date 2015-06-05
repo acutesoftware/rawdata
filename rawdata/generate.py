@@ -46,7 +46,7 @@ def random_block(cols=40, rows=5):
 def random_table(cols, rows, colSpecs, hdr):
     # verify the colSpecs required and assign defaults to empty sets
     colTypes = fill_colList_blanks(colSpecs, cols)
-    print('Generating columns - ', colTypes)
+    #print('Generating columns - ', colTypes)
     wordLists = load_lists(colTypes)
     tbl = []
     tbl.insert(0, hdr) # column headers
