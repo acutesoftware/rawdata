@@ -2,10 +2,10 @@ from setuptools import setup
 
 setup(
     name='rawdata',
-    version='0.0.3',
+    version='0.0.4',
     author='Duncan Murray',
     author_email='djmurray@acutesoftware.com.au',
-    packages=['rawdata', 'rawdata.data'],
+    packages=['rawdata'],
     url='https://github.com/acutesoftware/rawdata',
     license='GNU General Public License v3 (GPLv3)',
     description='Generate realistic raw datasets with optional DQ issues',
