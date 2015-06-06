@@ -20,10 +20,11 @@ def TEST():
     print('Data Table ....')
     colLabel = ['DATE', 'name', 'password', 'Born',  'Quote', 'Score']
     colTypes = ['DATE', 'PEOPLE', 'STRING', 'PLACE', 'WORD',  'INT']
-    tbl = random_table(6,5, colTypes, colLabel)
+    tbl = random_table(5, colTypes, colLabel)
     show_table(tbl)
-    save_table(tbl, 'test123.csv')
+    #save_table(tbl, 'test123.csv')
     print('password generator = ', generate_password(10))
+    print('random_currency = ', random_currency())
     
 def random_int(min_v=0, max_v=100):
     return random.randrange(min_v, max_v)
@@ -32,6 +33,12 @@ def random_letters(sze=20):
     lst = [random.choice(string.ascii_letters + string.digits) for _ in range(sze)]
     return "".join(lst)
 
+def random_currency(start=9, end=499):
+    cents = random.choice(['00','10','50','95','99'])
+    dollars = random.randint(start,end)
+    sign = random.choice(['$', '+$', '-$', '-', '', '$ ', ''])
+    return sign + str(dollars) + '.' + cents
+    
 def generate_password(sze=18):
     if sze < 8: sze = 8
     first_half = sze - 6
@@ -43,8 +50,9 @@ def random_hex_string(sze=30):
 def random_block(cols=40, rows=5):
     return ''.join([random_letters(cols) + '\n' for _ in range(0,rows)])
 
-def random_table(cols, rows, colSpecs, hdr):
+def random_table(rows, colSpecs, hdr):
     # verify the colSpecs required and assign defaults to empty sets
+    cols = len(colSpecs)
     colTypes = fill_colList_blanks(colSpecs, cols)
     #print('Generating columns - ', colTypes)
     wordLists = load_lists(colTypes)
@@ -58,6 +66,8 @@ def random_table(cols, rows, colSpecs, hdr):
                 txt = str(random_int())
             elif colTypes[c] == 'STRING':
                 txt = random_letters()
+            elif colTypes[c] == 'CURRENCY':
+                txt = random_currency(9, 499)
             else:
                 for lst in wordLists:
                     if lst['name'] != 'INT':

@@ -1,17 +1,17 @@
-from distutils.core import setup
+from setuptools import setup
 
 setup(
     name='rawdata',
-    version='0.0.2',
+    version='0.0.3',
     author='Duncan Murray',
     author_email='djmurray@acutesoftware.com.au',
     packages=['rawdata', 'rawdata.data'],
     url='https://github.com/acutesoftware/rawdata',
-    license='LICENSE.txt',
+    license='GNU General Public License v3 (GPLv3)',
     description='Generate realistic raw datasets with optional DQ issues',
     long_description=open('README.rst').read(),
     classifiers = [
-    'Development Status :: 1 - Planning',
+    'Development Status :: 2 - Pre-Alpha',
     'Environment :: Web Environment',
     'Programming Language :: Python :: 3.4',
     'Intended Audience :: Developers',

@@ -27,7 +27,7 @@ class TestGenerate(unittest.TestCase):
     def test_04_random_table(self):
         colLabel = ['DATE', 'name', 'password', 'Born',  'Quote', 'Score']
         colTypes = ['DATE', 'PEOPLE', 'STRING', 'PLACE', 'WORD',  'INT']
-        tbl = rawdata.generate.random_table(6,500, colTypes, colLabel)
+        tbl = rawdata.generate.random_table(500, colTypes, colLabel)
         #print(tbl)
         self.assertEqual(len(tbl), 501)       # 500 rows plus header
         self.assertEqual(len(tbl[0]), 6)      # check for 6 columns

@@ -15,22 +15,27 @@ class Table(object):
         """
         Adds 'num' errors to the table
         """
-        for i in range(1, num+1):
+        for i, _ in enumerate(range(1, num+1)):
             col = random.randint(0,len(self.tbl))
             print('col = ', col)
             self.tbl[col][i] = self.glitch.random_error(self.tbl[col][i])
             
     def swap_columns(self, c1, c2):  
         #self.tbl[c1][:], self.tbl[c2][:] = self.tbl[c2][:], self.tbl[c1][:] 
-        for rownum, r in enumerate(self.tbl):
-            #print('rownum = ', rownum, 'c2 = ', c2, 'c1 = ', c1)
-            #print('self.tbl[rownum][c1] = ', self.tbl[rownum][c1])
-            #print('self.tbl[rownum][c2] = ', self.tbl[rownum][c2])
-            self.tbl[rownum][c1], self.tbl[rownum][c2] = self.tbl[rownum][c2], self.tbl[rownum][c1]
+        for r, _ in enumerate(self.tbl):
+            self.tbl[r][c1], self.tbl[r][c2] = self.tbl[r][c2], self.tbl[r][c1]
 
 class DataError(object):
+    """
+    Class to introduce random errors to data
+    """
     def __init__(self, fudge_string):
+        if fudge_string == '':
+            fudge_string == 'BAD_DATA'
         self.fudge_string = fudge_string
+        
+    def __str__(self):
+        return self.fudge_string
     
     def random_error(self, orig):
         i = random.randint(1,3)
