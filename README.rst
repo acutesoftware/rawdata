@@ -15,6 +15,45 @@ To install run
 Basic Usage
 ----------------
 
+Create a random table
+
+.. code:: python
+
+    import rawdata.generate
+    colLabel = ['DATE', 'name',   'Born']
+    colTypes = ['DATE', 'PEOPLE', 'PLACE']
+    tbl = rawdata.generate.random_table(6,4, colTypes, colLabel)
+    rawdata.generate.show_table(tbl)
+
+        > DATE,name,Born
+        > 2013,Douglas,Scandinavia
+        > 1999,Hunter,Sierra Leone
+        > 2005,Shubha,Madagascar
+        
+Adding Errors to a table
+
+
+.. code:: python
+
+    import create
+    bad_string = generate.random_letters(6)
+    t = rawdata.create.Table(tbl, bad_string)
+    t.add_errors(2)
+    print(t.tbl)
+
+And after adding 2 random errors there are additional spaces in Douglas, and the Born column is missing for Hunter
+
+
+.. code:: python
+
+    DATE    name       Born
+    -----   ---------  ----------
+    2013     Douglas   Scandinavia
+    1999    Hunter      
+    2005    Shubha     Madagascar
+
+
+Other functions 
 
 .. code:: python
 
@@ -36,36 +75,6 @@ Basic Usage
     places = generate.get_list_places()
     print(len(places), ' places : ', places[58:60])
         > 262  places :  ['Brazil', 'British Virgin Islands']
-
-    tbl = generate.random_table(6,4, colTypes, colLabel)
-    generate.show_table(tbl)
-
-        > DATE,name,Born
-        > 2013,Douglas,Scandinavia
-        > 1999,Hunter,Sierra Leone
-        > 2005,Shubha,Madagascar
-        
-Adding Errors to a table
-
-
-.. code:: python
-
-    import create
-    t = create.Table(tbl, generate.random_letters(6))
-    t.add_errors(2)
-    print(t.tbl)
-
-And after adding 2 random errors there are additional spaces in Douglas, and the Born column is missing for Hunter
-
-
-.. code:: python
-
-    DATE    name       Born
-    -----   ---------  ----------
-    2013     Douglas   Scandinavia
-    1999    Hunter      
-    2005    Shubha     Madagascar
-
 
 
 
