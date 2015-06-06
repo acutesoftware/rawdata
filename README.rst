@@ -2,6 +2,13 @@
 Raw Data
 =========================================
 
+.. image:: https://badge.fury.io/py/rawdata.svg
+    :target: http://badge.fury.io/py/rawdata 
+
+.. image:: https://landscape.io/github/acutesoftware/rawdata/master/landscape.svg?style=flat
+   :target: https://landscape.io/github/acutesoftware/rawdata/master
+   :alt: Code Health    
+    
 Generate realistic raw datasets with optional DQ issues
 
 To install run 
