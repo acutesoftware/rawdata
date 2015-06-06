@@ -2,7 +2,7 @@ from setuptools import setup
 
 setup(
     name='rawdata',
-    version='0.0.4',
+    version='0.0.5',
     author='Duncan Murray',
     author_email='djmurray@acutesoftware.com.au',
     packages=['rawdata'],
