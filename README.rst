@@ -27,12 +27,12 @@ Create a random table
 .. code:: python
 
     import rawdata.generate
-    colLabel = ['DATE', 'name',   'Born']
+    colLabel = ['Year', 'Name',   'Born']
     colTypes = ['DATE', 'PEOPLE', 'PLACE']
-    tbl = rawdata.generate.random_table(6,4, colTypes, colLabel)
+    tbl = rawdata.generate.random_table(4, colTypes, colLabel)
     rawdata.generate.show_table(tbl)
 
-        > DATE,name,Born
+        > Year,name,Born
         > 2013,Douglas,Scandinavia
         > 1999,Hunter,Sierra Leone
         > 2005,Shubha,Madagascar
@@ -53,7 +53,7 @@ And after adding 2 random errors there are additional spaces in Douglas, and the
 
 .. code:: python
 
-    DATE    name       Born
+    Year    Name       Born
     -----   ---------  ----------
     2013     Douglas   Scandinavia
     1999    Hunter      
