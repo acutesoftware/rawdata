@@ -1,8 +1,8 @@
-from setuptools import setup, find_packages
+from setuptools import setup
 
 setup(
     name='rawdata',
-    version='0.0.7',
+    version='0.0.8',
     author='Duncan Murray',
     author_email='djmurray@acutesoftware.com.au',
     packages=['rawdata'],
@@ -19,7 +19,7 @@ setup(
     description='Generate realistic raw datasets with optional DQ issues',
     long_description=open('README.rst').read(),
     classifiers = [
-    'Development Status :: 2 - Pre-Alpha',
+    'Development Status :: 3 - Alpha',
     'Environment :: Web Environment',
     'Programming Language :: Python :: 3.4',
     'Intended Audience :: Developers',
