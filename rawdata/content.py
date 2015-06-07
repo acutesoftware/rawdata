@@ -34,7 +34,7 @@ class Samples(object):
     """
     def __init__(self):
         self.filelist = []
-        for root, dirs, files in os.walk(data_fldr):
+        for root, _, files in os.walk(data_fldr):
             for f in files:
                 self.filelist.append([root + os.sep + f, root,f])
 
@@ -48,11 +48,11 @@ class Samples(object):
         for row in self.filelist:
             print(row[2][:-4])
             
-    def get_sample(self, list):
-        with open(data_fldr + os.sep + list) as f:
+    def get_sample(self, short_filename):
+        with open(data_fldr + os.sep + short_filename) as f:
             for num, line in enumerate(f):
                 if num < 10:
-                    print(line)
+                    print(line.strip('\n'))
             
             
             

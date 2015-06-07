@@ -29,8 +29,8 @@ Create a random table
     import rawdata.generate
     colLabel = ['Year', 'Name',   'Born']
     colTypes = ['DATE', 'PEOPLE', 'PLACE']
-    tbl = rawdata.generate.random_table(4, colTypes, colLabel)
-    rawdata.generate.show_table(tbl)
+    tbl = rawdata.generate.TableGenerator(3, colTypes, colLabel)
+    print(tbl)
 
         > Year,name,Born
         > 2013,Douglas,Scandinavia
@@ -42,9 +42,8 @@ Adding Errors to a table
 
 .. code:: python
 
-    import create
-    bad_string = generate.random_letters(6)
-    t = rawdata.create.Table(tbl, bad_string)
+    import rawdata.errors
+    t = rawdata.create.Table(tbl, 'BAD_STRING')
     t.add_errors(2)
     print(t.tbl)
 
@@ -64,22 +63,24 @@ Other functions
 
 .. code:: python
 
-    import rawdata.generate as generate
+    import rawdata.generate
+    n = rawdata.generate.NumberGenerator
+    s = rawdata.generate.StringGenerator
 
-    print('Random Number    = ', generate.random_int(1,100))
+    print('Random Number    = ', n.random_int(1,100))
         > Random Number    =  84
 
-    print('Random Letters   = ', generate.random_letters(40))
+    print('Random Letters   = ', s.random_letters(40))
         > Random Letters   =  T1CElkRAGPAmWSavbDItDbFmQIvUh26SyJE58x49
 
-    print('Random Password  = ', generate.generate_password())
+    print('Random Password  = ', s.generate_password())
         > Random Password  =  peujlsmbf19966YKCX
 
-    words = generate.get_list_words()
+    words = rawdata.generate.get_list_words()
     print(len(words), ' words : ', words[500:502])
         > 10739  words :  ['architeuthis', 'arcsine']
 
-    places = generate.get_list_places()
+    places = rawdata.generate.get_list_places()
     print(len(places), ' places : ', places[58:60])
         > 262  places :  ['Brazil', 'British Virgin Islands']
 

@@ -63,9 +63,9 @@ class TableWithErrors(object):
         """
         Adds 'num' errors to the table
         """
-        for i, _ in enumerate(range(1, num+1)):
+        for _ in range(0, num):
             col = random.randint(0,len(self.tbl[0])-1)
-            row = random.randint(1,len(self.tbl)-1)  # dont mess with header here
+            row = random.randint(1,len(self.tbl)-1)  # don't mess with header here
             print('Adding error to col', col, ' row ', row)
             self.tbl[row][col] = self.glitch.random_error(self.tbl[row][col])
             
@@ -81,7 +81,7 @@ class DataError(object):
     """
     def __init__(self, fudge_string):
         if fudge_string == '':
-            fudge_string == 'BAD_DATA'
+            fudge_string = 'BAD_DATA'
         self.fudge_string = fudge_string
         
     def __str__(self):
