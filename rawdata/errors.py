@@ -36,6 +36,8 @@ class TableWithErrors(object):
             self.header = tbl.tbl[0]
         if fudge_str:
             self.glitch = DataError(fudge_str)
+        else:
+            self.glitch = DataError('BAD_DATA')
     
     def __str__(self):
         txt = '\n'.join(','.join([col if type(col) is str else str(col) for col in row]) for row in self.tbl)
