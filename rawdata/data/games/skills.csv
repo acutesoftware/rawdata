@@ -1,0 +1,39 @@
+area,type,name,cost,description
+spells,attack,Magic Missile,2,Magic Spell
+spells,info,Detect Monsters,2,Magic Spell
+spells,buff,Phase Door,2,Magic Spell
+spells,info,Light Area,2,Magic Spell
+spells,heal,Heal,2,Magic Spell
+spells,change,Find Hidden Traps/Doors,2,Magic Spell
+spells,attack,Stinking Cloud,2,Magic Spell
+spells,attack,Stun,2,Magic Spell
+spells,attack,Lightning Bolt,2,Magic Spell
+spells,buff,Trap/Door Destruction,2,Magic Spell
+spells,attack,Sleep,2,Magic Spell
+spells,heal,Cure Poison,2,Magic Spell
+spells,buff,Teleport Self,2,Magic Spell
+spells,buff,Remove Curse,2,Magic Spell
+spells,attack,Frost Bolt,2,Magic Spell
+spells,change,Turn Stone to Mud,2,Magic Spell
+spells,change,Turn Mud to Stone,2,Magic Spell
+spells,change,Create Food,2,Magic Spell
+spells,change,Recharge Item,2,Magic Spell
+spells,attack,Polymorph Other,2,Magic Spell
+spells,info,Identify,2,Magic Spell
+spells,attack,Fire Bolt,2,Magic Spell
+spells,attack,Slow Monster,2,Magic Spell
+spells,attack,Frost Ball,2,Magic Spell
+spells,attack,Teleport Other,2,Magic Spell
+spells,buff,Speed up,2,Magic Spell
+spells,attack,Fire Ball,2,Magic Spell
+spells,attack,Word of Destruction,2,Magic Spell
+spells,attack,Genocide,2,Magic Spell
+profession,gather,Mining,1,Skill to gather materials
+profession,gather,Farming,1,Skill to gather materials
+profession,gather,Wood cutter,1,Skill to gather materials
+profession,gather,Reed collector,1,Skill to gather materials
+profession,build,Carpenter,5,Skill to build things
+profession,build,Blacksmith,5,Skill to build things
+profession,build,Weaver,5,Skill to build things
+profession,build,Mason,5,Skill to build things
+profession,build,Engineer,5,Skill to build things

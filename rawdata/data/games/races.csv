@@ -1,0 +1,9 @@
+name,STA,STR,INT,AGI,CON,Health,max_health
+Human,0,0,0,0,0,5,5    
+Half-Elf,-1,0,1,2,2,4,4
+Elf,-1,-1,2,2,2,4,4
+Halfling,-1,-1,1,1,3,5,5
+Gnome,-1,-1,1,0,3,2,2
+Dwarf,1,1,-1,0,2,5,5
+Orc,2,1,-2,0,2,5,5
+Troll,4,1,-3,0,3,7,7

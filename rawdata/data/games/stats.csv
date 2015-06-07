@@ -1,0 +1,8 @@
+stat,name,increase_via,decrease_via,affects
+STA,Stamina,[armour:STA|physical training],[age*0.001],[health|damage_PHYSICAL/2]
+STR,Strength,[armour:STR|weight training],[age*0.0015],[damage_PHYSICAL*2]
+INT,Intellect,[armour:INT|puzzle training|school|age*0.01],[alcohol/0.03],[damage_SPELL*2]
+CON,Constitution,[armour:STA|physical training],[age*0.001],[health_regen+3]
+AGI,Agility,[armour:STA|martial art training],[],[CRIT+3|HIT+2|damage_PHYSICAL*2]
+Health,Health,[food|rest|Heal], [damage],[]
+max_health,Maximum Health,[],[],[]

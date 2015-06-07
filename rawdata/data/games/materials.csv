@@ -1,0 +1,11 @@
+type,name,drop_rate,extract_method,buy_price,sell_price,found_in,description
+money,gold,.5,[sell|pickpocket|rob],1,1,[monsters|chests],money makes the world go round
+gather,reeds,0,[pick],2,1,[grasslands|rivers],pick reeds for building things
+gather,wood,.02,[chop],5,4,[trees|buildings|dump],wood for building things
+gather,iron,.02,[mine],9,7,[caves|mountains|rocks],mine iron for building things
+gather,stone,0.01,[mine],4,3,[rocks|mountains|caves],mine stone for building things
+grow,turnips,0.01,[harvest],2,1,[turnip crops],plant turnips to grow food
+grow,carrots,0.01,[harvest],2,1,[carrot crops],plant carrots to grow food
+grow,wheat,0.01,[harvest],3,2,[wheat crops],plant wheat to grow food
+
+

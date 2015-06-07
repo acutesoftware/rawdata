@@ -1,0 +1,7 @@
+name,STA,STR,INT,CON,AGI,Health,max_health
+Warrior,9,9,1,8,5,19,19
+Mage   ,6,1,8,9,4,15,15
+Priest ,5,1,9,9,4,15,15
+Ranger ,7,5,4,6,7,17,17
+Rogue  ,6,8,4,5,8,16,16
+Paladin,8,5,7,8,5,17,17

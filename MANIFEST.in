@@ -1,2 +1,4 @@
 include *.rst
 include rawdata/data/*.*
+include rawdata/data/games/*.*
+

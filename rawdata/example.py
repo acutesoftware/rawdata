@@ -1,5 +1,4 @@
 # example.py
-import os
 import rawdata.generate
 import rawdata.errors
 
@@ -29,9 +28,6 @@ print('tbl[1][0] = ', tbl.tbl[1][0] )
 
 # now add some DQ issues
 t = rawdata.errors.TableWithErrors(tbl, s.random_letters(6))
-#t.swap_columns(0,3)
-print(t)
-#tbl.save_table('data' + os.sep + 'tbl_orig.csv')
 t.add_errors(2)
 print(t.tbl)
 #tbl.save_table('data' + os.sep + 'tbl_errors.csv')

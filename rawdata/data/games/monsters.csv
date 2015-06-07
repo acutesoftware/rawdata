@@ -1,0 +1,9 @@
+area,name,health,dmg,con,str,speed,desc
+fantasy,kobald,6,2,5,3,3,sneaky kobald
+fantasy,bandit,5,4,3,2,2,masked bandit
+fantasy,orc,7,4,4,4,1,angry orc
+fantasy,warlock,3,8,4,1,1,evil warlock
+town,beggar,1,1,1,1,2,town beggar
+town,drunk,1,2,2,1,-1,town beggar
+town,veteran,5,5,5,5,5,town beggar
+town,guard,50,9,50,9,2,armed guard
