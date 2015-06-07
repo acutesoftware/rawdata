@@ -1,0 +1,4 @@
+# finance_categories.txt
+asset_types:fixed,variable
+asset_groups:plant and equipment,goodwill,sales,stock
+liability_groups:bills,loans,payroll
