@@ -1,5 +1,5 @@
 # example.py
-
+import os
 import rawdata.generate as generate 
 import rawdata.create as create     
 

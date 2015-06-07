@@ -1,5 +1,2 @@
 include *.rst
 include rawdata/data/*.*
-include data/*.*
-recursive-include data *.txt *.csv
-recursive-include rawdata/data *.txt *.csv
