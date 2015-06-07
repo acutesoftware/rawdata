@@ -43,7 +43,7 @@ Adding Errors to a table
 .. code:: python
 
     import rawdata.errors
-    t = rawdata.create.Table(tbl, 'BAD_STRING')
+    t = rawdata.errors.TableWithErrors(tbl, 'BAD_STRING')
     t.add_errors(2)
     print(t.tbl)
 
