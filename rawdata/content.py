@@ -1,6 +1,7 @@
 # content.py
 
 import os
+import random
 
 data_fldr = os.path.abspath(os.path.dirname(os.path.abspath(__file__)) + os.sep + 'data' ) 
 
@@ -9,8 +10,14 @@ def TEST():
     #print(c)
     s = Samples()
     print(s.get_list())
-    s.get_sample('countries.csv')
+    col1 = s.get_collist_by_name(data_fldr + os.sep + 'games' + os.sep + 'skills.csv', 'type' )
+    print(col1)
     
+    # get list of countries from copper production
+    country_names_copper = s.get_collist_by_name(data_fldr + os.sep + 'finance' + os.sep + 'mining_copper_rent.csv', 'Country Name')  # country code, Country Name'2006'
+    print(country_names_copper)
+    # [{'CHILE', 'AUSTRALIA', 'UNITED KINGDOM', 'Cuba', 'SOUTH AFRICA', 'INDONESIA', 
+    #   'GUATEMALA', 'PHILIPPINES', 'NORWAY', 'ZIMBABWE', 'AUSTRIA', 'CYPRUS', 'CHINA', ...
 
 class Content(object):
     """
@@ -48,13 +55,30 @@ class Samples(object):
         for row in self.filelist:
             print(row[2][:-4])
             
-    def get_sample(self, short_filename):
-        with open(data_fldr + os.sep + short_filename) as f:
+    def get_list_fullname(self):
+        for row in self.filelist:
+            print(row[0])
+            
+    def get_sample(self, filename, col_name):
+        lst = self.get_collist_by_name(filename, col_name)
+        return random.choice(lst)
+    
+    def get_collist_by_name(self, filename, col_name):
+        with open(filename) as f:
+            ndx = 0
+            res = []
             for num, line in enumerate(f):
-                if num < 10:
-                    print(line.strip('\n'))
-            
-            
-            
+                #print('line',line, 'num',num)
+                cols = line.split(',')
+                if num == 0:
+                    for col_num, col in enumerate(cols):
+                        if col == col_name:
+                            ndx = col_num
+                #if num < 10:
+                #    print(line.strip('\n'))
+    
+                res.append(cols[ndx])
+        return [set(res)]            
+                    
 if __name__ == '__main__':
     TEST()
