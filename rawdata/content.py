@@ -34,8 +34,9 @@ def TEST():
     print(lst[0:5])
     
     # get food lists
-    food = s.get_collist_by_name(data_fldr + os.sep + 'food' + os.sep + 'food_desc.csv', 'Long_Desc')  
-    print(food[0:10])
+    food = s.get_collist_by_name(data_fldr + os.sep + 'food' + os.sep + 'food_desc.csv', 'Long_Desc')
+    for f in food[0]:
+        print(f)
     
         
     
@@ -92,13 +93,12 @@ class Samples(object):
                 cols = line.split(',')
                 if num == 0:
                     for col_num, col in enumerate(cols):
-                        if col == col_name:
+                        if col.strip('"') == col_name:
                             ndx = col_num
-                #if num < 10:
-                #    print(line.strip('\n'))
     
-                res.append(cols[ndx])
+                res.append(cols[ndx].strip('"'))
         return [set(res)]            
+        #return res     
                     
 if __name__ == '__main__':
     TEST()
