@@ -14,7 +14,8 @@ def TEST():
     print(col1)
     
     # get list of countries from copper production
-    country_names_copper = s.get_collist_by_name(data_fldr + os.sep + 'finance' + os.sep + 'mining_copper_rent.csv', 'Country Name')  # country code, Country Name'2006'
+    fname = data_fldr + os.sep + 'finance' + os.sep + 'mining_copper_rent.csv'
+    country_names_copper = s.get_collist_by_name(fname, 'Country Name')  # country code, Country Name
     print(country_names_copper)
     # [{'CHILE', 'AUSTRALIA', 'UNITED KINGDOM', 'Cuba', 'SOUTH AFRICA', 'INDONESIA', 
     #   'GUATEMALA', 'PHILIPPINES', 'NORWAY', 'ZIMBABWE', 'AUSTRIA', 'CYPRUS', 'CHINA', ...
