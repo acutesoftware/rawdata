@@ -73,11 +73,14 @@ class Samples(object):
             txt += '   ' + row[0] + '\n'
         return txt    
     
-    def get_list(self):
-        for row in self.filelist:
-            #print(row[2][:-4])
-            pass
-        return self.filelist
+    def get_list(self, names_only=False):
+        if names_only:
+            res = []
+            for row in self.filelist:
+                res.append(row[2][:-4])
+            return res
+        else:
+            return self.filelist
             
     def get_list_fullname(self):
         for row in self.filelist:
