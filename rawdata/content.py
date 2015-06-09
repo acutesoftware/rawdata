@@ -74,11 +74,14 @@ class Samples(object):
     
     def get_list(self):
         for row in self.filelist:
-            print(row[2][:-4])
+            #print(row[2][:-4])
+            pass
+        return self.filelist
             
     def get_list_fullname(self):
         for row in self.filelist:
             print(row[0])
+        
             
     def get_sample(self, filename, col_name):
         lst = self.get_collist_by_name(filename, col_name)
