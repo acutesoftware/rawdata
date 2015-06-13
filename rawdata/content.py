@@ -21,26 +21,13 @@ def TEST():
     #   'GUATEMALA', 'PHILIPPINES', 'NORWAY', 'ZIMBABWE', 'AUSTRIA', 'CYPRUS', 'CHINA', ...
 
     
-
-    # get categories from custom CSV file
-    csv_local = data_fldr + os.sep + 'finance_categories.txt'
-    lst = []
-    with open(csv_local, 'r') as f:
-        for line in f:
-            #print(line)
-            if line[0] != '#' and line != '':
-                content = line.split(':')
-                if content[0] == 'bills':
-                    lst = content[1].split(',')
-    print(lst[0:5])
-    
+   
     # get food lists
     food = s.get_collist_by_name(data_fldr + os.sep + 'food' + os.sep + 'food_desc.csv', 'Long_Desc')
     for f in food[0]:
         print(f)
     
-        
-    
+
 class Content(object):
     """
     core content object that others are derived
