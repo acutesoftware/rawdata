@@ -3,6 +3,8 @@ import os
 import random
 import binascii
 import string
+# import rawdata.content
+import content
 
 root_fldr = os.path.abspath(os.path.dirname(os.path.abspath(__file__)) )
 
@@ -29,6 +31,19 @@ def TEST():
     n = NumberGenerator()
     print('random_currency = ', n.random_currency())
 
+    # get food lists
+    #s = rawdata.content.Samples()
+    s = content.Samples()
+    food_list = s.get_collist_by_name(dat_fldr + os.sep + 'food' + os.sep + 'food_desc.csv', 'Long_Desc')
+    
+    # table with a custom list
+    custom_list = ['Carved Statue', '1984 Volvo', '2 metre Ball of string']
+    tbl = TableGenerator(8, ['PEOPLE', 'INT', custom_list], ['Name', 'Age', 'Fav Possession'])
+    print(tbl)
+ 
+    # table with loaded list
+    
+    
 class Structure(object):
     """
     core container to manager data generation
@@ -84,7 +99,10 @@ class TableGenerator(Structure):
         n = NumberGenerator()      
         # verify the col_types required and assign defaults to empty sets
         cols = len(col_types)
-        colTypes = fill_colList_blanks(col_types, cols)
+        #colTypes = fill_colList_blanks(col_types, cols)
+        colTypes = col_types
+        
+        
         #print('Generating columns - ', colTypes)
         wordLists = load_lists(colTypes)
         self.tbl.insert(0, col_label) # column headers
@@ -98,6 +116,9 @@ class TableGenerator(Structure):
                     txt = s.random_letters()
                 elif colTypes[c] == 'CURRENCY':
                     txt = n.random_currency(9, 499)
+                elif isinstance((colTypes[c]), (list, tuple)):
+                    # getting random data from passed list
+                    txt = get_rand_text_from_list(colTypes[c])
                 else:
                     for lst in wordLists:
                         if lst['name'] != 'INT':
@@ -111,6 +132,18 @@ class TableGenerator(Structure):
         txt = '\n'.join(','.join([col if type(col) is str else str(col) for col in row]) for row in self.tbl)
         return txt
 
+        
+    def _populate_column(self, tpe, nme, num_rows):
+        """
+        takes a single columns requirements and generates 
+        a list which is returned.
+        """
+        result = []
+        
+        
+        return result
+        
+        
     def save_table(self,  fname, delim=',', qu='"'):
         with open(fname, "wt") as f:
             f.write('\n'.join(delim.join([qu + col + qu if type(col) is str else qu + str(col) + qu for col in row]) for row in self.tbl))
@@ -119,6 +152,10 @@ def get_rand_text_from_list(lst):
     return lst[random.randrange(0, len(lst))]
     
 def fill_colList_blanks(partialCols, numRequiredCols):
+    """
+    no idea why this function is here - probably at start
+    when trying to autofill table, but it needs to go
+    """
     colWord = []
     num = 0
     for _ in range(0, numRequiredCols):
@@ -130,9 +167,24 @@ def fill_colList_blanks(partialCols, numRequiredCols):
     return colWord
 
 def load_lists(lst):
-    # loads a sample of data for each type in lst
-    results = []	# will return a list of dictionaries of lists (yes, that is right)
+    """
+    loads a sample of data for each type in lst
+        l =  PEOPLE
+        l =  INT
+        l =  ['Carved Statue', '1984 Volvo', '2 metre Ball of string']
+    
     lists_to_load = {l for l in lst}	# get unique list of types so only loading them once each
+    """
+    results = []	
+    lists_to_load = []
+    for l in lst:
+        #print(' l = ', l)
+        if isinstance(l, (list, tuple)):
+            results.append({'name': 'LIST', 'lst': l})
+        else:
+            lists_to_load.append(l)
+    
+    
     for tpe in lists_to_load:
         if tpe == 'STRING2':
             results.append({'name': 'STRING', 'lst': get_list_string(40)})
