@@ -3,8 +3,8 @@ import os
 import random
 import binascii
 import string
-# import rawdata.content
-import content
+import rawdata.content
+
 
 root_fldr = os.path.abspath(os.path.dirname(os.path.abspath(__file__)) )
 
@@ -33,7 +33,7 @@ def TEST():
 
     # get food lists
     #s = rawdata.content.Samples()
-    s = content.Samples()
+    s = rawdata.content.Samples()
     food_list = s.get_collist_by_name(dat_fldr + os.sep + 'food' + os.sep + 'food_desc.csv', 'Long_Desc')
     
     # table with a custom list
@@ -132,17 +132,12 @@ class TableGenerator(Structure):
         txt = '\n'.join(','.join([col if type(col) is str else str(col) for col in row]) for row in self.tbl)
         return txt
 
-        
-    def _populate_column(self, tpe, nme, num_rows):
-        """
-        takes a single columns requirements and generates 
-        a list which is returned.
-        """
-        result = []
-        
-        
-        return result
-        
+    def get_column(self, ndx):
+        res = []
+        for r in self.tbl:
+            res.append(r[ndx])
+        return res    
+
         
     def save_table(self,  fname, delim=',', qu='"'):
         with open(fname, "wt") as f:

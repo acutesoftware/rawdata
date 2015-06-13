@@ -41,5 +41,15 @@ class TestGenerate(unittest.TestCase):
         self.assertEqual(t.tbl[0][4], 'Quote') 
         self.assertEqual(t.tbl[0][5], 'Score') 
     
+    def test_05_table_with_custom_list(self):
+        my_colours = ['Blue', 'Green', 'Orange']
+        tbl = rawdata.generate.TableGenerator(99, ['PEOPLE', my_colours], ['Name', 'MyCols'])
+        #print(tbl)
+        #print(tbl.get_column(1))
+        self.assertEqual('Blue' in tbl.get_column(1), True) 
+        self.assertEqual('Green' in tbl.get_column(1), True) 
+        self.assertEqual('Orange' in tbl.get_column(1), True) 
+       
+    
 if __name__ == '__main__':
     unittest.main()
