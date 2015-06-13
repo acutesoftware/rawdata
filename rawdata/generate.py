@@ -31,11 +31,7 @@ def TEST():
     n = NumberGenerator()
     print('random_currency = ', n.random_currency())
 
-    # get food lists
-    #s = rawdata.content.Samples()
-    s = rawdata.content.Samples()
-    food_list = s.get_collist_by_name(dat_fldr + os.sep + 'food' + os.sep + 'food_desc.csv', 'Long_Desc')
-    
+     
     # table with a custom list
     custom_list = ['Carved Statue', '1984 Volvo', '2 metre Ball of string']
     tbl = TableGenerator(8, ['PEOPLE', 'INT', custom_list], ['Name', 'Age', 'Fav Possession'])
