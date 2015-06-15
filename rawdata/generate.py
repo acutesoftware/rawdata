@@ -87,8 +87,8 @@ class FunctionGenerator(object):
             num_terms = random.randint(2, 9)
         self.num_terms = num_terms
         self.equation = ''
-        self.mult = [random.randint(mult_range[0], mult_range[1] ) for r in range(self.num_terms + 1)]
-        self.expt = [random.randint(exp_range[0], exp_range[1]) for r in range(self.num_terms + 1)]
+        self.mult = [random.randint(mult_range[0], mult_range[1] ) for _ in range(self.num_terms + 1)]
+        self.expt = [random.randint(exp_range[0], exp_range[1]) for _ in range(self.num_terms + 1)]
         
         for i in range(self.num_terms):
             letter = chr(97 + i)
