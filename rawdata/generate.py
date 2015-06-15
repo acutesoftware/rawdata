@@ -3,8 +3,6 @@ import os
 import random
 import binascii
 import string
-import rawdata.content
-
 
 root_fldr = os.path.abspath(os.path.dirname(os.path.abspath(__file__)) )
 
@@ -37,11 +35,12 @@ def TEST():
     tbl = TableGenerator(8, ['PEOPLE', 'INT', custom_list], ['Name', 'Age', 'Fav Possession'])
     print(tbl)
  
-    # random functions, and maths calcs
-    f = FunctionGenerator(mult_range=[-9,9], exp_range=[0,5], num_terms=3)
+    # random equation generator, and maths calculations
+    f = FunctionGenerator(mult_range=[-3,5], exp_range=[0,3], num_terms=3)
     print(f)
     for i in range(5):
-        c = FunctionCalculator(f, [n.random_int(0,9), n.random_int(0,9), n.random_int(0,9)], i)
+        params = [n.random_int(i,i+5), n.random_int(i,i+5), n.random_int(i,i+5)]
+        c = FunctionCalculator(f, params, i)
         print(c)
    
     
@@ -90,9 +89,15 @@ class FunctionGenerator(object):
         self.equation = ''
         self.mult = [random.randint(mult_range[0], mult_range[1] ) for r in range(self.num_terms + 1)]
         self.expt = [random.randint(exp_range[0], exp_range[1]) for r in range(self.num_terms + 1)]
+        
         for i in range(self.num_terms):
-            self.equation += str(self.mult[i]) + 'x^' + str(self.expt[i]) + ' ' 
- 
+            letter = chr(97 + i)
+            sign = ''
+            if self.mult[i] >= 0:
+                if i > 0:
+                    sign = '+'
+            self.equation += sign + str(self.mult[i]) + letter + '^' + str(self.expt[i])
+                
     def __str__(self):
         return 'Equation   : ' + self.equation 
         
@@ -123,15 +128,16 @@ class FunctionCalculator(object):
         if len(params) != func.num_terms:
             assert('Error first parameter not equal to number of terms of function')
         self.params = params
-        ans = 0.000000000
+        ans = 0
         #for param_num, p in enumerate(self.params):
         for i in range(func.num_terms - 1):
             ans += func.mult[i] * params[i] ** func.expt[i]
-        self.answer = '%.9f' %ans
+        #self.answer = '%.9f' %ans
+        self.answer = str(ans)
 
     def __str__(self):
-        res = ''
-        res += 'Parameters : ' + ','.join([str(t) for t in self.params]) + ' => '
+        res = 'Parameters : '
+        res += ','.join([chr(97 + i) + '=' + str(t) for i,t in enumerate(self.params)]) + ' => '
         res += 'answer     : ' + self.answer # + '\n'
         return res
             
