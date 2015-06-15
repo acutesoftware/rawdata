@@ -37,8 +37,13 @@ def TEST():
     tbl = TableGenerator(8, ['PEOPLE', 'INT', custom_list], ['Name', 'Age', 'Fav Possession'])
     print(tbl)
  
-    # table with loaded list
-    
+    # random functions, and maths calcs
+    f = FunctionGenerator(mult_range=[-9,9], exp_range=[0,5], num_terms=3)
+    print(f)
+    for i in range(5):
+        c = FunctionCalculator(f, [n.random_int(0,9), n.random_int(0,9), n.random_int(0,9)], i)
+        print(c)
+   
     
 class Structure(object):
     """
@@ -46,9 +51,7 @@ class Structure(object):
     structures
     """
     pass
-
-    
-
+  
 class NumberGenerator(Structure):
     def random_int(self, min_v=0, max_v=100):
         return random.randrange(min_v, max_v)
@@ -59,7 +62,6 @@ class NumberGenerator(Structure):
         sign = random.choice(['$', '+$', '-$', '-', '', '$ ', ''])
         return sign + str(dollars) + '.' + cents
         
-
 class StringGenerator(Structure):
     def random_letters(self, sze=20):
         lst = [random.choice(string.ascii_letters + string.digits) for _ in range(sze)]
@@ -77,10 +79,64 @@ class StringGenerator(Structure):
     def random_block(self, cols=40, rows=5):
         return ''.join([self.random_letters(cols) + '\n' for _ in range(0,rows)])
 
-def get_list_string(num = 40):
-    s = StringGenerator()
-    return [s.random_letters(num) for _ in range(0,100)]
-    
+class FunctionGenerator(object):
+    """
+    generates a random polynomial function
+    """
+    def __init__(self, mult_range, exp_range, num_terms=3):
+        if num_terms is None:
+            num_terms = random.randint(2, 9)
+        self.num_terms = num_terms
+        self.equation = ''
+        self.mult = [random.randint(mult_range[0], mult_range[1] ) for r in range(self.num_terms + 1)]
+        self.expt = [random.randint(exp_range[0], exp_range[1]) for r in range(self.num_terms + 1)]
+        for i in range(self.num_terms):
+            self.equation += str(self.mult[i]) + 'x^' + str(self.expt[i]) + ' ' 
+ 
+    def __str__(self):
+        return 'Equation   : ' + self.equation 
+        
+class FunctionCalculator(object):
+    """
+    uses a FunctionGenerator object 'func' to
+    run calculations over a set of parameters
+    PARAMETERS:
+        func    : FunctionGenerator() object
+        params  : [3, 4, 1] # list with ONE value per term (x,y,z...) 
+        test_id : optional integer for naming when logging
+    USAGE:
+        f = FunctionGenerator(mult_range=[-9,9], exp_range=[0,5], num_terms=3)
+        print(f)
+        for i in range(5):
+            c = FunctionCalculator(f, [n.random_int(), n.random_int(), n.random_int()], i)
+            print(c)
+    RETURNS:
+        Equation   : 7x^5 -1x^4 -6x^1
+        Parameters : 1,4,7 => answer     : -249.000000000
+        Parameters : 8,8,0 => answer     : 225280.000000000
+        Parameters : 4,3,5 => answer     : 7087.000000000
+        Parameters : 1,8,2 => answer     : -4089.000000000
+        Parameters : 7,3,8 => answer     : 117568.000000000    
+    """
+    def __init__(self, func, params, test_id=1):
+        self.test_id = 'math_test_' + str(test_id)
+        if len(params) != func.num_terms:
+            assert('Error first parameter not equal to number of terms of function')
+        self.params = params
+        ans = 0.000000000
+        #for param_num, p in enumerate(self.params):
+        for i in range(func.num_terms - 1):
+            ans += func.mult[i] * params[i] ** func.expt[i]
+        self.answer = '%.9f' %ans
+
+    def __str__(self):
+        res = ''
+        res += 'Parameters : ' + ','.join([str(t) for t in self.params]) + ' => '
+        res += 'answer     : ' + self.answer # + '\n'
+        return res
+            
+        
+        
 class TableGenerator(Structure):
     """
     holds a table and manages the cleaning and 
@@ -139,6 +195,11 @@ class TableGenerator(Structure):
         with open(fname, "wt") as f:
             f.write('\n'.join(delim.join([qu + col + qu if type(col) is str else qu + str(col) + qu for col in row]) for row in self.tbl))
 
+def get_list_string(num = 40):
+    s = StringGenerator()
+    return [s.random_letters(num) for _ in range(0,100)]
+                
+            
 def get_rand_text_from_list(lst):
     return lst[random.randrange(0, len(lst))]
     
