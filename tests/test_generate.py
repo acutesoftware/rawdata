@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 # test_generate.py
 
 import unittest
@@ -45,8 +46,6 @@ class TestGenerate(unittest.TestCase):
     def test_05_table_with_custom_list(self):
         my_colours = ['Blue', 'Green', 'Orange']
         tbl = rawdata.generate.TableGenerator(99, ['PEOPLE', my_colours], ['Name', 'MyCols'])
-        #print(tbl)
-        #print(tbl.get_column(1))
         self.assertEqual('Blue' in tbl.get_column(1), True) 
         self.assertEqual('Green' in tbl.get_column(1), True) 
         self.assertEqual('Orange' in tbl.get_column(1), True) 

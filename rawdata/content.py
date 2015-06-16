@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 # content.py
 
 import os
@@ -6,8 +7,6 @@ import random
 data_fldr = os.path.abspath(os.path.dirname(os.path.abspath(__file__)) + os.sep + 'data' ) 
 
 def TEST():
-    #c = Content('finance', [4,3,5])
-    #print(c)
     s = Samples()
     print(s.get_list())
     col1 = s.get_collist_by_name(data_fldr + os.sep + 'games' + os.sep + 'skills.csv', 'type' )
@@ -20,14 +19,11 @@ def TEST():
     # [{'CHILE', 'AUSTRALIA', 'UNITED KINGDOM', 'Cuba', 'SOUTH AFRICA', 'INDONESIA', 
     #   'GUATEMALA', 'PHILIPPINES', 'NORWAY', 'ZIMBABWE', 'AUSTRIA', 'CYPRUS', 'CHINA', ...
 
-    
-   
     # get food lists
     food = s.get_collist_by_name(data_fldr + os.sep + 'food' + os.sep + 'food_desc.csv', 'Long_Desc')
     for f in food[0]:
         print(f)
     
-
 class Content(object):
     """
     core content object that others are derived
@@ -92,7 +88,6 @@ class Samples(object):
     
                 res.append(cols[ndx].strip('"'))
         return [set(res)]            
-        #return res     
                     
 if __name__ == '__main__':
     TEST()

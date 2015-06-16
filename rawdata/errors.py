@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 # errors.py
 
 import os
@@ -12,7 +13,6 @@ def TEST():
     colLabel = ['DATE', 'name',   'Born']
     colTypes = ['DATE', 'PEOPLE', 'PLACE']
     tbl = rawdata.generate.TableGenerator(3, colTypes, colLabel)
-    #generate.show_table(tbl)
     t = TableWithErrors(tbl, 'VVV')
     print(t.tbl)
     t.load_from_file(data_fldr + os.sep + 'countries.csv')
@@ -72,7 +72,10 @@ class TableWithErrors(object):
             self.tbl[row][col] = self.glitch.random_error(self.tbl[row][col])
             
     def swap_columns(self, c1, c2):  
-        #self.tbl[c1][:], self.tbl[c2][:] = self.tbl[c2][:], self.tbl[c1][:] 
+        """
+        switch columns around in a table to simulate import errors
+        with incorrect column headers
+        """
         for r, _ in enumerate(self.tbl):
             self.tbl[r][c1], self.tbl[r][c2] = self.tbl[r][c2], self.tbl[r][c1]
 

@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 # test_errors.py
 
 import unittest
@@ -9,7 +10,6 @@ class TestCreate(unittest.TestCase):
     def test_01_create_error(self):
         e = rawdata.errors.DataError('Random Text')
         self.assertEqual(str(e),'Random Text')
-        #print(e)
 
     def test_02_error_fixed_val(self):
         e = rawdata.errors.DataError('BAD STRING')
@@ -28,7 +28,6 @@ class TestCreate(unittest.TestCase):
         e = rawdata.errors.DataError('BAD STRING')
         self.assertEqual(e.random_error('Orig') != 'Orig', True)
         
-        
     def test_10_table_swap_columns(self):
         colLabel = ['DATE', 'name',   'Born']
         colTypes = ['DATE', 'PEOPLE', 'PLACE']
@@ -42,9 +41,6 @@ class TestCreate(unittest.TestCase):
         t.swap_columns(2,0)
         self.assertEqual(t.tbl[0],['DATE', 'Born', 'name'])
         self.assertEqual(len(t.tbl[0]),3)  # confirm 3 columns in header
-    
-    
-    
-    
-if __name__ == '__main__':
+ 
+ if __name__ == '__main__':
     unittest.main()
