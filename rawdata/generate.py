@@ -264,8 +264,8 @@ def get_list_words():
     with open(wordList) as f:
         return [line.strip().replace('_', ' ') for line in f if random.randrange(1,100) > 90]
 
-def get_list_dates():
-    return [i for i in range(1985, 2014)]
+def get_list_dates(start_date=1985, end_date=2015):
+    return [i for i in range(start_date, end_date)]
 
 def get_list_places():
     with open(places) as f:

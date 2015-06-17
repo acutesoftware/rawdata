@@ -32,10 +32,10 @@ Create a random table
     tbl = rawdata.generate.TableGenerator(3, colTypes, colLabel)
     print(tbl)
 
-        > Year,name,Born
-        > 2013,Douglas,Scandinavia
-        > 1999,Hunter,Sierra Leone
-        > 2005,Shubha,Madagascar
+        > Year, name,    Born
+        > 2013, Douglas, Scandinavia
+        > 1999, Hunter,  Sierra Leone
+        > 2005, Shubha,  Madagascar
         
 Adding Errors to a table
 
@@ -58,6 +58,20 @@ And after adding 2 random errors there are additional spaces in Douglas, and the
     1999    Hunter      
     2005    Shubha     Madagascar
 
+You can use columns generated via a custom list
+
+.. code:: python
+
+
+    custom_list = ['Carved Statue', '1984 Volvo', '2 metre Ball of string']
+    tbl = TableGenerator(8, ['PEOPLE', 'INT', custom_list], ['Name', 'Age', 'Fav Possession'])
+    print(tbl)
+        > Name,   Age,  Fav Possession
+        > Inez,    58,  Carved Statue
+        > Zane,    50,  2 metre Ball of string
+        > Jered,   49,  1984 Volvo
+        > Tameron, 55,  2 metre Ball of string
+        > Wyatt,   68,  Carved Statue
 
 Other functions 
 
