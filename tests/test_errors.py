@@ -2,6 +2,13 @@
 # test_errors.py
 
 import unittest
+import os
+import sys
+
+root_fldr = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
+test_fldr = os.path.dirname(__file__) + os.sep + 'test_results'
+sys.path.insert(1, root_fldr)
+
 import rawdata.generate
 import rawdata.errors
 
@@ -42,5 +49,5 @@ class TestCreate(unittest.TestCase):
         self.assertEqual(t.tbl[0],['DATE', 'Born', 'name'])
         self.assertEqual(len(t.tbl[0]),3)  # confirm 3 columns in header
  
- if __name__ == '__main__':
+if __name__ == '__main__':
     unittest.main()

@@ -2,6 +2,13 @@
 # test_generate.py
 
 import unittest
+import os
+import sys
+
+root_fldr = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
+test_fldr = os.path.dirname(__file__) + os.sep + 'test_results'
+sys.path.insert(1, root_fldr)
+
 import random
 import rawdata.generate
 
@@ -33,7 +40,6 @@ class TestGenerate(unittest.TestCase):
         colLabel = ['DATE', 'name', 'password', 'Born',  'Quote', 'Score']
         colTypes = ['DATE', 'PEOPLE', 'STRING', 'PLACE', 'WORD',  'INT']
         t = rawdata.generate.TableGenerator(500, colTypes, colLabel)
-        #print(tbl)
         self.assertEqual(len(t.tbl), 501)       # 500 rows plus header
         self.assertEqual(len(t.tbl[0]), 6)      # check for 6 columns
         self.assertEqual(t.tbl[0][0], 'DATE') 

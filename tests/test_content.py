@@ -1,8 +1,14 @@
 #!/usr/bin/python3
 # test_content.py
 
-import os
 import unittest
+import os
+import sys
+
+root_fldr = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
+test_fldr = os.path.dirname(__file__) + os.sep + 'test_results'
+sys.path.insert(1, root_fldr)
+
 import rawdata.generate
 import rawdata.content
 
@@ -10,11 +16,9 @@ class TestContent(unittest.TestCase):
     def test_01_check_sample_datafiles(self):
         s = rawdata.content.Samples()
         all_files = s.get_list()
-        print(len(all_files))
-        self.assertEqual(len(all_files),12)  # check for 11 data files
+        #print(len(all_files))
+        self.assertEqual(len(all_files) > 12, True)  # check for at least 12 data files
         self.assertEqual(all_files[0][2],'countries.csv')
-        self.assertEqual(all_files[1][2],'finance_categories.txt')
-        self.assertEqual(all_files[2][2],'names.csv')
 
     def test_02_get_collist(self):
         s = rawdata.content.Samples()
