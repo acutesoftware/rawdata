@@ -64,7 +64,7 @@ You can use columns generated via a custom list
 
 
     custom_list = ['Carved Statue', '1984 Volvo', '2 metre Ball of string']
-    tbl = TableGenerator(8, ['PEOPLE', 'INT', custom_list], ['Name', 'Age', 'Fav Possession'])
+    tbl = TableGenerator(5, ['PEOPLE', 'INT', custom_list], ['Name', 'Age', 'Fav Possession'])
     print(tbl)
         > Name,   Age,  Fav Possession
         > Inez,    58,  Carved Statue
