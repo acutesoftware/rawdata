@@ -39,13 +39,13 @@ t2 = rawdata.generate.TableGenerator(50000, tpe, lbl)
 print('created table containing ' + str(len(t2.tbl)) + ' rows')
 for r in t2.tbl[0:4]:
     print(r)
-"""
-    created table containing 50001 rows
-    ['Entry Year', 'Name', 'Country', 'Travel Cost']
-    [1985, 'Rena', 'Samoa', '$90.95']
-    [1998, 'Gary', 'Sri Lanka', '$9.10']
-    [2002, 'Maire', 'Nauru', '295.10']
-"""    
+
+    # created table containing 50001 rows
+    # ['Entry Year', 'Name', 'Country', 'Travel Cost']
+    # [1985, 'Rena', 'Samoa', '$90.95']
+    # [1998, 'Gary', 'Sri Lanka', '$9.10']
+    # [2002, 'Maire', 'Nauru', '295.10']
+  
 
 custom_list = ['Carved Statue', '1984 Volvo', '2 metre Ball of string']
 tbl = rawdata.generate.TableGenerator(5, ['PEOPLE', 'INT', custom_list], ['Name', 'Age', 'Fav Possession'])

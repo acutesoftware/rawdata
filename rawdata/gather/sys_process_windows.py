@@ -77,7 +77,7 @@ wininit.exe ,C:\\windows\\system32\\wininit.exe , 1720320 , 621,0, 4857856, 0
 csrss.exe,  C:\\windows\\system32\\csrss.exe, 3715072, 4814326, 44304284, 34344960,0                    
 
 """
-import os
+
 import time
 
 op_file = 'processes.txt'
