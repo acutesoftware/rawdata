@@ -79,8 +79,10 @@ csrss.exe,  C:\\windows\\system32\\csrss.exe, 3715072, 4814326, 44304284, 343449
 """
 
 import time
+import rawdata.config as mod_cfg
 
-op_file = 'processes.txt'
+op_file = mod_cfg.fldrs['pers_data'] + 'sys_win_processes.txt'
+#print(op_file)
 
 def main():
     lst = GetWindowsProcesses_method2()

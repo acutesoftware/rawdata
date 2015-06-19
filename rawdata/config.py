@@ -14,7 +14,7 @@ pers_fldr = 'T:\\user\\AIKIF'
 
 fldrs['localPath'] = pers_fldr + os.sep 
 fldrs['log_folder'] = pers_fldr + os.sep + 'log' 
-fldrs['pers_data'] = pers_fldr + os.sep + 'pers_data' 
+fldrs['pers_data'] = pers_fldr + os.sep + 'pers_data' + os.sep 
 fldrs['pers_credentials'] = pers_fldr + os.sep + 'pers_data' + os.sep + 'credentials' 
 
 # FOR DEVELOPMENT
