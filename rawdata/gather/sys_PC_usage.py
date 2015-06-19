@@ -2,8 +2,6 @@
 # sys_PC_usage.py 
 
 from win32gui import GetWindowText, GetForegroundWindow
-import sys
-import os
 import time
 
 import rawdata.config as mod_cfg
