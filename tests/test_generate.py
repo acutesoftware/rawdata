@@ -22,6 +22,30 @@ class TestGenerate(unittest.TestCase):
         self.assertEqual(n.random_int(50,51), 50)
         self.assertEqual(n.random_int(999,5555) > 999, True)
 
+    def test_01_random_currency(self):
+        n2 = rawdata.generate.NumberGenerator()
+        #print(n2.random_currency())
+        self.assertEqual(len(n2.random_currency(1,100)) > 4, True)
+        n3 = rawdata.generate.NumberGenerator(cents='Normal')
+        
+    def test_01_currency_cents(self):
+        n4 = rawdata.generate.NumberGenerator(cents='Normal')
+        self.assertEqual(n4.cent_choices, ['00', '00', '00', '00', '10', '50', '95', '95', '95', '98', '99', '99'])
+
+        n5 = rawdata.generate.NumberGenerator()   # uses cents=Normal as default
+        self.assertEqual(n5.cent_choices, ['00', '00', '00', '00', '10', '50', '95', '95', '95', '98', '99', '99'])
+        
+        n6 = rawdata.generate.NumberGenerator('fives')
+        self.assertEqual(n6.cent_choices[0:5], ['00', '05', '10', '15', '20'])
+        self.assertEqual(n6.cent_choices[18:20], ['90', '95'])
+        
+
+        n7 = rawdata.generate.NumberGenerator('all')
+        self.assertEqual(len(n7.cent_choices), 99)
+        self.assertEqual(n7.cent_choices[0:5], ['00', '01', '02', '03', '04'])
+        self.assertEqual(n7.cent_choices[97:99], ['97', '98'])
+        
+
     def test_02_random_letters(self):
         s = rawdata.generate.StringGenerator()
         self.assertEqual(len(s.random_letters(1)), 1)
