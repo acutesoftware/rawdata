@@ -8,7 +8,7 @@ import smtplib
 root_folder = os.path.abspath(os.path.dirname(os.path.abspath(__file__)) + os.sep + ".." + os.sep + ".." + os.sep + "..") 
 
 
-import aikif.cls_log as mod_log
+#import aikif.cls_log as mod_log
 import aikif.config as mod_cfg   # comment out if you dont need cached password
 
 def TEST():
