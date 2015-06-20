@@ -9,8 +9,7 @@ root_folder = os.path.abspath(os.path.dirname(os.path.abspath(__file__)) + os.se
 
 
 import aikif.cls_log as mod_log
-import aikif.config as mod_cfg
-import aikif.agents.agent as agt
+import aikif.config as mod_cfg   # comment out if you dont need cached password
 
 def TEST():
     
@@ -26,53 +25,12 @@ def TEST():
     save_folder = mod_cfg.fldrs['pers_data'] + os.sep + 'email' + os.sep + 'gmail'
     account = GmailAccount(username, password, save_folder)   
     
-    agt = EmailAgent('email_agent', root_folder, True, account)
-    print(agt)
-    
     account.connect()
-    print('Total Emails = ', account.get_inbox_count())  # works if this is just after connect (20 emails)
+    print('Total Emails = ', account.get_inbox_count()) 
     search_str = "(SUBJECT Flight)"
     search_str = "ALL"
     account.get_all_emails_containing(100, search_str)
     # tok account.send('djmurray@gmail.com', subject='test from AIKIF ', msg='this is a test')
-
-            
-class EmailAgent(agt.Agent):
-    """
-    agent that logs emails. [using AIKIF logging].
-    """
-    
-    def __init__(self, name,  fldr, running, account):
-        """
-        takes a folder which contains the list of email PST files for logging
-        """
-        agt.Agent.__init__(self, name,  fldr, running)
-        self.LOG_LEVEL = 1
-        self.root_folder = fldr
-        self.account = account
-        self.log_folder = mod_cfg.fldrs['log_folder']
-        self.fl_opname = self.log_folder + os.sep + name + '.csv'
-        if running is True:
-            self.do_your_job()
-
-    def __str__(self):
-        """
-        display the current class summary
-        """
-        res = '--- Email Agent---\n'
-        res += 'self.LOG_LEVEL   = ' + str(self.LOG_LEVEL) + '\n'
-        res += 'self.root_folder = ' + self.root_folder + '\n'
-        res += 'self.log_folder  = ' + self.log_folder + '\n'
-        res += 'self.fl_opname   = ' + self.fl_opname + '\n'
-        res += str(self.account)
-        return res
-            
-    def do_your_job(self):
-        """
-        the goal of the email agent is to parse emails and index
-        """ 
-        lg = mod_log.Log(self.log_folder)
-        lg.record_command('email_collect.txt', 'email agent - checking folder - ' + self.root_folder)
 
 class EmailAccount(object):
     """
