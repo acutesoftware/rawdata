@@ -27,15 +27,16 @@ Create a random table
 .. code:: python
 
     import rawdata.generate
-    colLabel = ['Year', 'Name',   'Born']
-    colTypes = ['DATE', 'PEOPLE', 'PLACE']
+    colLabel = ['Year', 'Name',   'Born', 'Details' , 'Amount']
+    colTypes = ['DATE', 'PEOPLE', 'PLACE', 'WORD',    'CURRENCY']
     tbl = rawdata.generate.TableGenerator(3, colTypes, colLabel)
     print(tbl)
 
-        > Year, name,    Born
-        > 2013, Douglas, Scandinavia
-        > 1999, Hunter,  Sierra Leone
-        > 2005, Shubha,  Madagascar
+    > Year, name,    Age, Born,         Details,      Amount       
+    > 2013, Douglas, 34,  Scandinavia,  Bowling Ball, $34.95
+    > 1999, Hunter,  65,  Sierra Leone, Fish,         12.00
+    > 2005, Shubha,  18,  Madagascar,   screenplay,   -$231.00
+
         
 Adding Errors to a table
 
@@ -44,17 +45,17 @@ Adding Errors to a table
 
     import rawdata.errors
     t = rawdata.errors.TableWithErrors(tbl, 'BAD_STRING')
-    t.add_errors(2)
+    t.add_errors(3)
     print(t.tbl)
 
-And after adding 2 random errors there are additional spaces in Douglas, and the Born column is missing for Hunter
+And after adding 3 random errors there are additional spaces in Douglas, a fake string in Douglas Born column, and the Born column is missing for Hunter
 
 
 .. code:: python
 
     Year    Name       Born
     -----   ---------  ----------
-    2013     Douglas   Scandinavia
+    2013     Douglas   BAD_STRING
     1999    Hunter      
     2005    Shubha     Madagascar
 
