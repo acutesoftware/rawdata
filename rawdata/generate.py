@@ -27,8 +27,10 @@ def TEST():
     #save_table(tbl, 'test123.csv')
     print('password generator = ', s.generate_password(10))
     
-    n = NumberGenerator()
+    n = NumberGenerator('fives')
     print('random_currency = ', n.random_currency())
+    for transactions in range(1,20):
+        print(n.random_currency())
 
      
     # table with a custom list
@@ -53,11 +55,26 @@ class Structure(object):
     pass
   
 class NumberGenerator(Structure):
+    """
+    Creates a random currency value based on likely
+    cent values 
+    """
+    def __init__(self, cents='Normal'):
+        """
+        pass a random choice cent selection
+        """
+        if cents == 'Normal':
+            self.cent_choices = ['00','00','00','00','10','50','95','95','95','98','99','99']
+        elif cents == 'fives':
+            self.cent_choices = ['{:0>2}'.format(c) for c in range(0,99,5)]
+        else:
+            self.cent_choices = ['{:0>2}'.format(c) for c in range(0,99)]
+    
     def random_int(self, min_v=0, max_v=100):
         return random.randrange(min_v, max_v)
         
     def random_currency(self, start=9, end=499):
-        cents = random.choice(['00','10','50','95','99'])
+        cents = random.choice(self.cent_choices)
         dollars = random.randint(start,end)
         sign = random.choice(['$', '+$', '-$', '-', '', '$ ', ''])
         return sign + str(dollars) + '.' + cents
