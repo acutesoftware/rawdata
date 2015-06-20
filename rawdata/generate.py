@@ -28,14 +28,15 @@ def TEST():
     print('password generator = ', s.generate_password(10))
     
     n = NumberGenerator('fives')
-    print('random_currency = ', n.random_currency())
+    print('random_currency = ', n.random_currency(45, 88))
+    amounts_paid = []
     for transactions in range(1,20):
-        print(n.random_currency())
+        amounts_paid.append(n.random_currency())
 
      
     # table with a custom list
     custom_list = ['Carved Statue', '1984 Volvo', '2 metre Ball of string']
-    tbl = TableGenerator(8, ['PEOPLE', 'INT', custom_list], ['Name', 'Age', 'Fav Possession'])
+    tbl = TableGenerator(8, ['PEOPLE', 'INT', custom_list, amounts_paid], ['Name', 'Age', 'Fav Possession', 'Transaction Cost'])
     print(tbl)
  
     # random equation generator, and maths calculations
@@ -73,10 +74,14 @@ class NumberGenerator(Structure):
     def random_int(self, min_v=0, max_v=100):
         return random.randrange(min_v, max_v)
         
-    def random_currency(self, start=9, end=499):
+    def random_currency(self, start=9, end=499.9999979797):
         cents = random.choice(self.cent_choices)
+        if end == 499.9999979797:
+            end = 499
+            sign = random.choice(['$','', '+$', '+'])
+        else:
+            sign = random.choice(['$', '+$', '-$', '-', '', '$ ', ''])
         dollars = random.randint(start,end)
-        sign = random.choice(['$', '+$', '-$', '-', '', '$ ', ''])
         return sign + str(dollars) + '.' + cents
         
 class StringGenerator(Structure):
