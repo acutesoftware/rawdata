@@ -32,11 +32,18 @@ t.add_errors(2)
 print(t.tbl)
 #tbl.save_table('data' + os.sep + 'tbl_errors.csv')
 
+
+custom_list = ['Carved Statue', '1984 Volvo', '2 metre Ball of string']
+tbl = rawdata.generate.TableGenerator(5, ['PEOPLE', 'INT', custom_list], ['Name', 'Age', 'Fav Possession'])
+print(tbl)
+
+
 # Create a large table
-lbl = ['Entry Year', 'Name',   'Country', 'Travel Cost']
-tpe = ['DATE', 'PEOPLE', 'PLACE', 'CURRENCY']
-t2 = rawdata.generate.TableGenerator(50000, tpe, lbl)
+lbl = ['Year', 'Customer_id', 'Age', 'Name', 'Country', 'Details', 'Amount']
+tpe = ['DATE', 'STRING', 'INT', 'PEOPLE', 'PLACE', 'WORD', 'CURRENCY']
+t2 = rawdata.generate.TableGenerator(500, tpe, lbl)
 print('created table containing ' + str(len(t2.tbl)) + ' rows')
+t2.save_table('sample.csv')
 for r in t2.tbl[0:4]:
     print(r)
 
@@ -46,8 +53,4 @@ for r in t2.tbl[0:4]:
     # [1998, 'Gary', 'Sri Lanka', '$9.10']
     # [2002, 'Maire', 'Nauru', '295.10']
   
-
-custom_list = ['Carved Statue', '1984 Volvo', '2 metre Ball of string']
-tbl = rawdata.generate.TableGenerator(5, ['PEOPLE', 'INT', custom_list], ['Name', 'Age', 'Fav Possession'])
-print(tbl)
 
