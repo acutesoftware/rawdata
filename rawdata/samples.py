@@ -14,14 +14,14 @@ def main():
     """
     print('samples.py')
     print('Creates random data and strings in various formats')
-    all = Samples()
-    #print(all)
-    #print(all.samples[0])
-    s = all.get_sample_by_name('finance_transaction')
-    print(s)
+    s = Samples()
+    #print(s)
+    #print(s.samples[0])
+    f = s.get_sample_by_name('finance_transaction')
+    print(f)
     
-    #print(s.col_labels)
-    #print(s.col_types)
+    #print(f.col_labels)
+    #print(f.col_types)
     
     
     
@@ -46,8 +46,8 @@ class Samples(object):
             for basename in files:
                 if fnmatch.fnmatch(basename, sample_xtn):
                     filename = os.path.join(root, basename)
-                    self.sample_list.append([basename, root + os.sep + basename])
-                    self.samples.append(Sample(root + os.sep + basename))
+                    self.sample_list.append([basename, filename])
+                    self.samples.append(Sample(filename))
                     
         
     def __str__(self):
