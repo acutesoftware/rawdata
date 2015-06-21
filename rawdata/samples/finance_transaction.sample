@@ -1,0 +1,23 @@
+# finance_transaction.sample
+# used by rawdata/samples.py to define how to 
+# build a generator for a specific table.
+#
+# lines starting with # are ignored
+# lines starting with LIST: define a named list
+# lines starting with COLUMN: define a column_name
+
+#########################
+# Content definitions   #
+#########################
+
+LIST:date_range = [2013, 2014]
+LIST:amount_range = [12.50, 738.99]
+
+#########################
+# Column definitions    #
+#########################
+# column_name, column_type, col_vals
+COLUMN:Date, DATE, date_range 
+COLUMN:Details, WORD, !random!
+COLUMN:Location, PLACE, !random!
+COLUMN:Amount, CURRENCY, amount_range
