@@ -60,13 +60,13 @@ f = s.get_sample_by_name('finance_transaction')
 t3 = rawdata.generate.TableGenerator(6, f.col_types, f.col_labels)
 print(t3)
    
-    # created table containing 7 rows
-    # ['Date', 'Details', 'Location', 'Amount']
-    # [2014, 'jack benny', 'Bermuda', '+$459.99']
-    # [1995, 'audubon', 'Runion', '$ 350.95']
-    # [1994, 'horace mann', 'Hong Kong', '463.95']
-    # [1988, 'culex pipiens', 'The West', '-$462.00']
-    # [2010, 'family convolvulaceae', 'Central Asia', '-136.00']
-    # [2009, 'grappling', 'Pitcairn', '-$83.00']    
-    
-    
+# created table containing 7 rows
+# ['Date', 'Details', 'Location', 'Amount']
+# [2014, 'jack benny', 'Bermuda', '+$459.99']
+# [1995, 'audubon', 'Runion', '$ 350.95']
+# [1994, 'horace mann', 'Hong Kong', '463.95']
+# [1988, 'culex pipiens', 'The West', '-$462.00']
+# [2010, 'family convolvulaceae', 'Central Asia', '-136.00']
+# [2009, 'grappling', 'Pitcairn', '-$83.00']    
+
+
