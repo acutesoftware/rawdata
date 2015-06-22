@@ -1,6 +1,7 @@
 # example.py
 import rawdata.generate
 import rawdata.errors
+import samples as samples  # change to rawdata.samples once uploaded to pypi
 
 n = rawdata.generate.NumberGenerator()
 s = rawdata.generate.StringGenerator()
@@ -53,4 +54,19 @@ for r in t2.tbl[0:4]:
     # [1998, 'Gary', 'Sri Lanka', '$9.10']
     # [2002, 'Maire', 'Nauru', '295.10']
   
-
+print('Example using sample config files')
+s = samples.Samples()
+f = s.get_sample_by_name('finance_transaction')
+t3 = rawdata.generate.TableGenerator(6, f.col_types, f.col_labels)
+print(t3)
+   
+    # created table containing 7 rows
+    # ['Date', 'Details', 'Location', 'Amount']
+    # [2014, 'jack benny', 'Bermuda', '+$459.99']
+    # [1995, 'audubon', 'Runion', '$ 350.95']
+    # [1994, 'horace mann', 'Hong Kong', '463.95']
+    # [1988, 'culex pipiens', 'The West', '-$462.00']
+    # [2010, 'family convolvulaceae', 'Central Asia', '-136.00']
+    # [2009, 'grappling', 'Pitcairn', '-$83.00']    
+    
+    
