@@ -35,10 +35,6 @@ class Content(object):
     def __str__(self):
         return self.content_type
         
-    def save(self):
-        pass
-    def load(self):
-        pass
         
 class Samples(object):
     """
