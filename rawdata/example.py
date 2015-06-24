@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 # example.py
 import rawdata.generate
 import rawdata.errors
@@ -21,11 +22,11 @@ print(len(places), ' places : ', places[58:60])
 colLabel = ['DATE', 'name',   'Born']
 colTypes = ['DATE', 'PEOPLE', 'PLACE']
 tbl = rawdata.generate.TableGenerator(3, colTypes, colLabel)
+print(' ------- Random Table     = ', len(colLabel), 'cols by ', len(tbl.tbl), ' rows ------- ')
 print(tbl)
-print('Random Table     = ', len(colLabel), 'cols by ', len(tbl.tbl), ' rows')
-print('tbl[0][0] = ', tbl.tbl[0][0] )
-print('tbl[0][1] = ', tbl.tbl[0][1] )
-print('tbl[1][0] = ', tbl.tbl[1][0] )
+#print('tbl[0][0] = ', tbl.tbl[0][0] )  # tbl[0][0] =  DATE
+#print('tbl[0][1] = ', tbl.tbl[0][1] )  # tbl[0][1] =  name
+#print('tbl[1][0] = ', tbl.tbl[1][0] )  # tbl[1][0] =  2013
 
 # now add some DQ issues
 t = rawdata.errors.TableWithErrors(tbl, s.random_letters(6))
