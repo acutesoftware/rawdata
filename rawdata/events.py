@@ -1,11 +1,5 @@
 #!/usr/bin/python3
-# example_event.py
-
-#import rawdata.generate
-#import rawdata.content
-
-xmas_scale = [0.14/25 for n in range(1, 25)]
-#xmas_presales = dict([(num + 335, 0.14 + num*n) for num, n in enumerate(xmas_scale)])
+# events.py
 
 trend_dicts = [
     {'name':'weekday_sales', 
@@ -14,17 +8,31 @@ trend_dicts = [
     }, 
     {'name':'xmas_presales', 
      'scale':'day_of_year', 
-     'trend':dict([(num + 335, round(0.14 + num*n,3)) for num, n in enumerate(xmas_scale)])
+     'trend':dict([(num + 335, round(0.14 + num*n,3)) 
+                     for num, n in enumerate(
+                      [0.14/25 for n in range(1, 25)])])
     }, 
 ]
 
-
-
+test_data = [['2015-01-23', 15],
+             ['2015-03-11', 75],
+             ['2014-05-03', 23],
+             ['2015-11-15', 13],
+             ['2013-08-15', 45],
+            ]
 
 def TEST():
+    """
     for d in trend_dicts:
         t = TrendGenerator(d)
         print(t)
+    """
+    t = TrendGenerator(trend_dicts[0])
+    print(t)
+    print(test_data)
+    t_out = t.create_time_series(test_data, 0, 1)
+    print(test_data)
+        
 
 class TrendGenerator(object):
     """
@@ -72,13 +80,24 @@ class TrendGenerator(object):
         res += '\n'
         return res
         
-    def create_time_series(self, date_list):
+    def create_time_series(self, lst, date_col_index, val_col_index ):
         """
         use the trend dictionary in the class, take
-        the date_list and modify it according to the
-        trend values and type of scale
+        the list 'lst' and use the date_col_index to
+        modify the val_col_index column according to
+        the trend values and type of scale
         """
+        mult = 1.0
+        for row_num, row in enumerate(lst):
+            mult = self._get_mult_for_date(row[date_col_index])
+            lst[row_num][val_col_index] = lst[row_num][val_col_index] * mult
         
+    def _get_mult_for_date(self, ndx):
+        """ 
+        takes a date and finds the multiplier
+        """
+        #print('TODO - check for day of week or day of year')
+        return 1.1  # for testing
 
 if __name__ == '__main__':
     TEST()	
