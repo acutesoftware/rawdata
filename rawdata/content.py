@@ -24,18 +24,7 @@ def TEST():
     for f in food[0]:
         print(f)
     
-class Content(object):
-    """
-    core content object that others are derived
-    """
-    def __init__(self, content_type, content_range):
-        self.content_type = content_type
-        self.content_range = content_range
-        
-    def __str__(self):
-        return self.content_type
-        
-        
+    
 class Samples(object):
     """
     read samples from data subfolder to get lists
