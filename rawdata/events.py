@@ -28,9 +28,9 @@ def TEST():
         print(t)
     """
     t = TrendGenerator(trend_dicts[0])
-    print(t)
-    print(test_data)
-    t_out = t.create_time_series(test_data, 0, 1)
+    #print(t)
+    #print(test_data)
+    _ = t.create_time_series(test_data, 0, 1)
     print(test_data)
         
 
@@ -63,7 +63,6 @@ class TrendGenerator(object):
         
     def __str__(self):
         res = ''
-        tot = 0
         res += 'name  = ' +  self.trend_dict['name'] + '\n'
         res += 'scale = ' + self.trend_dict['scale'] + '\n'
         res += 'trend = ' 
@@ -92,11 +91,18 @@ class TrendGenerator(object):
             mult = self._get_mult_for_date(row[date_col_index])
             lst[row_num][val_col_index] = lst[row_num][val_col_index] * mult
         
-    def _get_mult_for_date(self, ndx):
+    def _get_mult_for_date(self, relative_date):
         """ 
-        takes a date and finds the multiplier
+        takes a relative_date and finds the multiplier
+        based on the scale of the trend
+        
+        TODO - implement this
         """
-        #print('TODO - check for day of week or day of year')
+        absolute_date = ''
+        for k,v in self.trend_dict['trend'].items():
+            if self.trend_dict['scale'] == 'day_of_week':
+                if absolute_date == relative_date:
+                    print('day of week calc: k=', k, 'v = ', v)
         return 1.1  # for testing
 
 if __name__ == '__main__':
