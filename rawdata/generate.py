@@ -85,6 +85,9 @@ class NumberGenerator(Structure):
         return sign + str(dollars) + '.' + cents
         
 class StringGenerator(Structure):
+    """
+    generates random strings
+    """
     def random_letters(self, sze=20):
         lst = [random.choice(string.ascii_letters + string.digits) for _ in range(sze)]
         return "".join(lst)
@@ -283,17 +286,29 @@ def load_lists(lst):
 
         
 def get_list_words():
+    """
+    reads wordnet to get a unique list of nouns
+    """
     with open(wordList) as f:
         return [line.strip().replace('_', ' ') for line in f if random.randrange(1,100) > 90]
 
 def get_list_dates(start_date=1985, end_date=2015):
+    """
+    picks a random year
+    """
     return [i for i in range(start_date, end_date)]
 
 def get_list_places():
+    """
+    picks a random country
+    """
     with open(places) as f:
         return [line.split(',')[2].strip().strip('"').title() for line in f]
 
 def get_list_people():
+    """
+    chooses a random name from names.csv
+    """
     with open(names) as f:
         return [line.split(',')[0].title() for line in f]
     
