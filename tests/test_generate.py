@@ -22,13 +22,13 @@ class TestGenerate(unittest.TestCase):
         self.assertEqual(n.random_int(50,51), 50)
         self.assertEqual(n.random_int(999,5555) > 999, True)
 
-    def test_01_random_currency(self):
+    def test_02_random_currency(self):
         n2 = rawdata.generate.NumberGenerator()
         #print(n2.random_currency())
-        self.assertEqual(len(n2.random_currency(1,100)) > 4, True)
+        self.assertEqual(len(n2.random_currency(1,100)) > 2, True)
         n3 = rawdata.generate.NumberGenerator(cents='Normal')
         
-    def test_01_currency_cents(self):
+    def test_03_currency_cents(self):
         n4 = rawdata.generate.NumberGenerator(cents='Normal')
         self.assertEqual(n4.cent_choices, ['00', '00', '00', '00', '10', '50', '95', '95', '95', '98', '99', '99'])
 
@@ -46,13 +46,13 @@ class TestGenerate(unittest.TestCase):
         self.assertEqual(n7.cent_choices[97:99], ['97', '98'])
         
 
-    def test_02_random_letters(self):
+    def test_04_random_letters(self):
         s = rawdata.generate.StringGenerator()
         self.assertEqual(len(s.random_letters(1)), 1)
         self.assertEqual(len(s.random_letters(5)), 5)
         self.assertEqual(len(s.random_letters(500)), 500)
         
-    def test_03_generate_password(self):
+    def test_05_generate_password(self):
         s = rawdata.generate.StringGenerator()
         self.assertEqual(len(s.generate_password(6)), 8)  # 8 char min enforced
         self.assertEqual(len(s.generate_password(8)), 8) 
@@ -60,7 +60,7 @@ class TestGenerate(unittest.TestCase):
         self.assertEqual(len(s.generate_password()), 18)  # default 18 char
         self.assertEqual(len(s.generate_password(22)), 22) 
     
-    def test_04_random_table(self):
+    def test_05_random_table(self):
         colLabel = ['DATE', 'name', 'password', 'Born',  'Quote', 'Score']
         colTypes = ['DATE', 'PEOPLE', 'STRING', 'PLACE', 'WORD',  'INT']
         t = rawdata.generate.TableGenerator(500, colTypes, colLabel)
@@ -73,7 +73,7 @@ class TestGenerate(unittest.TestCase):
         self.assertEqual(t.tbl[0][4], 'Quote') 
         self.assertEqual(t.tbl[0][5], 'Score') 
     
-    def test_05_table_with_custom_list(self):
+    def test_07_table_with_custom_list(self):
         my_colours = ['Blue', 'Green', 'Orange']
         tbl = rawdata.generate.TableGenerator(99, ['PEOPLE', my_colours], ['Name', 'MyCols'])
         self.assertEqual('Blue' in tbl.get_column(1), True) 
@@ -81,7 +81,7 @@ class TestGenerate(unittest.TestCase):
         self.assertEqual('Orange' in tbl.get_column(1), True) 
 
 
-    def test_06_function_generator(self):
+    def test_08_function_generator(self):
         rng_mult = [-9999,9999]
         rng_expt = [0,999]
         #rng = [-2,9]
@@ -97,7 +97,7 @@ class TestGenerate(unittest.TestCase):
         self.assertEqual(f1.expt[0] < rng_expt[1]+1, True) 
         
         #print(f1)
-    def test_07_function_answer(self):
+    def test_09_function_answer(self):
         """
         Set the max and min ranges for randomisation the same
         to generate a fixed equation to test against known answers
@@ -120,7 +120,7 @@ class TestGenerate(unittest.TestCase):
         #print(c3)
         
         
-    def test_08_function_calculator(self):
+    def test_10_function_calculator(self):
         rng_mult = [-9,99]
         rng_expt = [0,9]
         f2 = rawdata.generate.FunctionGenerator(rng_mult, rng_expt, num_terms=3)
