@@ -1,5 +1,7 @@
 #!/usr/bin/python3
 # example.py
+
+import os
 import rawdata.generate
 import rawdata.errors
 import samples as samples  # change to rawdata.samples once uploaded to pypi
@@ -45,7 +47,7 @@ lbl = ['Year', 'Customer_id', 'Age', 'Name', 'Country', 'Details', 'Amount']
 tpe = ['DATE', 'STRING', 'INT', 'PEOPLE', 'PLACE', 'WORD', 'CURRENCY']
 t2 = rawdata.generate.TableGenerator(500, tpe, lbl)
 print('created table containing ' + str(len(t2.tbl)) + ' rows')
-t2.save_table('sample.csv')
+t2.save_table(rawdata.generate.dat_fldr + os.sep + 'sample.csv')
 for r in t2.tbl[0:4]:
     print(r)
 
