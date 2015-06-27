@@ -5,6 +5,9 @@ Raw Data
 .. image:: https://badge.fury.io/py/rawdata.svg
     :target: http://badge.fury.io/py/rawdata 
 
+.. image:: https://travis-ci.org/acutesoftware/rawdata.svg?branch=master
+    :target: https://travis-ci.org/acutesoftware/rawdata
+    
 .. image:: https://landscape.io/github/acutesoftware/rawdata/master/landscape.svg?style=flat
    :target: https://landscape.io/github/acutesoftware/rawdata/master
    :alt: Code Health    
