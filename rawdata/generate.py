@@ -295,7 +295,7 @@ def get_list_from_file(fname, col_name):
         line = f.readline()
         hdrs = line.split(',')
         for num, c in enumerate(hdrs):
-            if c = col_name:
+            if c == col_name:
                 col_ndx = num
         
         # now read the rest
