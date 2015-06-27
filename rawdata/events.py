@@ -30,8 +30,8 @@ def TEST():
     t = TrendGenerator(trend_dicts[0])
     #print(t)
     #print(test_data)
-    _ = t.create_time_series(test_data, 0, 1)
-    print(test_data)
+    t_series = t.create_time_series(test_data, 0, 1)
+    print(t_series)
         
 
 class TrendGenerator(object):

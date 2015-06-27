@@ -301,7 +301,7 @@ def get_list_from_file(fname, col_name):
         # now read the rest
         for line in f:
             cols = line.split(',')
-            lst.append(col[col_ndx])
+            lst.append(cols[col_ndx])
     return lst
         
 def get_list_words():
