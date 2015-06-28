@@ -1,7 +1,6 @@
 # install.py
 
 import os
-import sys
 
 data_fldr = os.path.abspath(os.path.dirname(os.path.abspath(__file__)) + os.sep + '..' + os.sep +  'rawdata' + os.sep + 'data' ) 
 
@@ -31,12 +30,12 @@ def rebuild_index():
     for root, _, files in os.walk(data_fldr):
         for f in files:
             if f[-3:].upper() in ['CSV','TXT']:
-                ndx.extend(get_index_terms(root + os.sep + f, f))
+                ndx.extend(get_index_terms(root + os.sep + f))
     with open(ndx_file, 'w') as fio:
         for i in ndx:
             fio.write(i + '\n')
     
-def get_index_terms(fname, shortname):
+def get_index_terms(fname):
     """
     reads the file 'fname' and returns all index values
     for it in terms of fname.col_name, e.g.
@@ -47,14 +46,12 @@ def get_index_terms(fname, shortname):
     folder_names = fname.split(os.sep)
     start = False
     root_name = ''
-    for num, fldr in enumerate(folder_names):
+    for fldr in folder_names:
         if start == True:
             root_name += fldr + '.'
         if fldr == 'data':
             start = True
-    #print('fname = ', fname, ' root_name = ', root_name)    
     root_name = root_name[:-5]
-    #terms.append(root_name)
     data_files.append(root_name)
     
     #read the file and add column names to list of terms
