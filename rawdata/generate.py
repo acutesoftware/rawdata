@@ -187,7 +187,7 @@ class TableGenerator(Structure):
         colTypes = col_types
         
         
-        #print('Generating columns - ', colTypes)
+        print('Generating columns - ', colTypes)
         wordLists = load_lists(colTypes)
         self.tbl.insert(0, col_label) # column headers
         for _ in range(0,tot_rows):
@@ -321,8 +321,9 @@ def get_list_places():
     """
     picks a random country
     """
+    print('get_list_places : places= ', places )
     with open(places) as f:
-        return [line.split(',')[2].strip().strip('"').title() for line in f]
+        return [line.split(',')[1].strip().strip('"').title() for line in f]
 
 def get_list_people():
     """
