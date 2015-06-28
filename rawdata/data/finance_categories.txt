@@ -1,9 +1,36 @@
-# finance_categories.txt
-asset_types:fixed,variable
-asset_groups:plant and equipment,goodwill,sales,stock
-liability_groups:bills,loans,payroll
-income_groups_tax:Rental,interest,Profit / Loss from Professional Items,Salary,Gifts,Sales
-expense_groups_tax:Travel,Work Travel,home office, internet, PC, phone,Donations,Depreciation
-bills:Rent,Electricity,Gas,Phone,Mobile,Internet,Registration,Entertainment,Food,Car,Transport,Education,Medical,Gifts,Loans,Credit Cards,Store Cards,Clothing
+finance_categories,
+bills,
+loans,
+payroll,
+Rental,
+interest,
+Salary,
+Gifts,
+Sales,
+Travel,
+Work Travel,
+home office, 
+internet, 
+PC, 
+phone,
+Donations,
+Depreciation
+Electricity,
+Gas,
+Phone,
+Mobile,
+Internet,
+Registration,
+Entertainment,
+Food,
+Car,
+Transport,
+Education,
+Medical,
+Gifts,
+Loans,
+Credit Cards,
+Store Cards,
+Clothing
 
 
