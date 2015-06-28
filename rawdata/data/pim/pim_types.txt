@@ -1,0 +1,10 @@
+CAT, PIM_TYPE_SHORT, PIM_TYPE_DESC
+Diary, Diary, Electronic Calendar
+Diary, Calendar, Electronic Calendar
+Diary, Journal, Diary to recording notes
+Contacts, Address Book, Address Book
+Contacts, Phone Book, Address Book
+Contacts, Black Book, Address Book
+Task, Task List, List of things to do
+Task, Project Management, List of things to do
+
