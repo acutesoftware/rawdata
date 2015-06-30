@@ -5,10 +5,10 @@ names.Name_meaning
 finance_categories.finance_categories
 finance_categories.
 nouns.noun
-pim.file_types.Source Code
 pim.pim_types.CAT
 pim.pim_types.PIM_TYPE_SHORT
 pim.pim_types.PIM_TYPE_DESC
+pim.file_types.Source Code
 games.classes.name
 games.classes.STA
 games.classes.STR
@@ -108,3 +108,34 @@ finance.mining_copper_rent.2005
 finance.mining_copper_rent.2006
 finance.mining_copper_rent.2007
 finance.mining_copper_rent.2008
+world.country.CountryCode
+world.country.Long Name
+world.country.Income Group
+world.country.Region
+world.country.Lending category
+world.country.Other groups
+world.country.Currency Unit
+world.country.Latest population census
+world.country.Latest household survey
+world.country.Special Notes
+world.country.National accounts base year
+world.country.National accounts reference year
+world.country.System of National Accounts
+world.country.SNA price valuation
+world.country.Alternative conversion factor
+world.country.PPP survey year
+world.country.Balance of Payments Manual in use
+world.country.External debt Reporting status
+world.country.System of trade
+world.country.Government Accounting concept
+world.country.IMF data dissemination standard
+world.country.Source of most recent Income and expenditure data
+world.country.Vital registration complete
+world.country.Latest agricultural census
+world.country.Latest industrial data
+world.country.Latest trade data
+world.country.Latest water withdrawal data
+world.country.2-alpha code
+world.country.WB-2 code
+world.country.Table Name
+world.country.Short Name
