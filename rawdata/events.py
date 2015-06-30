@@ -1,6 +1,8 @@
 #!/usr/bin/python3
 # events.py
 
+import random
+
 trend_dicts = [
     {'name':'weekday_sales', 
      'scale':'day_of_week', 
@@ -11,6 +13,10 @@ trend_dicts = [
      'trend':dict([(num + 335, round(0.14 + num*n,3)) 
                      for num, n in enumerate(
                       [0.14/25 for n in range(1, 25)])])
+    }, 
+    {'name':'triangle', 
+     'scale':'day_of_year', 
+     'trend':dict([(num, random.triangular(10, 20)) for num, n in enumerate([n for n in range(1, 25)])])
     }, 
 ]
 
@@ -30,8 +36,15 @@ def TEST():
     t = TrendGenerator(trend_dicts[0])
     #print(t)
     #print(test_data)
-    t_series = t.create_time_series(test_data, 0, 1)
-    print(t_series)
+    _ = t.create_time_series(test_data, 0, 1)
+    print(test_data)
+    
+    t2 = TrendGenerator(trend_dicts[2])
+    print(t2)
+    _ = t2.create_time_series(test_data, 0, 1)
+    #print(test_data)
+    
+    
         
 
 class TrendGenerator(object):
@@ -90,6 +103,7 @@ class TrendGenerator(object):
         for row_num, row in enumerate(lst):
             mult = self._get_mult_for_date(row[date_col_index])
             lst[row_num][val_col_index] = lst[row_num][val_col_index] * mult
+        
         
     def _get_mult_for_date(self, relative_date):
         """ 
