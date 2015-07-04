@@ -103,6 +103,21 @@ class StringGenerator(Structure):
         
     def random_block(self, cols=40, rows=5):
         return ''.join([self.random_letters(cols) + '\n' for _ in range(0,rows)])
+        
+    def bytes_to_str(self, btes):
+        return btes.decode("utf-8")
+        
+    def str_to_bytes(self, txt):
+        return bytes(txt, encoding="UTF-8")
+        
+    def unicode_to_ascii(self, txt, destructive=True):
+        """
+        take an unknown unicode string as 'str' and convert
+        to ASCII. If destructive, then ignore unknown chars
+        otherwise attempt to convert via mapping.
+        """
+        pass
+        
 
 class FunctionGenerator(object):
     """
