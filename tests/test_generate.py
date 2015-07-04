@@ -60,7 +60,7 @@ class TestGenerate(unittest.TestCase):
         self.assertEqual(len(s.generate_password()), 18)  # default 18 char
         self.assertEqual(len(s.generate_password(22)), 22) 
     
-    def test_05_random_table(self):
+    def test_06_random_table(self):
         colLabel = ['DATE', 'name', 'password', 'Born',  'Quote', 'Score']
         colTypes = ['DATE', 'PEOPLE', 'STRING', 'PLACE', 'WORD',  'INT']
         t = rawdata.generate.TableGenerator(500, colTypes, colLabel)
@@ -125,14 +125,21 @@ class TestGenerate(unittest.TestCase):
         rng_expt = [0,9]
         f2 = rawdata.generate.FunctionGenerator(rng_mult, rng_expt, num_terms=3)
         
-        
-        
         for i in range(5):
             n = rawdata.generate.NumberGenerator()
             params = [n.random_int(i,i+5), n.random_int(i,i+5), n.random_int(i,i+5)]
             c = rawdata.generate.FunctionCalculator(f2, params, i)
             #print(c)
  
+    def test_11_convert_str_and_bytes(self):
+        txt = 'abcde'
+        self.assertEqual(txt, 'abcde')
+        s = rawdata.generate.StringGenerator()
+        b = s.str_to_bytes(txt)
+        self.assertEqual(b, b'abcde')
+        s2 = s.bytes_to_str(b)
+        self.assertEqual(txt, s2)
+        print(s2)
         
 if __name__ == '__main__':
     unittest.main()
