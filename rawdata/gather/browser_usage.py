@@ -181,18 +181,22 @@ class Browser(object):
     
         self.num_history = 0
         storage.write('"url","visit_count","typed_count","last_visit_time","visit_time","hidden","from_visit","id","transition","title"\n')
-        for path in paths:
-            c = sqlite3.connect(path)
-            for row in c.execute(SQL_STATEMENT):
-                #storage.write( row[0] + ", " + row[1] + ", " + str(row[2])+ ", ")
-                storage.write(self.format_history_row(row))
-                self.num_history += 1
-                #date_time = date_from_webkit(row[1])
-                #url = re.search(pattern, row[0])
-                #try: urlc = url.group(0)
-                #except: urlc = "ERROR"
-                #storage.write(str(date_time)[0:19] + "\t" + urlc + "\n")
-        #print('Exported ' + str(self.num_history) + ' records to ' + self.history_file)		
+        try:
+            for path in paths:
+                c = sqlite3.connect(path)
+                for row in c.execute(SQL_STATEMENT):
+                    #storage.write( row[0] + ", " + row[1] + ", " + str(row[2])+ ", ")
+                    storage.write(self.format_history_row(row))
+                    self.num_history += 1
+                    #date_time = date_from_webkit(row[1])
+                    #url = re.search(pattern, row[0])
+                    #try: urlc = url.group(0)
+                    #except: urlc = "ERROR"
+                    #storage.write(str(date_time)[0:19] + "\t" + urlc + "\n")
+            #print('Exported ' + str(self.num_history) + ' records to ' + self.history_file)		
+        except Exception:
+            print('Error - cant open browser files - close Chrome and retry')
+            
 
     def format_history_row(self, row):
         """

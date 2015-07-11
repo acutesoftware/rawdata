@@ -4,7 +4,6 @@ Raw Data
 .. image:: https://api.travis-ci.org/acutesoftware/rawdata.svg?branch=master
     :target: https://travis-ci.org/acutesoftware/rawdata
 
-
 .. image:: https://coveralls.io/repos/acutesoftware/rawdata/badge.svg?branch=master&service=github
   :target: https://coveralls.io/github/acutesoftware/rawdata?branch=master
    
