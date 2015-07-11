@@ -18,6 +18,9 @@ setup(
     license='GNU General Public License v3 (GPLv3)',
     description='Generate realistic raw datasets with optional DQ issues',
     long_description=open('README.rst').read(),
+    install_requires=[
+          'nose >= 1.0',
+    ],
     classifiers = [
     'Development Status :: 3 - Alpha',
     'Environment :: Web Environment',
