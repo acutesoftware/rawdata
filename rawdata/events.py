@@ -27,25 +27,6 @@ test_data = [['2015-01-23', 15],
              ['2013-08-15', 45],
             ]
 
-def TEST():
-    """
-    for d in trend_dicts:
-        t = TrendGenerator(d)
-        print(t)
-    """
-    t = TrendGenerator(trend_dicts[0])
-    #print(t)
-    #print(test_data)
-    _ = t.create_time_series(test_data, 0, 1)
-    print(test_data)
-    
-    t2 = TrendGenerator(trend_dicts[2])
-    print(t2)
-    _ = t2.create_time_series(test_data, 0, 1)
-    #print(test_data)
-    
-    
-        
 
 class TrendGenerator(object):
     """
@@ -119,6 +100,3 @@ class TrendGenerator(object):
                     print('day of week calc: k=', k, 'v = ', v)
         return 1.1  # for testing
 
-if __name__ == '__main__':
-    TEST()	
-    

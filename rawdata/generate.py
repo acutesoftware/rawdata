@@ -11,42 +11,6 @@ dat_fldr = root_fldr + os.sep + 'data'
 names    = dat_fldr + os.sep + 'names.csv'  # http://www.cs.princeton.edu/introcs/data/names.csv
 places   = dat_fldr + os.sep + 'countries.csv'  
 wordList = dat_fldr + os.sep + 'nouns.txt'
-
-def TEST():
-    print('generate.py')
-    print('Creates random data and strings in various formats')
-    s = StringGenerator()
-    print('Random Strings....\n  ', s.random_hex_string(20), '\n  ', s.random_letters(50))
-    print('Random Block ....')
-    print(s.random_block(30,11))
-    print('Data Table ....')
-    colLabel = ['DATE', 'name', 'password', 'Born',  'Quote', 'Score']
-    colTypes = ['DATE', 'PEOPLE', 'STRING', 'PLACE', 'WORD',  'INT']
-    tbl = TableGenerator(5, colTypes, colLabel)
-    print(tbl)
-    #save_table(tbl, 'test123.csv')
-    print('password generator = ', s.generate_password(10))
-    
-    n = NumberGenerator('fives')
-    print('random_currency = ', n.random_currency(45, 88))
-    amounts_paid = []
-    for _ in range(1,20):
-        amounts_paid.append(n.random_currency())
-
-     
-    # table with a custom list
-    custom_list = ['Carved Statue', '1984 Volvo', '2 metre Ball of string']
-    tbl = TableGenerator(8, ['PEOPLE', 'INT', custom_list, amounts_paid], ['Name', 'Age', 'Fav Possession', 'Transaction Cost'])
-    print(tbl)
- 
-    # random equation generator, and maths calculations
-    f = FunctionGenerator(mult_range=[-3,5], exp_range=[0,3], num_terms=3)
-    print(f)
-    for i in range(5):
-        params = [n.random_int(i,i+5), n.random_int(i,i+5), n.random_int(i,i+5)]
-        c = FunctionCalculator(f, params, i)
-        print(c)
-   
     
 class Structure(object):
     """
@@ -116,7 +80,9 @@ class StringGenerator(Structure):
         to ASCII. If destructive, then ignore unknown chars
         otherwise attempt to convert via mapping.
         """
-        pass
+        print('TODO')
+        return txt
+      
         
 
 class FunctionGenerator(object):
@@ -250,20 +216,6 @@ def get_list_string(num = 40):
 def get_rand_text_from_list(lst):
     return lst[random.randrange(0, len(lst))]
     
-def fill_colList_blanks(partialCols, numRequiredCols):
-    """
-    no idea why this function is here - probably at start
-    when trying to autofill table, but it needs to go
-    """
-    colWord = []
-    num = 0
-    for _ in range(0, numRequiredCols):
-        tpe = partialCols[num]
-        if tpe == '': 
-            tpe = 'STRING'
-        colWord.append(tpe)
-        num = num + 1
-    return colWord
 
 def load_lists(lst):
     """
@@ -298,12 +250,9 @@ def load_lists(lst):
         if tpe == 'PEOPLE':
             results.append({'name': 'PEOPLE', 'lst': get_list_people()})
     return results
-
+    
+"""
 def get_list_from_file(fname, col_name):
-    """
-    reads a file and returns the list of values
-    from the column col_name
-    """
     col_ndx = 0
     lst = []
     with open(fname, 'r') as f:
@@ -318,7 +267,7 @@ def get_list_from_file(fname, col_name):
             cols = line.split(',')
             lst.append(cols[col_ndx])
     return lst
-        
+"""        
 def get_list_words():
     """
     reads wordnet to get a unique list of nouns
@@ -346,8 +295,4 @@ def get_list_people():
     """
     with open(names) as f:
         return [line.split(',')[0].title() for line in f]
-    
-            
-if __name__ == '__main__':
-    TEST()	
     
