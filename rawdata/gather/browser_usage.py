@@ -15,9 +15,10 @@ import rawdata.config as mod_cfg
 
 home = expanduser("~")
 browser_data_path = home + r"\AppData\Local\Google\Chrome\User Data\Default" 
-#browser_data_path = home + r"\FAKE_PATH_DOESNT_WORK\to_test_travis_ci" 
 op_folder = mod_cfg.fldrs['pers_data']
 
+#op_folder = 'sdgsdfsdgsdgsdg'
+#browser_data_path = home + r"\FAKE_PATH_DOESNT_WORK\to_test_travis_ci" 
 
 def TEST():
     """ self test for browser agent """
@@ -183,10 +184,14 @@ class Browser(object):
         SQL_STATEMENT += 'FROM urls, visits '
         SQL_STATEMENT += 'WHERE urls.id = visits.url;'
         
-        storage = codecs.open(self.history_file, 'w', 'utf-8')
-    
         self.num_history = 0
-        storage.write('"url","visit_count","typed_count","last_visit_time","visit_time","hidden","from_visit","id","transition","title"\n')
+        
+        try:
+            storage = codecs.open(self.history_file, 'w', 'utf-8')
+            storage.write('"url","visit_count","typed_count","last_visit_time","visit_time","hidden","from_visit","id","transition","title"\n')
+        except Exception:
+            print('Error - cant open history file for writing')
+            
         try:
             for path in paths:
                 c = sqlite3.connect(path)
@@ -225,6 +230,10 @@ class Browser(object):
         """
         exports the logins and passwords from Chrome
         """
+        if not os.path.exists(self.op_folder):
+            print('op folder doesnt exist')
+            return
+        
         try:
             db = sqlite3.connect(browser_data_path + os.sep + "Login Data")
             c = db.cursor()
@@ -244,7 +253,9 @@ class Browser(object):
                     line = self.extract_password_row(row)
                     if line:
                         f.write(line)
-                    
+        
+        
+        
          
     def extract_password_row(self, row):
         res = ''
