@@ -15,6 +15,7 @@ import rawdata.config as mod_cfg
 
 home = expanduser("~")
 browser_data_path = home + r"\AppData\Local\Google\Chrome\User Data\Default" 
+#browser_data_path = home + r"\FAKE_PATH_DOESNT_WORK\to_test_travis_ci" 
 op_folder = mod_cfg.fldrs['pers_data']
 
 
@@ -95,6 +96,11 @@ class Browser(object):
         export Chrome bookmarks to CSV
         by reading Bookmarks file in json format
         """
+        
+        if not os.path.exists(self.browser_data_path):
+            print('Cant find browser path to get bookmarks')
+            return
+        
         json_file = codecs.open(self.browser_data_path + os.sep + "Bookmarks", encoding='utf-8')
         bookmark_data = json.load(json_file)
         op = codecs.open(self.bookmarks_file, 'w', encoding='utf-8')
@@ -219,14 +225,15 @@ class Browser(object):
         """
         exports the logins and passwords from Chrome
         """
-        db = sqlite3.connect(browser_data_path + os.sep + "Login Data")
-        c = db.cursor()
-        c.execute("SELECT * FROM logins WHERE blacklisted_by_user = 0")
-        raw_password_data = c.fetchall()
-        
-        c.close()
-        db.close()
-
+        try:
+            db = sqlite3.connect(browser_data_path + os.sep + "Login Data")
+            c = db.cursor()
+            c.execute("SELECT * FROM logins WHERE blacklisted_by_user = 0")
+            raw_password_data = c.fetchall()
+            c.close()
+            db.close()
+        except Exception:
+            raw_password_data = ''
         # export
         line = ''
         #print(raw_password_data)
