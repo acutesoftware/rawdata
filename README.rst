@@ -4,11 +4,12 @@ Raw Data
 .. image:: https://api.travis-ci.org/acutesoftware/rawdata.svg?branch=master
     :target: https://travis-ci.org/acutesoftware/rawdata
 
+
+.. image:: https://coveralls.io/repos/acutesoftware/rawdata/badge.svg?branch=master&service=github
+  :target: https://coveralls.io/github/acutesoftware/rawdata?branch=master
+   
 .. image:: https://badge.fury.io/py/rawdata.svg
     :target: http://badge.fury.io/py/rawdata 
-
-.. image:: https://travis-ci.org/acutesoftware/rawdata.svg?branch=master
-    :target: https://travis-ci.org/acutesoftware/rawdata
     
 .. image:: https://landscape.io/github/acutesoftware/rawdata/master/landscape.svg?style=flat
    :target: https://landscape.io/github/acutesoftware/rawdata/master
