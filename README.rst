@@ -1,6 +1,8 @@
 =========================================
 Raw Data
 =========================================
+.. image:: https://api.travis-ci.org/acutesoftware/rawdata.svg?branch=master
+    :target: https://travis-ci.org/acutesoftware/rawdata
 
 .. image:: https://badge.fury.io/py/rawdata.svg
     :target: http://badge.fury.io/py/rawdata 
