@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+# -*- coding: utf-8 -*-
 # content.py
 
 import os
@@ -104,15 +105,14 @@ class DataFiles(object):
         return [set(res)]            
 
     def get_all_columns(self, filename):
-        with open(filename) as f:
+        #with open(filename, 'r', encoding='utf8') as f:
+        with open(filename, 'r') as f:
             ndx = 0
             res = []
-            for num, line in enumerate(f):
-                #print('line',line, 'num',num)
-                cols = line.split(',')
-                if num == 0:
-                    for col in cols:
-                        res.append(col.strip('"').strip('\n'))
+            line = f.readline()
+            cols = line.split(',')
+            for col in cols:
+                res.append(col.strip('"').strip('\n'))
         return res       
 
         
