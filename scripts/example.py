@@ -11,7 +11,7 @@ sys.path.insert(1, root_fldr)
 
 import generate
 import errors
-import samples as samples  # change to rawdata.samples once uploaded to pypi
+import content
 
 n = generate.NumberGenerator()
 s = generate.StringGenerator()
@@ -65,7 +65,7 @@ for r in t2.tbl[0:4]:
     # [2002, 'Maire', 'Nauru', '295.10']
   
 print('Example using sample config files')
-s = samples.Samples()
+s = content.Samples()
 f = s.get_sample_by_name('finance_transaction')
 print(f)
 
@@ -81,4 +81,16 @@ print(t3)
 # [2010, 'family convolvulaceae', 'Central Asia', '-136.00']
 # [2009, 'grappling', 'Pitcairn', '-$83.00']    
 
+# print('DATA FILES')
+# d = content.DataFiles()
+# print(d)
+# T:\user\dev\src\python\rawdata\rawdata\data\countries.csv
+# T:\user\dev\src\python\rawdata\rawdata\data\sample.csv
+# T:\user\dev\src\python\rawdata\rawdata\data\names.csv
+
+
+print('All Columns')
+d = content.DataFiles()
+for row in d.lookup:
+    print(row)
 
