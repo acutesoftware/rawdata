@@ -25,6 +25,10 @@ def TEST():
         print(f)
     
     
+    f = s.get_sample_by_name('finance_transaction')
+    print(f)
+
+    
 class Samples(object):
     """
     read samples from data subfolder to get lists
@@ -73,6 +77,77 @@ class Samples(object):
     
                 res.append(cols[ndx].strip('"'))
         return [set(res)]            
-                    
+   
+    def get_sample_by_name(self, txt):
+        """
+        returns the first Sample that matches txt
+        """
+        for s in self.samples:
+            if txt + '.sample' in s.fullname:
+                return s
+        return None
+    
+    def list(self):
+        """
+        List all samples available
+        """
+        res = ''
+        for l in self.sample_list:
+            res += l + '\n'
+        return res
+
+class Sample(object):
+    """
+    class to manage a single sample, read from 
+    a .sample file - just does parsing really
+    """
+    def __init__(self, fullname):
+        """
+        reads the .sample file passed and loads 
+        to class.
+        """
+        self.fullname = fullname
+        self.cols = []
+        self.lists = []
+        self.col_types = []     # list for generate function
+        self.col_labels = []    # list for generate function
+        
+        with open(fullname, 'r') as f:
+            for line in f:
+                self._parse_line(line)
+                     
+    
+    def __str__(self):
+        res = 'Sample File = ' + self.fullname + '\n'
+        for num, c in enumerate(self.cols):
+            res += 'Column#' + str(num) + ' = ' + c + '\n'
+        for num, l in enumerate(self.lists):
+            res += 'List#' + str(num) + ' = ' + l + '\n'
+        
+        res += '\nDETAILS for generate\n'
+        res += ' colLabels = [' + ','.join([c for c in self.col_labels]) + ']\n'
+        res += ' colTypes  = [' + ','.join([c for c in self.col_types]) + ']\n'
+        
+        
+        return res
+      
+    
+    def _parse_line(self, line):
+        """
+        takes a line from a sample file and parses into 
+        class objects.
+        """
+        if line[0] != '#':
+            parsed = line.split(':')
+            if parsed[0] == 'LIST':
+                self.lists.append(parsed[1].strip('\n'))
+            elif parsed[0] == 'COLUMN':
+                self.cols.append(parsed[1].strip('\n'))
+                details = parsed[1].strip('\n').split(',')
+                self.col_labels.append(details[0].strip(' '))
+                self.col_types.append(details[1].strip(' '))
+                
+
+   
 if __name__ == '__main__':
     TEST()
