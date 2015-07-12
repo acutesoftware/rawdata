@@ -50,11 +50,21 @@ class TestContent(unittest.TestCase):
         print('columns')
         for c in d.columns:
             print(c[0][len(data_fldr) + 1:] + '.' + c[2] + '.' + c[3])
+        for r in d.columns:
+            print(r[4])
+            print(len(r[4]))
         """
         d = content.DataFiles()
-        self.assertEqual(len(d.columns) > 120, True)
-        
-        
+        try:
+            self.assertEqual(len(d.columns) > 1, True)
+            
+            print(d.lookup[0:5])
+            self.assertEqual('finance.mining_copper_rent.2002' in d.lookup, True)
+            self.assertEqual('food.food_desc.Ref_Desc' in d.lookup, True)
+            self.assertEqual('games.materials.name' in d.lookup, True)
+            self.assertEqual('.countries.country_code' in d.lookup, True)  # this should be moved
+        except Exception:
+            print('Error running test_05_list_data_file_columns')
     
 if __name__ == '__main__':
     unittest.main()

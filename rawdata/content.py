@@ -19,14 +19,15 @@ def TEST():
     # [{'build', 'buff', 'gather', 'type', 'heal', 'change', 'attack', 'info'}]
 
     f = s.get_sample_by_name('finance_transaction')
-    print(f)
+    #print(f)
     
     
     d = DataFiles()
-    print('Datafiles', d)
-    print('columns')
-    for c in d.columns:
-        print(c[0][len(data_fldr) + 1:] + '.' + c[2] + '.' + c[3])
+    #print('Datafiles', d)
+    #print('columns')
+    
+    #for c in d.columns:
+    #    print(c[0][len(data_fldr) + 1:] + '.' + c[2] + '.' + c[3])
     #for i in s.samples:
     #    print(i)
     
@@ -34,7 +35,7 @@ def TEST():
 class DataFiles(object):
     """
     read data files from data subfolder to get lists
-        columns = [folder, filename, short_name, column_name]
+        columns = [folder, filename, short_name, column_name, dot_form]
             games.skills.area
             games.skills.description
             food.food_desc.NDB_No
@@ -56,12 +57,19 @@ class DataFiles(object):
     def __init__(self):
         self.filelist = []
         self.columns = []
+        self.lookup = []
         for root, _, files in os.walk(data_fldr):
             for f in files:
                 self.filelist.append([root + os.sep + f, root,f])
                 cols = self.get_all_columns(root + os.sep + f)
                 for c in cols:
-                    self.columns.append([root,f, f[:-4], c])
+                    if c != '':
+                        #print('c = ', c)
+                        dot_form = root[len(data_fldr) + 1:] + '.' + f[:-4] + '.' + c
+                        
+                        self.columns.append([root,f, f[:-4], c, dot_form])
+                        self.lookup.append(dot_form)
+                        #self.columns.append([c[0],f, f[:-4], c, c[4]])
                     
                 
     def __str__(self):
