@@ -5,7 +5,7 @@ setup(
     version='0.1.0',
     author='Duncan Murray',
     author_email='djmurray@acutesoftware.com.au',
-    packages=['rawdata', 'rawdata.gather'],
+    packages=['rawdata'],
     include_package_data = True,
     package_data = {
         # If any package contains *.txt files, include them:
