@@ -3,8 +3,13 @@
 
 import os
 import random
+import fnmatch
 
 data_fldr = os.path.abspath(os.path.dirname(os.path.abspath(__file__)) + os.sep + 'data' ) 
+
+rootPath = os.getcwd() + os.sep + 'samples'
+sample_xtn = '*.sample'
+
 
 def TEST():
     s = Samples()
@@ -27,7 +32,7 @@ def TEST():
     
     f = s.get_sample_by_name('finance_transaction')
     print(f)
-
+    print(s)
     
 class Samples(object):
     """
@@ -35,14 +40,34 @@ class Samples(object):
     """
     def __init__(self):
         self.filelist = []
+        self.sample_list = []
+        self.samples = []
+        # data files
         for root, _, files in os.walk(data_fldr):
             for f in files:
                 self.filelist.append([root + os.sep + f, root,f])
 
+        # samples from samples folder        
+        self.sample_list = []  # filelist = [shortname, fullpath]
+        self.samples = []       # list of Sample objects
+        for root, _, files in os.walk(rootPath):
+            for basename in files:
+                if fnmatch.fnmatch(basename, sample_xtn):
+                    filename = os.path.join(root, basename)
+                    self.sample_list.append([basename, filename])
+                    self.samples.append(Sample(filename))
+                
+                
     def __str__(self):
-        txt = 'Samples read from :\n'
+        txt = 'Data files read from :\n'
+        txt += data_fldr + '\n'
         for row in self.filelist:
-            txt += '   ' + row[0] + '\n'
+            txt += row[0] + '\n'
+            
+            
+        txt += '\nList of available sample definitions\n'
+        for d in self.sample_list:
+            txt += d[0]  #.ljust(30) + d[1] + '\n'            
         return txt    
     
     def get_list(self, names_only=False):
