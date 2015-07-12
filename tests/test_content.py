@@ -66,5 +66,18 @@ class TestContent(unittest.TestCase):
         except Exception:
             print('Error running test_05_list_data_file_columns')
     
+    def test_06_get_unique_list(self):
+        s = content.get_unique_list('food.food_desc.Ref_Desc')
+        print(s)
+    
+    def test_07_choose_value(self):
+        s = content.choose_value('food.food_desc.Ref_Desc')
+        print(s)
+    
+    def test_08_choose_weighted_value(self):
+        s = content.choose_weighted_value('food.food_desc.Ref_Desc')
+        print(s)
+    
+    
 if __name__ == '__main__':
     unittest.main()
