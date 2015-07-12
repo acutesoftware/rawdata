@@ -30,6 +30,48 @@ def TEST():
     #    print(c[0][len(data_fldr) + 1:] + '.' + c[2] + '.' + c[3])
     #for i in s.samples:
     #    print(i)
+
+def get_unique_list(txt):
+    print('get a unique list of values from a lookup val: file.col')
+    res = 'get_unique_list'
+    
+    # step 1: split the string like games.monsters.stats into
+    # folder = /data/games, file = monsters.csv, col = stats
+    
+    
+    # step 2: read all the values of the column from file
+    
+    # step 3: return the list
+     
+    return res
+    
+def choose_value(txt):
+    print('pick a random values from a lookup val: file.col')
+    res = 'choose value'
+    
+    # step 1: split the string like games.monsters.stats into
+    # folder = /data/games, file = monsters.csv, col = stats
+    
+    
+    # step 2: read a DISTINCT list of values of the column from file
+    
+    # step 3: return a random.choice of the list
+     
+    return res
+
+def choose_weighted_value(txt):
+    print('pick a random values from a lookup val: file.col')
+    res = 'choose weighted value'
+    
+    # step 1: split the string like games.monsters.stats into
+    # folder = /data/games, file = monsters.csv, col = stats
+    
+    
+    # step 2: read all the values of the column from file
+    
+    # step 3: return a random.choice of the list
+     
+    return res
     
     
 class DataFiles(object):
