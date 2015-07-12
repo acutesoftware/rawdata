@@ -108,6 +108,7 @@ class DataFiles(object):
         #with open(filename, 'r', encoding='utf8') as f:
         with open(filename, 'r') as f:
             ndx = 0
+            line = ''
             res = []
             try:
                 line = f.readline()
