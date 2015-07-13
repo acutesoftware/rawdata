@@ -19,11 +19,11 @@ def TEST():
     # [{'build', 'buff', 'gather', 'type', 'heal', 'change', 'attack', 'info'}]
 
     f = s.get_sample_by_name('finance_transaction')
-    #print(f)
+    print(f)
     
     
     d = DataFiles()
-    #print('Datafiles', d)
+    print('Datafiles', d)
     #print('columns')
     
     #for c in d.columns:
@@ -33,7 +33,7 @@ def TEST():
 
 def get_unique_list(txt):
     print('get a unique list of values from a lookup val: file.col')
-    res = 'get_unique_list'
+    res = 'get_unique_list' + txt
     
     # step 1: split the string like games.monsters.stats into
     # folder = /data/games, file = monsters.csv, col = stats
@@ -47,7 +47,7 @@ def get_unique_list(txt):
     
 def choose_value(txt):
     print('pick a random values from a lookup val: file.col')
-    res = 'choose value'
+    res = 'choose value' + txt
     
     # step 1: split the string like games.monsters.stats into
     # folder = /data/games, file = monsters.csv, col = stats
@@ -61,7 +61,7 @@ def choose_value(txt):
 
 def choose_weighted_value(txt):
     print('pick a random values from a lookup val: file.col')
-    res = 'choose weighted value'
+    res = 'choose weighted value' + txt
     
     # step 1: split the string like games.monsters.stats into
     # folder = /data/games, file = monsters.csv, col = stats
@@ -106,13 +106,10 @@ class DataFiles(object):
                 cols = self.get_all_columns(root + os.sep + f)
                 for c in cols:
                     if c != '':
-                        #print('c = ', c)
                         dot_form = root[len(data_fldr) + 1:] + '.' + f[:-4] + '.' + c
-                        
                         self.columns.append([root,f, f[:-4], c, dot_form])
                         self.lookup.append(dot_form)
-                        #self.columns.append([c[0],f, f[:-4], c, c[4]])
-                    
+                   
                 
     def __str__(self):
         txt = 'Data files read from :\n'
@@ -144,7 +141,6 @@ class DataFiles(object):
             ndx = 0
             res = []
             for num, line in enumerate(f):
-                #print('line',line, 'num',num)
                 cols = line.split(',')
                 if num == 0:
                     for col_num, col in enumerate(cols):
@@ -155,9 +151,7 @@ class DataFiles(object):
         return [set(res)]            
 
     def get_all_columns(self, filename):
-        #with open(filename, 'r', encoding='utf8') as f:
         with open(filename, 'r') as f:
-            ndx = 0
             line = ''
             res = []
             try:
