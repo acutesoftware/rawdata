@@ -80,7 +80,7 @@ class StringGenerator(Structure):
         to ASCII. If destructive, then ignore unknown chars
         otherwise attempt to convert via mapping.
         """
-        print('TODO')
+        print('TODO', destructive)
         return txt
       
         
@@ -250,24 +250,7 @@ def load_lists(lst):
         if tpe == 'PEOPLE':
             results.append({'name': 'PEOPLE', 'lst': get_list_people()})
     return results
-    
-"""
-def get_list_from_file(fname, col_name):
-    col_ndx = 0
-    lst = []
-    with open(fname, 'r') as f:
-        line = f.readline()
-        hdrs = line.split(',')
-        for num, c in enumerate(hdrs):
-            if c == col_name:
-                col_ndx = num
-        
-        # now read the rest
-        for line in f:
-            cols = line.split(',')
-            lst.append(cols[col_ndx])
-    return lst
-"""        
+         
 def get_list_words():
     """
     reads wordnet to get a unique list of nouns
