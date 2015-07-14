@@ -7,39 +7,39 @@ import sys
 
 root_fldr = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
 test_fldr = os.path.dirname(__file__) + os.sep + 'test_results'
-sys.path.insert(1, root_fldr)
+sys.path.insert(1, root_fldr + os.sep + 'rawdata')
 
-import rawdata.generate
-import rawdata.errors
+import generate
+import errors
 
 class TestCreate(unittest.TestCase):
     
     def test_01_create_error(self):
-        e = rawdata.errors.DataError('Random Text')
+        e = errors.DataError('Random Text')
         self.assertEqual(str(e),'Random Text')
 
     def test_02_error_fixed_val(self):
-        e = rawdata.errors.DataError('BAD STRING')
+        e = errors.DataError('BAD STRING')
         self.assertEqual(e._fixed_val(),'BAD STRING')
 
     def test_03_error_blank_out(self):
-        e = rawdata.errors.DataError('Originally Valid Text')
+        e = errors.DataError('Originally Valid Text')
         self.assertEqual(e._blank_out(),'')
 
     def test_03_error_add_spaces(self):
-        e = rawdata.errors.DataError('')
+        e = errors.DataError('')
         self.assertEqual(e._add_spaces('AAA'),' AAA     ')
 
     def test_03_error_add_random(self):
         # not sure what error will occur, but ensure input string is different
-        e = rawdata.errors.DataError('BAD STRING')
+        e = errors.DataError('BAD STRING')
         self.assertEqual(e.random_error('Orig') != 'Orig', True)
         
     def test_10_table_swap_columns(self):
         colLabel = ['DATE', 'name',   'Born']
         colTypes = ['DATE', 'PEOPLE', 'PLACE']
-        good_table = rawdata.generate.TableGenerator(40, colTypes, colLabel)
-        t = rawdata.errors.TableWithErrors(good_table, 'BLAH')
+        good_table = generate.TableGenerator(40, colTypes, colLabel)
+        t = errors.TableWithErrors(good_table, 'BLAH')
         self.assertEqual(t.tbl[0],['DATE', 'name', 'Born'])
         t.swap_columns(0,1)
         self.assertEqual(t.tbl[0],['name', 'DATE', 'Born'])
@@ -48,6 +48,10 @@ class TestCreate(unittest.TestCase):
         t.swap_columns(2,0)
         self.assertEqual(t.tbl[0],['DATE', 'Born', 'name'])
         self.assertEqual(len(t.tbl[0]),3)  # confirm 3 columns in header
+        
+    def test_11_TEST(self):
+        errors.TEST()
+        
  
 if __name__ == '__main__':
     unittest.main()
