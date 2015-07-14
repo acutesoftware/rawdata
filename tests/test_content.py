@@ -78,6 +78,42 @@ class TestContent(unittest.TestCase):
         s = content.choose_weighted_value('food.food_desc.Ref_Desc')
         print(s)
     
+    def test_09_datafile__str__(self):
+        d = content.DataFiles()
+        print(d)
     
+    def test_10_datafile_get_list(self):
+        d = content.DataFiles()
+        list_1 = d.get_list()
+        list_2 = d.get_list(True)
+    
+    def test_11_datafile_get_list_fullname(self):
+        d = content.DataFiles()
+        #print(d.get_list_fullname())
+    
+    def test_12_datafile_get_sample(self):
+        fname = content.data_fldr + os.sep + 'food' + os.sep + 'food_desc.csv'
+        d = content.DataFiles()
+        mysample = d.get_sample(fname, 'Long Desc')
+    
+    def test_13_samples__str__(self):
+        tst1 = content.Samples()
+        print(tst1)
+        self.assertEqual(str(tst1), 'List of available sample definitions\n')
+    
+    def test_13_samples_get_sample_by_name(self):
+        tst1 = content.Samples()
+        s2 = tst1.get_sample_by_name('FAKE_WILL_FAIL')
+        self.assertEqual(s2, None)
+        
+    def test_14_samples_list(self):
+        tst1 = content.Samples()
+        full_list = tst1.list()
+        print(full_list)
+        #self.assertEqual(len(full_list) > 1, True)
+        
+    def test_15_TEST(self):
+        content.TEST()
+         
 if __name__ == '__main__':
     unittest.main()
