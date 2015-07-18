@@ -24,6 +24,10 @@ def TEST():
     
     d = DataFiles()
     print('Datafiles', d)
+    
+    for i in 1, range(1, 5):
+        print(d.get_sample(data_fldr + os.sep + 'food' + os.sep + 'combinations.csv', 'ingredient1'))
+    
     #print('columns')
     
     #for c in d.columns:

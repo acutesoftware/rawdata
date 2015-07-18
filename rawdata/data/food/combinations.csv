@@ -1,0 +1,16 @@
+ingredient1,ingredient2,tastiness,comment
+cheese,chives,0.9
+toothpaste,orange juice,0.0
+cheese,pineapple,0.9
+cheese,ham,0.9
+bacon,eggs,0.95
+steak,potato,0.95
+coconut,rice,0.95
+lemon,steak,0.5
+lemon,fish,0.8
+lemon,mushroom,0.7
+potato,rice,0.4
+rice,pasta,0.3
+pasta,tomato,0.95
+tomato,lemon,0.8
+tomato,cabbage,0.3
