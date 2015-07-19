@@ -25,8 +25,12 @@ def TEST():
     d = DataFiles()
     print('Datafiles', d)
     
-    for i in 1, range(1, 5):
+    for i in range(0, 5):
         print(d.get_sample(data_fldr + os.sep + 'food' + os.sep + 'combinations.csv', 'ingredient1'))
+    
+    # test sentiment
+    sent = data_fldr + os.sep + 'text' + os.sep + 'sentiment.csv'
+    print(d.get_sample(sent, 'word'))
     
     #print('columns')
     
@@ -137,8 +141,9 @@ class DataFiles(object):
         
             
     def get_sample(self, filename, col_name):
-        lst = self.get_collist_by_name(filename, col_name)
-        return random.choice(lst)
+        set = self.get_collist_by_name(filename, col_name)
+        #print('lst = ', lst)
+        return random.choice(list(set[0]))
     
     def get_collist_by_name(self, filename, col_name):
         with open(filename) as f:
