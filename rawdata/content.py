@@ -136,9 +136,10 @@ class DataFiles(object):
             return self.filelist
             
     def get_list_fullname(self):
+        lst = []
         for row in self.filelist:
-            print(row[0])
-        
+            lst.append(row[0])
+        return lst
             
     def get_sample(self, filename, col_name):
         set = self.get_collist_by_name(filename, col_name)
