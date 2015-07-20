@@ -89,7 +89,8 @@ class TestContent(unittest.TestCase):
     
     def test_11_datafile_get_list_fullname(self):
         d = content.DataFiles()
-        #print(d.get_list_fullname())
+        full_list = d.get_list_fullname()
+        self.assertEqual(len(full_list) > 22, True)
     
     def test_12_datafile_get_sample(self):
         fname = content.data_fldr + os.sep + 'food' + os.sep + 'food_desc.csv'
