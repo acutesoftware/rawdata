@@ -166,15 +166,11 @@ class DataFiles(object):
             res = []
             try:
                 line = f.readline()
+                cols = line.split(',')
+                for col in cols:
+                    res.append(col.strip('"').strip('\n'))
             except Exception:
-                try:
-                    print('Error reading line in ' + filename)
-                except Exception:
-                    print('problem reading one of the filenames')
-                
-            cols = line.split(',')
-            for col in cols:
-                res.append(col.strip('"').strip('\n'))
+                print('Error reading line in ' + filename)                
         return res       
 
         
@@ -182,6 +178,7 @@ class Samples(object):
     """
     class to manage the list of sample files in /samples folder
     """
+    rootPath = os.getcwd() + os.sep + 'samples'
     def __init__(self):
         self.sample_list = []  # filelist = [shortname, fullpath]
         self.samples = []      # list of Sample objects
