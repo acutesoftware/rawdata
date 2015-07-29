@@ -9,7 +9,7 @@ import sys
 root_fldr = os.path.abspath(os.path.join(os.path.dirname(__file__), '..')) + os.sep + 'rawdata'
 test_fldr = os.path.dirname(__file__) + os.sep + 'test_results'
 sys.path.insert(1, root_fldr)
-
+root_path = root_fldr + os.sep + 'samples'
 import generate
 import content
 
@@ -99,17 +99,18 @@ class TestContent(unittest.TestCase):
         mysample = d.get_sample(fname, 'Long Desc')
     
     def test_13_samples__str__(self):
-        tst1 = content.Samples()
+        tst1 = content.Samples(root_path)
         print(tst1)
-        self.assertEqual(str(tst1), 'List of available sample definitions\n')
+        self.assertEqual(str(tst1)[0:36], 'List of available sample definitions')
     
     def test_13_samples_get_sample_by_name(self):
-        tst1 = content.Samples()
+        tst1 = content.Samples(root_path)
         s2 = tst1.get_sample_by_name('FAKE_WILL_FAIL')
         self.assertEqual(s2, None)
         
     def test_14_samples_list(self):
-        tst1 = content.Samples()
+        tst1 = content.Samples(root_path)
+        print('root_path = ', tst1.root_path)
         full_list = tst1.list()
         print(full_list)
         #self.assertEqual(len(full_list) > 1, True)

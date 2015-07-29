@@ -8,12 +8,12 @@ import fnmatch
 
 data_fldr = os.path.abspath(os.path.dirname(os.path.abspath(__file__)) + os.sep + 'data' ) 
 
-rootPath = os.getcwd() + os.sep + 'samples'
+#rootPath = os.getcwd() + os.sep + 'samples'
 sample_xtn = '*.sample'
 
 
 def TEST():
-    s = Samples()
+    s = Samples(os.getcwd() + os.sep + 'samples')
     #print(s.get_list())  # list of data files [fullname, shortname]
     #col1 = s.get_collist_by_name(data_fldr + os.sep + 'games' + os.sep + 'skills.csv', 'type' )
     # [{'build', 'buff', 'gather', 'type', 'heal', 'change', 'attack', 'info'}]
@@ -178,11 +178,11 @@ class Samples(object):
     """
     class to manage the list of sample files in /samples folder
     """
-    rootPath = os.getcwd() + os.sep + 'samples'
-    def __init__(self):
+    def __init__(self, root_path):
         self.sample_list = []  # filelist = [shortname, fullpath]
         self.samples = []      # list of Sample objects
-        for root, _, files in os.walk(rootPath):
+        self.root_path = root_path # os.getcwd() + os.sep + 'samples'
+        for root, _, files in os.walk(self.root_path):
             for basename in files:
                 if fnmatch.fnmatch(basename, sample_xtn):
                     filename = os.path.join(root, basename)
@@ -210,8 +210,9 @@ class Samples(object):
         List all samples available
         """
         res = ''
-        for l in self.sample_list:
-            res += l + '\n'
+        for d in self.sample_list:
+            print(d)
+            res += d[0] + '\n'
         return res
 
         
@@ -269,7 +270,3 @@ class Sample(object):
                 self.col_labels.append(details[0].strip(' '))
                 self.col_types.append(details[1].strip(' '))
                 
-
-   
-if __name__ == '__main__':
-    TEST()
