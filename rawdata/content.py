@@ -19,18 +19,18 @@ def TEST():
     # [{'build', 'buff', 'gather', 'type', 'heal', 'change', 'attack', 'info'}]
 
     f = s.get_sample_by_name('finance_transaction')
-    print(f)
+    #print(f)
     
     
     d = DataFiles()
-    print('Datafiles', d)
+    #print('Datafiles', d)
     
     for i in range(0, 5):
         print(d.get_sample(data_fldr + os.sep + 'food' + os.sep + 'combinations.csv', 'ingredient1'))
     
     # test sentiment
     sent = data_fldr + os.sep + 'text' + os.sep + 'sentiment.csv'
-    print(d.get_sample(sent, 'word'))
+    #print(d.get_sample(sent, 'word'))
     
     #print('columns')
     
@@ -164,10 +164,13 @@ class DataFiles(object):
         with open(filename, 'r') as f:
             line = ''
             res = []
-            line = f.readline()
-            cols = line.split(',')
-            for col in cols:
-                res.append(col.strip('"').strip('\n'))
+            try:
+                line = f.readline()
+                cols = line.split(',')
+                for col in cols:
+                    res.append(col.strip('"').strip('\n'))
+            except Exception as ex:
+                print('get_all_columns error in ', filename)
         return res       
 
         
@@ -208,7 +211,7 @@ class Samples(object):
         """
         res = ''
         for d in self.sample_list:
-            print(d)
+            #print(d)
             res += d[0] + '\n'
         return res
 
