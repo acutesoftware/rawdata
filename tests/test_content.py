@@ -107,22 +107,26 @@ class TestContent(unittest.TestCase):
         
     def test_14_samples__str__(self):
         tst1 = content.Samples(root_path)
-        print(tst1)
+        #print(tst1)
         self.assertEqual(str(tst1)[0:36], 'List of available sample definitions')
     
-    
-    
+     
     
     def test_15_samples_get_sample_by_name(self):
         tst1 = content.Samples(root_path)
         s2 = tst1.get_sample_by_name('FAKE_WILL_FAIL')
         self.assertEqual(s2, None)
         
+        s3 = tst1.get_sample_by_name('finance_transaction')
+        self.assertEqual(len(str(s3)) > 50, True)
+        #print(s3)
+        
+        
     def test_16_samples_list(self):
         tst1 = content.Samples(root_path)
         print('root_path = ', tst1.root_path)
         full_list = tst1.list()
-        print(full_list)
+        #print(full_list)
         #self.assertEqual(len(full_list) > 1, True)
         
     def test_99_TEST(self):
