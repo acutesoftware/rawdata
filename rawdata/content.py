@@ -164,13 +164,10 @@ class DataFiles(object):
         with open(filename, 'r') as f:
             line = ''
             res = []
-            try:
-                line = f.readline()
-                cols = line.split(',')
-                for col in cols:
-                    res.append(col.strip('"').strip('\n'))
-            except Exception:
-                print('Error reading line in ' + filename)                
+            line = f.readline()
+            cols = line.split(',')
+            for col in cols:
+                res.append(col.strip('"').strip('\n'))
         return res       
 
         
