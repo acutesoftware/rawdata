@@ -98,24 +98,34 @@ class TestContent(unittest.TestCase):
         d = content.DataFiles()
         mysample = d.get_sample(fname, 'Long Desc')
     
-    def test_13_samples__str__(self):
+    def test_13_datafile_get_all_columns(self):
+        fname = content.data_fldr + os.sep + 'food' + os.sep + 'food_desc.csv'
+        d = content.DataFiles()
+        #print(d.get_all_columns(fname))
+        self.assertEqual(len(d.get_all_columns(fname)), 14)
+        self.assertEqual(d.get_all_columns(fname)[0], 'NDB_No')
+        
+    def test_14_samples__str__(self):
         tst1 = content.Samples(root_path)
         print(tst1)
         self.assertEqual(str(tst1)[0:36], 'List of available sample definitions')
     
-    def test_13_samples_get_sample_by_name(self):
+    
+    
+    
+    def test_15_samples_get_sample_by_name(self):
         tst1 = content.Samples(root_path)
         s2 = tst1.get_sample_by_name('FAKE_WILL_FAIL')
         self.assertEqual(s2, None)
         
-    def test_14_samples_list(self):
+    def test_16_samples_list(self):
         tst1 = content.Samples(root_path)
         print('root_path = ', tst1.root_path)
         full_list = tst1.list()
         print(full_list)
         #self.assertEqual(len(full_list) > 1, True)
         
-    def test_15_TEST(self):
+    def test_99_TEST(self):
         content.TEST()
          
 if __name__ == '__main__':
