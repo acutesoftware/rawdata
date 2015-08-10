@@ -96,7 +96,8 @@ class TrendGenerator(object):
         absolute_date = ''
         for k,v in self.trend_dict['trend'].items():
             if self.trend_dict['scale'] == 'day_of_week':
-                if absolute_date == relative_date:
-                    print('day of week calc: k=', k, 'v = ', v)
+                pass
+                #if absolute_date == relative_date:
+                #    print('day of week calc: k=', k, 'v = ', v)
         return 1.1  # for testing
 
