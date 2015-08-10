@@ -133,16 +133,15 @@ class DataFiles(object):
         return [set(res)]            
 
     def get_all_columns(self, filename):
+        line = ''
+        res = []
+        if os.path.exists(filename) is False:
+            return  None # []  # or should we return None?
         with open(filename, 'r') as f:
-            line = ''
-            res = []
-            try:
-                line = f.readline()
-                cols = line.split(',')
-                for col in cols:
-                    res.append(col.strip('"').strip('\n'))
-            except Exception as ex:
-                print('get_all_columns error in ', filename)
+            line = f.readline()
+            cols = line.split(',')
+            for col in cols:
+                res.append(col.strip('"').strip('\n'))
         return res       
 
         

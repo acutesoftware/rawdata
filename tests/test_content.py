@@ -102,6 +102,10 @@ class TestContent(unittest.TestCase):
         self.assertEqual(len(d.get_all_columns(fname)), 14)
         self.assertEqual(d.get_all_columns(fname)[0], 'NDB_No')
         
+        # check for dud file
+        self.assertEqual(d.get_all_columns('FILE_NOT_FOUND.txt'), None)
+        
+        
     def test_14_samples__str__(self):
         tst1 = content.Samples(root_path)
         #print(tst1)
