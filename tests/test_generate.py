@@ -170,5 +170,6 @@ class TestGenerate(unittest.TestCase):
         self.assertEqual(txt, s2)
         print(s2)
         
-if __name__ == '__main__':
-    unittest.main()
+#if __name__ == '__main__':
+#    unittest.main()
+print('to run locally - import test_errors; unittest.main();')
