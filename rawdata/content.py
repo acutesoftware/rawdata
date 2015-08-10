@@ -8,36 +8,8 @@ import fnmatch
 
 data_fldr = os.path.abspath(os.path.dirname(os.path.abspath(__file__)) + os.sep + 'data' ) 
 
-#rootPath = os.getcwd() + os.sep + 'samples'
 sample_xtn = '*.sample'
 
-
-def TEST():
-    s = Samples(os.getcwd() + os.sep + 'samples')
-    #print(s.get_list())  # list of data files [fullname, shortname]
-    #col1 = s.get_collist_by_name(data_fldr + os.sep + 'games' + os.sep + 'skills.csv', 'type' )
-    # [{'build', 'buff', 'gather', 'type', 'heal', 'change', 'attack', 'info'}]
-
-    f = s.get_sample_by_name('finance_transaction')
-    #print(f)
-    
-    
-    d = DataFiles()
-    #print('Datafiles', d)
-    
-    for i in range(0, 5):
-        print(d.get_sample(data_fldr + os.sep + 'food' + os.sep + 'combinations.csv', 'ingredient1'))
-    
-    # test sentiment
-    sent = data_fldr + os.sep + 'text' + os.sep + 'sentiment.csv'
-    #print(d.get_sample(sent, 'word'))
-    
-    #print('columns')
-    
-    #for c in d.columns:
-    #    print(c[0][len(data_fldr) + 1:] + '.' + c[2] + '.' + c[3])
-    #for i in s.samples:
-    #    print(i)
 
 def get_unique_list(txt):
     print('get a unique list of values from a lookup val: file.col')

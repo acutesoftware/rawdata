@@ -55,16 +55,13 @@ class TestContent(unittest.TestCase):
             print(len(r[4]))
         """
         d = content.DataFiles()
-        try:
-            self.assertEqual(len(d.columns) > 1, True)
-            
-            print(d.lookup[0:5])
-            self.assertEqual('finance.mining_copper_rent.2002' in d.lookup, True)
-            self.assertEqual('food.food_desc.Ref_Desc' in d.lookup, True)
-            self.assertEqual('games.materials.name' in d.lookup, True)
-            self.assertEqual('.countries.country_code' in d.lookup, True)  # this should be moved
-        except Exception:
-            print('Error running test_05_list_data_file_columns')
+        self.assertEqual(len(d.columns) > 1, True)
+        
+        print(d.lookup[0:5])
+        self.assertEqual('finance.mining_copper_rent.2002' in d.lookup, True)
+        self.assertEqual('food.food_desc.Ref_Desc' in d.lookup, True)
+        self.assertEqual('games.materials.name' in d.lookup, True)
+        self.assertEqual('.countries.country_code' in d.lookup, True)  # this should be moved
     
     def test_06_get_unique_list(self):
         s = content.get_unique_list('food.food_desc.Ref_Desc')
@@ -129,8 +126,5 @@ class TestContent(unittest.TestCase):
         #print(full_list)
         #self.assertEqual(len(full_list) > 1, True)
         
-    def test_99_TEST(self):
-        content.TEST()
-         
-if __name__ == '__main__':
-    unittest.main()
+      
+print('to run locally - import test_errors; unittest.main();')
