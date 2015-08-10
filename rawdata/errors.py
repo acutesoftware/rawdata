@@ -5,25 +5,6 @@ import os
 import random
 import rawdata.generate
 data_fldr = os.path.abspath(os.path.dirname(os.path.abspath(__file__)) + os.sep + 'data' ) 
-
-def TEST():
-    """
-    local testing - will be moved to test_create.py
-    """
-    colLabel = ['DATE', 'name',   'Born']
-    colTypes = ['DATE', 'PEOPLE', 'PLACE']
-    tbl = rawdata.generate.TableGenerator(3, colTypes, colLabel)
-    t = TableWithErrors(tbl, 'VVV')
-    print(t.tbl)
-    t.load_from_file(data_fldr + os.sep + 'countries.csv')
-
-    #generate.show_table(t.tbl)
-    print('header = ', t.header)
-    
-    # add errors to the country file
-    t.add_errors(50)
-    print(t)
-    
     
 class TableWithErrors(object):
     """
@@ -113,6 +94,3 @@ class DataError(object):
         else:
             return ' ' + str(orig) + '     ' 
             
-    
-if __name__ == '__main__':
-    TEST()
