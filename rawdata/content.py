@@ -7,7 +7,7 @@ import random
 import fnmatch
 
 data_fldr = os.path.abspath(os.path.dirname(os.path.abspath(__file__)) + os.sep + 'data' ) 
-
+print('data_fldr = ', data_fldr)
 sample_xtn = '*.sample'
 
 
@@ -82,6 +82,7 @@ class DataFiles(object):
         self.lookup = []
         for root, _, files in os.walk(data_fldr):
             for f in files:
+                #print('DataFiles.init: f = ', f, 'root = ', root)
                 self.filelist.append([root + os.sep + f, root,f])
                 cols = self.get_all_columns(root + os.sep + f)
                 for c in cols:
@@ -137,11 +138,14 @@ class DataFiles(object):
         res = []
         if os.path.exists(filename) is False:
             return  None # []  # or should we return None?
-        with open(filename, 'r') as f:
-            line = f.readline()
-            cols = line.split(',')
-            for col in cols:
-                res.append(col.strip('"').strip('\n'))
+        try:
+            with open(filename, 'r') as f:
+                line = f.readline()
+                cols = line.split(',')
+                for col in cols:
+                    res.append(col.strip('"').strip('\n'))
+        except Exception as ex:
+            print('DataFiles.get_all_columns: cant read filename ' + str(ex))
         return res       
 
         
