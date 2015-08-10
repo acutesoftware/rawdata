@@ -81,24 +81,29 @@ class TestGenerate(unittest.TestCase):
         self.assertEqual(len(s.generate_password(22)), 22) 
     
     def test_06_random_table(self):
-        colLabel = ['DATE', 'name', 'password', 'Born',  'Quote', 'Score']
-        colTypes = ['DATE', 'PEOPLE', 'STRING', 'PLACE', 'WORD',  'INT']
+        colLabel = ['DATE', 'name', 'password', 'Born',  'Quote', 'Score',  'Balance']
+        colTypes = ['DATE', 'PEOPLE', 'STRING', 'PLACE', 'WORD',  'INT', 'CURRENCY']
         t = generate.TableGenerator(500, colTypes, colLabel)
         self.assertEqual(len(t.tbl), 501)       # 500 rows plus header
-        self.assertEqual(len(t.tbl[0]), 6)      # check for 6 columns
+        self.assertEqual(len(t.tbl[0]), 7)      # check for all columns
         self.assertEqual(t.tbl[0][0], 'DATE') 
         self.assertEqual(t.tbl[0][1], 'name') 
         self.assertEqual(t.tbl[0][2], 'password') 
         self.assertEqual(t.tbl[0][3], 'Born') 
         self.assertEqual(t.tbl[0][4], 'Quote') 
         self.assertEqual(t.tbl[0][5], 'Score') 
-    
+        self.assertEqual(t.tbl[0][6], 'Balance') 
+        #print(t)
+        t.save_table('random_table.csv')
+        self.assertEqual(os.path.exists('random_table.csv'), True)
+        
     def test_07_table_with_custom_list(self):
         my_colours = ['Blue', 'Green', 'Orange']
         tbl = generate.TableGenerator(99, ['PEOPLE', my_colours], ['Name', 'MyCols'])
         self.assertEqual('Blue' in tbl.get_column(1), True) 
         self.assertEqual('Green' in tbl.get_column(1), True) 
         self.assertEqual('Orange' in tbl.get_column(1), True) 
+        self.assertEqual(str(tbl)[0:11], 'Name,MyCols')
 
 
     def test_08_function_generator(self):

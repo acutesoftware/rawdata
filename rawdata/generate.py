@@ -90,8 +90,6 @@ class FunctionGenerator(object):
     generates a random polynomial function
     """
     def __init__(self, mult_range, exp_range, num_terms=3):
-        if num_terms is None:
-            num_terms = random.randint(2, 9)
         self.num_terms = num_terms
         self.equation = ''
         self.mult = [random.randint(mult_range[0], mult_range[1] ) for _ in range(self.num_terms + 1)]
@@ -132,8 +130,8 @@ class FunctionCalculator(object):
     """
     def __init__(self, func, params, test_id=1):
         self.test_id = 'math_test_' + str(test_id)
-        if len(params) != func.num_terms:
-            assert('Error first parameter not equal to number of terms of function')
+        #if len(params) != func.num_terms:
+        #    assert('Error first parameter not equal to number of terms of function')
         self.params = params
         ans = 0
         #for param_num, p in enumerate(self.params):
@@ -237,8 +235,6 @@ def load_lists(lst):
     
     
     for tpe in lists_to_load:
-        if tpe == 'STRING2':
-            results.append({'name': 'STRING', 'lst': get_list_string(40)})
         if tpe == 'STRING':
             results.append({'name': 'STRING', 'lst': get_list_string()})
         if tpe == 'WORD':
