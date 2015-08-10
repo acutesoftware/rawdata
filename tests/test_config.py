@@ -21,5 +21,3 @@ class TestConfig(unittest.TestCase):
         self.assertEqual(len(config.fldrs) > 6, True)
         
    
-if __name__ == '__main__':
-    unittest.main()

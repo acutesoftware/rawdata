@@ -21,12 +21,9 @@ unittest.TextTestRunner().run(all_tests)
 
 def wipe_file(fname):
     if os.path.exists(fname):
-        try:
-            os.remove(fname)
-            print('deleted ' + fname)
-        except:
-            pass
-        
+        os.remove(fname)
+        print('deleted ' + fname)
+    
 
 print ('WIPING ALL TEST RESULTS - PRESS CTRL C TO STOP')
 
