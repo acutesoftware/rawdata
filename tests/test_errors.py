@@ -57,17 +57,11 @@ class TestCreate(unittest.TestCase):
         self.assertEqual(str(t11)[0:20], 'Year,Born,Fav number')
         self.assertEqual(t11.header, ['Year', 'Born', 'Fav number'])
         t11.add_errors(5)
-        #print(t11)
+
         
     def test_12_load_from_file(self):
-        # replace the table with data from a file
         cntry_tbl = generate.TableGenerator(1, ['Code', 'Country'], ['STRING', 'STRING'])
         t12 = errors.TableWithErrors(cntry_tbl, '')
-        #print(t12.tbl)
         t12.load_from_file(errors.data_fldr + os.sep + 'countries.csv')
-        #print(str(t12)[0:200])
- 
-        pass
-     
-if __name__ == '__main__':
-    unittest.main()
+
+print('to run locally - import test_errors; unittest.main();')
