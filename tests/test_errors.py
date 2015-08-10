@@ -56,7 +56,7 @@ class TestCreate(unittest.TestCase):
         t11 = errors.TableWithErrors(good_table, 'WRONG_STRING')
         self.assertEqual(str(t11)[0:20], 'Year,Born,Fav number')
         self.assertEqual(t11.header, ['Year', 'Born', 'Fav number'])
-        t11.add_errors(5)
+        t11.add_errors(500)
 
         
     def test_12_load_from_file(self):
