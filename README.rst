@@ -13,7 +13,11 @@ Raw Data
 .. image:: https://landscape.io/github/acutesoftware/rawdata/master/landscape.svg?style=flat
    :target: https://landscape.io/github/acutesoftware/rawdata/master
    :alt: Code Health    
-    
+
+.. image:: https://requires.io/github/acutesoftware/rawdata/requirements.svg?branch=master
+     :target: https://requires.io/github/acutesoftware/rawdata/requirements/?branch=master
+     :alt: Requirements Status
+     
 Generate realistic raw datasets with optional DQ issues
 
 To install run 
