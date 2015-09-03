@@ -10,49 +10,6 @@ data_fldr = os.path.abspath(os.path.dirname(os.path.abspath(__file__)) + os.sep 
 print('data_fldr = ', data_fldr)
 sample_xtn = '*.sample'
 
-
-def get_unique_list(txt):
-    print('get a unique list of values from a lookup val: file.col')
-    res = 'get_unique_list' + txt
-    
-    # step 1: split the string like games.monsters.stats into
-    # folder = /data/games, file = monsters.csv, col = stats
-    
-    
-    # step 2: read all the values of the column from file
-    
-    # step 3: return the list
-     
-    return res
-    
-def choose_value(txt):
-    print('pick a random values from a lookup val: file.col')
-    res = 'choose value' + txt
-    
-    # step 1: split the string like games.monsters.stats into
-    # folder = /data/games, file = monsters.csv, col = stats
-    
-    
-    # step 2: read a DISTINCT list of values of the column from file
-    
-    # step 3: return a random.choice of the list
-     
-    return res
-
-def choose_weighted_value(txt):
-    print('pick a random values from a lookup val: file.col')
-    res = 'choose weighted value' + txt
-    
-    # step 1: split the string like games.monsters.stats into
-    # folder = /data/games, file = monsters.csv, col = stats
-    
-    
-    # step 2: read all the values of the column from file
-    
-    # step 3: return a random.choice of the list
-     
-    return res
-    
     
 class DataFiles(object):
     """

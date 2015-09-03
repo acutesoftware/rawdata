@@ -63,17 +63,6 @@ class TestContent(unittest.TestCase):
         self.assertEqual('games.materials.name' in d.lookup, True)
         self.assertEqual('.countries.country_code' in d.lookup, True)  # this should be moved
     
-    def test_06_get_unique_list(self):
-        s = content.get_unique_list('food.food_desc.Ref_Desc')
-        print(s)
-    
-    def test_07_choose_value(self):
-        s = content.choose_value('food.food_desc.Ref_Desc')
-        print(s)
-    
-    def test_08_choose_weighted_value(self):
-        s = content.choose_weighted_value('food.food_desc.Ref_Desc')
-        print(s)
     
     def test_09_datafile__str__(self):
         d = content.DataFiles()
