@@ -1,0 +1,64 @@
+;Desserts
+After Dinner Mints
+Chocolate Dessert
+Chocolate Mousse
+Creamed Rice Pudding    
+Custard - Long Life
+Custard - Uht
+Custard - Vanilla
+Custard Powder
+Custard Quick
+Devon Custard
+Egg Custard Mix
+Ice Cream Cones
+Ice Cream Cups
+Ice Magic - Caramel
+Ice Magic - Choc Mint
+Ice Magic - Chocolate
+Ice Magic - Strawberry
+Jelly - Apple
+Jelly - Apricot
+Jelly - Berry Fruit
+Jelly - Blackcurrant
+Jelly - Blueberry
+Jelly - Bubblegum
+Jelly - Cherry
+Jelly - Cola
+Jelly - Lemon
+Jelly - Lemon Lime
+Jelly - Lime
+Jelly - Mango
+Jelly - Orange
+Jelly - Org/Mango
+Jelly - Passionfruit
+Jelly - Pch/Aprct
+Jelly - Pine/Passion
+Jelly - Pineapple
+Jelly - Pink Lemonade
+Jelly - Raspberry
+Jelly - Strawberry
+Jelly - Tropical Crush
+Jelly - Wine
+Junket Tablets - Flav
+Junket Tablets - Plain
+Maple Syrup
+Pavlova Magic Mix
+Plum Pudding   
+Pudding Mix - Choc Sauce
+Pudding Mix - Fruit Custard
+Pudding Mix - Golden Sponge
+Topping - Butterscotch
+Topping - Caramel
+Topping - Caramello
+Topping - Cherry Ripe
+Topping - Choc Malt
+Topping - Choc/Honeycomb
+Topping - Chocolate
+Topping - Diet Caramel
+Topping - Diet Chocolate
+Topping - Hot Fudge Choc
+Topping - Strawberry
+Topping - Other
+Vanilla Rice Pudding
+Waffles
+Other

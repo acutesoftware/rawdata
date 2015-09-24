@@ -1,0 +1,11 @@
+;Cold Meats
+Camp Pie
+Corned Beef
+Corned Beef - Lite
+Corned Mutton
+Leg Ham
+Leg Ham - Lite
+Luncheon Meat
+Spam
+Other
+

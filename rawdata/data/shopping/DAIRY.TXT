@@ -1,0 +1,35 @@
+;Dairy
+Cheese - Sliced
+Cheese - Sliced Low Fat
+Cheese - Bulk
+Cheese - Bulk, Low Fat
+Cheese - Grated
+Cheese - Grated, Low Fat
+Cream
+Cream - Sour
+Cream - Thickened
+Cream Cheese
+Desserts
+Dietary
+Flavoured Milk - Banana
+Flavoured Milk - Choc
+Flavoured Milk - Straw
+Fruit Ices
+Ice Blocks
+Ice Cream - Banana
+Ice Cream - Caramel
+Ice Cream - Chocolate
+Ice Cream - Choc Chip
+Ice Cream - Neopolitan
+Ice Cream - Strawberry
+Ice Cream - Vanilla
+Ice Cream - Other
+Milk - Full Cream
+Milk - Low Fat
+Milk - Skim
+Paddle Pops
+Yoghurt - Low Fat
+Yoghurt - Fruit
+Yoghurt - Plain
+Voghurt - Vanilla
+Other

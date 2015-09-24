@@ -1,0 +1,34 @@
+;Asian Foods
+Baby Corn
+Bamboo Shoots
+Champignons
+Coconut Cream
+Curry Paste - Green
+Curry Paste - Red
+Fried Rice Mix
+Lychee Syrup
+Mixed Asian Veges
+Monosodium Glutamate
+Noodles - 2 Min
+Noodles - Crispy
+Noodles - Egg
+Noodles - Rice
+Noodles - Other
+Rice Paper
+Sauce - Black Bean
+Sauce - Cha Sin
+Sauce - Chilli
+Sauce - Dim Sim
+Sauce - Garlic
+Sauce - Green Curry
+Sauce - Hoi Sin
+Sauce - Red Curry
+Sauce - Satay
+Sauce - Soy
+Sauce - Stir Fry
+Sauce - Sweet & Sour
+Sauce - Sweet Chilli
+Sauce - Other
+Sesame Oil
+Tamarind 
+Other

@@ -1,0 +1,76 @@
+;Canned Fish
+Anchovies
+Crab Meat
+Crab Meat - White
+Herrings
+Kipper Fillets In Brine
+Mackerel
+Mackerel - Fillets
+Mussels - Smoked
+Octopus In Marinade
+Oysters - Smoked
+Oysters - Smoked In Oil
+Oysters - Smoked/BBQ Sauce
+Pilchards - Tomato Sauce
+Prawns - Peeled
+Salmon - Fancy Pink
+Salmon - Fillets Olive Oil
+Salmon - Pink
+Salmon - Pink No Salt
+Salmon - Pink Sandwich
+Salmon - Pink Smoked
+Salmon - Red No Salt
+Salmon - Red Sockeye
+Salmon - Other
+Sardines - In Hot Sauce
+Sardines - In Oil
+Sardines - In Water
+Sardines - No Salt
+Sardines - Soya Bean Oil
+Sardines - Springwater
+Sardines - Thai Sauce
+Sardines - Tomato Sauce
+Sardines - Other
+Tuna + Creamy Mornay
+Tuna + Italienne
+Tuna + Satay
+Tuna + Thai Red
+Tuna - Brine Low Salt
+Tuna - Chunks In Olive Oil
+Tuna - Chunks In Spr/water
+Tuna - Chunky In Brine
+Tuna - Chunky In Oil
+Tuna - Curry
+Tuna - Flakes In Oil
+Tuna - Garlic
+Tuna - Herb Garlic
+Tuna - Hot Mayonnaise
+Tuna - In 3 Bean Salad
+Tuna - In Light Olive Oil
+Tuna - In Mayonnaise
+Tuna - In Springwater
+Tuna - Lem/Cracked Pepper
+Tuna - Lemon Dill
+Tuna - Lemon Pepper
+Tuna - Lunch Kit
+Tuna - Malaysian
+Tuna - Sandwich
+Tuna - Spicy Onion
+Tuna - Sweet Chilli
+Tuna - Thai Curry
+Tuna - Tomato Basil
+Tuna - Tomato Chilli
+Tuna - Tomato Onion
+Tuna - Yellow Fin In Brine
+Tuna - Yelowfin Chunk S/Wtr
+Tuna in Chilli Oil
+Tuna In Oil Italian Style
+Tuna Slices - Lightly Smoked
+Tuna Tempters - Capscm/Chilli
+Tuna Tempters - Chilli
+Tuna Tempters - Lem Crk/Pepper
+Tuna Tempters - Onion/Sauce
+Tuna Tempters - Tandoori
+Tuna Tempters - Teriyaki
+Tuna With Peppers
+Other

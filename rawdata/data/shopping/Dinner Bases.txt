@@ -1,0 +1,59 @@
+;Dinner Bases
+Chicken Tonight - Apricot
+Chicken Tonight - Cacciatori
+Chicken Tonight - Chicken/Mushroom
+Chicken Tonight - Creamy Lemon
+Chicken Tonight - Creamy Mushroom
+Chicken Tonight - Creamy Tandoori
+Chicken Tonight - Curry Veg
+Chicken Tonight - Herb Wine
+Chicken Tonight - Honey Mustard
+Chicken Tonight - S/Fry Honey Soy
+Chicken Tonight - S/Fry Satay
+Chicken Tonight - S/Fry Thai Sweet Chilli
+Continental Easy Meal Apricot Chicken
+Continental Easy Meal Beef Goulash
+Continental Easy Meal Beef Stroganoff
+Continental Easy Meal Chicken Satay
+Continental Easy Meal Chicken Tandoori
+Continental Easy Meal Chow Mein Mince
+Continental Easy Meal Creamy Tandoori Chicken
+Continental Easy Meal Curried Sausages
+Continental Easy Meal Honey Soy Chicken
+Continental Easy Meal Malayan Satay
+Continental Easy Meal Oriental Beef
+Continental Easy Meal Pasta Bacon/Carb
+Continental Easy Meal Spag Bolognese
+Continental Easy Meal Tuna Mornay
+Continental Hot Pot Curry
+Continental Sauce Creamy Satay
+Continental Sauce Stroganoff
+Dinner Mix Coutry Style Sausages
+Dinner Mix Creamy Thai Chicken
+Dinner Winner
+Hot Pot Mix
+Maggi Cook In The Pot Apricot Chicken
+Maggi Cook In The Pot Beef Goulash
+Maggi Cook In The Pot Chicken Chasseur
+Maggi Cook In The Pot Ragout
+Maggi Cook In The Pot Satay Beef
+Maggi Cook In The Pot Stroganoff
+Maggi Cook In The Pot Teriyaki Sesame
+Maggi Exotic Ready Mix Beef Black/Bean
+Maggi Taste Of Asia Mix Butter Chicken
+Maggi Taste Of Asia Mix Chicken Korma
+Maggi Taste Of Asia Mix Chinese Beef
+Maggi Taste Of Asia Mix Malay Noodle
+Maggi Taste Of Asia Mix Satay Chicken
+Maggi Taste Of Asia Mix Thai Red Curry
+Recipe Mix Malay Satay Medium
+Recipe Mix Thai Green Curry Hot
+Recipe Mix Thai Red Curry Medium
+Sauce - Black Bean
+Sauce - Honey/Sesame/Garlic
+Sauce - Sweet/Sour/Vegetable
+Stir Fry Sauce - Black Bean
+Stir Fry Sauce - Mongolian Lamb
+Stir Fry Sauce - Tasty Szechuan
+Taylors Sauce Chickn Honey/Macadamia
+Other

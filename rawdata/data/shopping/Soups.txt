@@ -1,0 +1,38 @@
+;Canned Soup
+Beef Goulash
+Beef Stockpot
+Beef/Pepper Potato
+Chicken
+Chicken Noodle
+Chicken/Corn
+Chicken/Korma
+Chicken/Mushroom
+Chunky Beef
+Chunky Chicken
+Chunky Pea/Ham
+Chunky Stockpot
+Creamy Asparagus
+Creamy Barramundi
+Creamy Celery
+Creamy Chicken
+Creamy Mushroom
+Creamy Pumpkin
+Creamy Scallop
+French Onion
+Hearty Lentil
+Hearty Veg/Pasta
+Italian Tomato/Basil
+Minestrone
+Mushroom
+Pea/Ham
+Potato/Leek
+Pumpkin
+Spring Vegetable
+Thai Green Curry
+Tomato
+Vegetable
+Vegetable/Beef
+Weight Watchers Soup - Chicken
+Weight Watchers Soup - Minestrone
+Weight Watchers Soup - Tomato
+Other

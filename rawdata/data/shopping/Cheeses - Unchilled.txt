@@ -1,0 +1,7 @@
+;Cheeses - Unchilled
+Cheese - Cheddar
+Cheese - Cheddar Portions
+Cheese - Portions
+Cheese - Processed
+Cheesestiks
+Other

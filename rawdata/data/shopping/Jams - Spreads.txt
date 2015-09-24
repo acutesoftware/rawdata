@@ -1,0 +1,51 @@
+;Jams & Spreads
+Cream Cheese Spread
+Golden Syrup
+Honey
+Honey - Creamed
+Jam - Apricot
+Jam - Blackberry
+Jam - Blackcurrant
+Jam - Blueberry
+Jam - Boysonberry
+Jam - Cherry
+Jam - English Style
+Jam - Forest Fruits
+Jam - Ginger/Lime
+Jam - Lime
+Jam - Mandarin
+Jam - Mango
+Jam - Melon/Lemon
+Jam - Plum
+Jam - Raspberry
+Jam - Scotch
+Jam - Strawberry
+Jam - Sweet Orange
+Malt Extract
+Marmite
+Paste - Anchovette
+Paste - Chicken
+Paste - Chicken/Ham
+Paste - Crab
+Paste - Devilled Ham
+Paste - Liver
+Paste - Luncheon Pork
+Paste - Salmon/Lobster
+Paste - Veal/Ham Chicken
+Peanut Butter - Crunchy
+Peanut Butter - Smooth
+Peanut Butter - Smooth Unsalted
+Peanut Butter - Super Crunchy
+Promite
+Relish - Sandwich
+Spread - Caramel
+Spread - Chocolate
+Spread - Date
+Spread - Hazelnut Crunchy
+Spread - Hazelnut Smooth
+Spread - Lemon
+Spread - Milky Way
+Spread - Spam
+Treacle
+Vegemite
+Other

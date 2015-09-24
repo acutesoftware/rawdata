@@ -1,0 +1,56 @@
+;Dried Fruit & Nuts
+Almond Kernels
+Almonds - Blanched
+Almonds - Blanched Whole
+Almonds - Flaked
+Almonds - Natural
+Almonds - Slivered
+Almonds - Toasted Flaked
+Almonds - Toasted Slivered
+Apricots - Diced
+Apricots - Dried
+Apricots - Dried Fancy
+Apricots - Fancy Large
+Apricots - Sun Dried
+Apricots - Turkish
+Cashews - Toasted Halves
+Cherries - Glace
+Coconut - Dessicated
+Coconut - Fine Dessicated
+Currants
+Dates - Pitted
+Figs
+Figs - Dried Garland
+Fruit - Dried Mixed
+Fruit - Medley
+Fruit - Mixed Peeled
+Fruit Mince
+Fruit Mixed
+Fruits - Liqueur
+Fruits - Liqueur Apricot/Rum
+Fruits - Liqueur Brandy Prunes
+Fruits - Liqueur Rum/N/Raisin
+Ginger - Mild
+Ginger - Mild Crystals
+Mango Slices - Dried
+Nuts - Cashews Whole
+Nuts - Crushed
+Nuts - Granulated
+Nuts - Hazelnuts
+Nuts - Macadamia Crushed
+Nuts - Pecan
+Nuts - Pine
+Nuts - Pine Toasted
+Nuts - Pistachio
+Pears
+Pine Kernels
+Prunes - Fancy Large
+Prunes - Pitted
+Raisins
+Sultanas
+Sultanas - Natural
+Walnuts
+Walnuts - Baking
+Walnuts - Californian
+Walnuts - Kernels Gold
+Other

@@ -1,0 +1,71 @@
+;Electrical
+Alarm Clock Radio
+Antenna Lead
+Antenna Lead With Adaptor
+Battery - Alkaline 1.5v A
+Battery - Alkaline 1.5v AA
+Battery - Alkaline 1.5v AAA
+Battery - Alkaline 1.5v C
+Battery - Alkaline 1.5v D
+Battery - Alkaline 9v
+Battery - Car Alarm 12v
+Battery - Heavy Duty 1.5v A
+Battery - Heavy Duty 1.5v AA
+Battery - Heavy Duty 1.5v AAA
+Battery - Heavy Duty 1.5v C
+Battery - Heavy Duty 1.5v D
+Battery - Heavy Duty 9v
+Battery - Lantern Heavy Duty 6v
+Battery - Lithium 1.5v AA
+Battery - NiCad 1.2v
+Calculator
+Charger - NiCad
+Compact Fluorescent - 15w
+Compact Fluorescent - 18w
+Compact Fluorescent - 20w
+Compact Fluorescent - 9w
+Double Adaptor
+Edison Screw Base Bulb 2.3v
+Electrical Tape
+Extension Lead
+Floodlamp Par38 120/150w 240v
+Fluoro Starters 20w
+Fluoro Starters 40w
+Fluoro Tube 15w
+Fluoro Tube 18w
+Fluoro Tube 36w
+Fuse Wire
+Globe - Candle Ses Clear 40w
+Globe - Clear Bc 100w
+Globe - Clear Bc 25w
+Globe - Clear Bc 40w
+Globe - Clear Bc 60w
+Globe - Clear Bc 75w
+Globe - Pearl Bc 100w
+Globe - Pearl Bc 25w
+Globe - Pearl Bc 40w
+Globe - Pearl Bc 60w
+Globe - Pearl Bc 75w
+Lamp - Halogen 12v 20w
+Lamp - Halogen 12v 50w
+Lamp - Halogen 240v 150w
+Lamp - Halogen 240v 500w
+Night Light
+Pilot Lamp Bc 15w
+Powerboard
+Prefocused Bulb 2.4v
+Prefocused Bulb 4.8v
+Reflector Globe Es 100w
+Reflector Globe Es 40w
+Reflector Globe Es 60w
+Reflector Globe Es 75w
+Smoke Alarm
+Surge Powerboard
+Table Clock
+Telephone Double Adaptor
+Telephone Extension Lead
+Timer
+Torch With Battery
+Tv Antenna - Rabbits Ear
+Universal Remote Control
+Other

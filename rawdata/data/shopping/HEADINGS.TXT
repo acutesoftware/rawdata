@@ -1,0 +1,63 @@
+;VERSION 2.1
+Asian Foods
+Baby Food
+Baby Needs
+Canned Baked Beans
+Baking Needs
+Beauty Aids
+Beverages
+Biscuits
+Bread
+Breakfast Cereals
+Dairy - Butter - Margarine
+Canned Fish
+Canned Vegetables
+Canned Fruit
+Cereals
+Cheeses - Unchilled
+Cleaning Products
+Cold Meats
+Condiments
+Confectionery
+Cordials
+Dairy
+Desserts
+Dinner Bases
+Dried Fruits - Nuts
+Dried Vegetables
+Eggs
+Electrical
+First Aid
+Frozen Meals
+Frozen Vegetables
+Fruit - Vegetables
+Gravy - Salts - Seasonings
+Hardware
+Herbs - Spices
+Household Cleaning
+Indian Foods
+Insecticides
+Jams - Spreads
+Kitchen Utensils
+Laundry
+Meat
+Medicinal
+Mexican Food
+Miscellaneous
+Oils - Cooking
+Canned Foods - Other
+Packet Soup
+Paper Goods
+Pet Supplies
+Rice - Pasta - Noodles
+Self Service Delicatessen
+Shoe Care
+Side Dishes
+Small Appliances
+Snacks
+Soft Drinks
+Soups
+Stationery
+Sugars - Sweeteners
+Toiletries
+Vitamins

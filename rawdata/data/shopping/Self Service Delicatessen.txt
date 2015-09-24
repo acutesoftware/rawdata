@@ -1,0 +1,36 @@
+;Self Service Delicatessen
+Black Pudding
+Chicken Breast
+Chicken Breast - Sliced
+Ham - Leg
+Ham - Leg Champagne
+Ham - Leg Indian Curry
+Ham - Leg Shaved
+Ham - Leg Sliced
+Ham - Leg Smoked
+Ham - Lite
+Ham - Luncheon Sliced
+Ham - Shaved
+Ham - Shoulder
+Ham - Shoulder Sliced
+Ham - Smoked Slices
+Ham - Steaks
+Knob - Chicken
+Knob - Devon
+Knob - Garlic
+Knob - Ham/Chicken
+Liverwurst - German
+Liverwurst - Latvian
+Liverwurst - Old Style 
+Pastrami - Shaved
+Pepperoni - Sliced
+Roast Beef
+Salami - Danish
+Salami - Hot Spanish
+Salami - Sliced
+Salami - Spanish
+Silverside
+Turkey Breast
+Turkey Breast - Sliced
+Turkey Pastrami
+Other

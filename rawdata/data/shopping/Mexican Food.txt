@@ -1,0 +1,33 @@
+;Mexican Food
+Beans - Mexican
+Burrito Tortillas
+Corn Chips
+Enchilada Tortillas
+Fajita Sauce
+Fajita Tortillas
+Kit - Burrito
+Kit - Chili Con Carne
+Kit - Enchilada
+Kit - Fajita
+Kit - Nachos
+Kit - Taco
+Nachos Topping - Mild
+Refried Beans
+Refried Beans - Chilli
+Salsa Thick N Chunky - Med
+Salsa Thick N Chunky - Mild
+Sauce - Burrito Mild
+Sauce - Chunky Hot
+Sauce - Chunky Medium
+Sauce - Enchilada Mild
+Sauce Taco - Hot
+Sauce Taco - Medium
+Sauce Taco - Mild
+Sauce Taco - Thick Chunky
+Season Mix - Burrito
+Season Mix - Chilli
+Season Mix - Taco
+Taco Sauce - Medium
+Taco Seasoning Mix
+Taco Shells
+Other

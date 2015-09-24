@@ -1,0 +1,42 @@
+;Beverages
+Beef Extract
+Bonox
+Cocoa
+Coffee
+Coffee - Caffeine Free
+Coffee - Percolator
+Coffee - Other
+Drinking Chocolate
+Quik
+Tea - Instant
+Tea - Leaf
+Tea Bags - Apple/Cinnamon
+Tea Bags - Black Cherry
+Tea Bags - Black China
+Tea Bags - Blackcurrant
+Tea Bags - Blkcrnt/Lemn
+Tea Bags - Camomile
+Tea Bags - Ceylon
+Tea Bags - Cup
+Tea Bags - Decaffeinated
+Tea Bags - Earl Grey
+Tea Bags - Emperors Garden
+Tea Bags - English Breakfast
+Tea Bags - Green Apple
+Tea Bags - Honey/Lemon
+Tea Bags - Infusion Fruit
+Tea Bags - Infusion Herbal
+Tea Bags - Irish Breakfast
+Tea Bags - Lemon
+Tea Bags - Lemon Ginger
+Tea Bags - Orange Peko
+Tea Bags - Orange Refresh
+Tea Bags - Paw Paw
+Tea Bags - Peppermint
+Tea Bags - Pot
+Tea Bags - Raspberry
+Tea Bags - Rosehip
+Tea Bags - Peach/Passionfruit
+Tea Bags - Other
+Vanilla Mallow
+Other

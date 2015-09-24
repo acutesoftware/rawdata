@@ -1,0 +1,27 @@
+;Pet Supplies
+Bird Seed
+Budgie/Canary Food
+Canned Cat Food
+Canned Dog Food
+Cat Treats
+Dog Treats
+Dog Leash
+Dry Cat Food
+Dry Dog Food
+Fish Food
+Flea Collar - Cat
+Flea Collar - Dog
+Goldfish Flakes
+Grit
+Honey Stick
+Layer Pellets
+Millet Seed
+Mouse/Rat Food
+Parrot Mix
+Pet Accessories
+Pet Litter
+Rabbit/Guinea Pig Pellets
+Seed Bell
+Sunflower Seed
+Wheat
+Other

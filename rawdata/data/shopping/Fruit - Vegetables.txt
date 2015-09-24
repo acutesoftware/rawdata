@@ -1,0 +1,62 @@
+;Fruit & Vegetables
+Apples - Delicious
+Apples - Granny Smith
+Asparagus
+Avocado
+Bananas
+Basil Bunch
+Beans
+Beetroot
+Broccoli
+Cabbage
+Capsicum - Green
+Capsicum - Red
+Carrots
+Cauliflower
+Celery
+Cherries
+Coriander
+Corn
+Cucumber - Green
+Cucumber - Lebanese
+Cucumber - Telegraph
+Dill
+Eggplant
+Garlic
+Grapes - Flame Seedless
+Grapes - Green Seedless
+Grapes - Red
+Kiwifruit
+Leeks
+Lemons
+Lettuce - Butter
+Lettuce - Cos
+Lettuce - Standard
+Mandarins
+Melons - Rockmelon
+Mint
+Mushroom Cups
+Onions
+Oranges - Navel
+Oranges - Valencia
+Parsley
+Parsley - Continental
+Peas
+Peas - Snow
+Potatoes
+Potatoes - New
+Pumpkin
+Pumpkin - Jap
+Pumpkin - Butternut
+Radish
+Shallots
+Spinach
+Spring Onions
+Sprouts - Alfalfa
+Sprouts - Bean
+Strawberries
+Tomatoes - Cherry
+Tomatoes - Standard
+Watermelon
+Zucchini
+Other

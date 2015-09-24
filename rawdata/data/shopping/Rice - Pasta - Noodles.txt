@@ -1,0 +1,54 @@
+;Noodles / Pasta / Rice
+Bowl Noodles - Beef
+Bowl Noodles - Chicken
+Bowl Noodles - Oriental
+Cup Noodles - Bacon
+Cup Noodles - Beef
+Cup Noodles - Chicken
+Cup Noodles - Chicken/Corn
+Cup Noodles - Chicken/Mushroom
+Cup Noodles - Oriental
+Cup Noodles - Prawn
+Cup Noodles - Prawn/Chicken
+Egg Noodles - Capellini
+Egg Noodles - Tagliatelle
+Noodles - 2 Min
+Noodles - Crunchy
+Noodles - Instant
+Noodles - Long Life
+Pasta - Bavette
+Pasta - Bowties
+Pasta - Conchiglie
+Pasta - Corkscrews
+Pasta - Crests
+Pasta - Elbows
+Pasta - Eliche Grandi
+Pasta - Elicoidali
+Pasta - Egg Noodles
+Pasta - Fettuccine
+Pasta - Fusilli
+Pasta - Large Shells
+Pasta - Lasagne
+Pasta - Macaroni
+Pasta - Mostaccioli
+Pasta - Penne Lisce
+Pasta - Penne Rigate
+Pasta - Pennoni
+Pasta - Penterigati
+Pasta - Radiatore
+Pasta - Rigati
+Pasta - Rigatini
+Pasta - Rollini
+Pasta - Small Shells
+Pasta - Spaghetti
+Pasta - Spiral
+Pasta - Trivelle
+Pasta - Vegetarian    
+Rice - Arborio
+Rice - Brown
+Rice - Calrose
+Rice - Jasmine
+Rice - Long Grain
+Rice - Long Grain Basmati
+Rice - White
+Other

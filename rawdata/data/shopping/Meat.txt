@@ -1,0 +1,20 @@
+;Meat
+Bacon
+Beef
+Chicken
+Duck
+Frankfurts
+Ham
+Lamb
+Mince - Beef
+Mince - Chicken
+Mince - Lamb
+Mince - Pork
+Pet Scraps
+Pork
+Rabbit
+Ribs
+Sausages
+Turkey
+Veal
+Other

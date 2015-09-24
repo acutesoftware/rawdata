@@ -1,0 +1,37 @@
+;Canned Fruit
+Apricot Halves
+Blackberries
+Blueberries
+Boysenberries
+Cherries - Black
+Cherries - Blk Seedless
+Cherries - Maraschino
+Cherries - Red
+Cherries - Red Pitted
+Fruit Salad - Chunky
+Fruit Salad - Light Syrup
+Fruit Salad In Juice
+Fruit Salad - Other
+Fruit Trio
+Grapefruit Segments
+Lychees
+Mango Slices
+Passionfruit Pulp
+Peach Slices In Juice
+Peach/Pear Quarters
+Peaches In Orange Jelly
+Peachs/Pears In Trop Juice
+Pear Halves
+Pineapple Chunks
+Pineapple Crush
+Pineapple Pieces
+Pineapple Slices
+Pineapple Thins
+Plums - Dark
+Raspberries In Syrup
+Strawberry Syrup
+Two Fruits
+Weight Watchers Apricots
+Weight Watchers Fruit Salad
+Weight Watchers Peaches
+Other

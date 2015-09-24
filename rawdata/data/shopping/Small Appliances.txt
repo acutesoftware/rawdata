@@ -1,0 +1,20 @@
+;Small Appliances
+Bedside Lamp
+Blender
+Breadmaker
+Clock
+Egg Cooker
+Frypan
+Hairdryer
+Iron
+Juicer
+Kettle
+Massager
+Mixer
+Omelette Maker
+Rice Cooker
+Sandwich Maker
+Toaster
+Vacuum Cleaner
+Wok
+Other

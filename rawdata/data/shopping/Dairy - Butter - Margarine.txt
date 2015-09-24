@@ -1,0 +1,8 @@
+;Butter, Margarine etc
+Butter
+Canola
+Copha
+Fats
+Margarine
+Oils
+Other

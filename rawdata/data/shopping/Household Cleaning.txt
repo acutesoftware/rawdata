@@ -1,0 +1,55 @@
+;Household Cleaning
+Broom Handle
+Broom Head
+Broom With Handle
+Bucket - Large
+Bucket - Small
+Bucket - Square
+Cloth Peg Bag
+Clothes Pegs
+Cobweb Duster
+Coir Mat
+Container With Lid
+Cotton Gloves
+Cutlery Tray
+Dish Brush
+Dish Cloth
+Dish Drainer
+Dish Mop
+Draught Stopper
+Dustpan Caddy/Broom
+Feather Duster
+Fly Swatter
+Glass/Tile Wiper
+Household Sprayer
+Ironing Aids
+Ironing Board Cover
+Laundry Hamper
+Mop Head
+Mop Refill
+Mop With Handle
+Mouse Trap
+Paper Tidy
+Peg Basket
+Pegs - Dolly
+Pegs - Plastic
+Pegs - Wood
+Plate Brush
+Rubber Gloves
+Rubber Mat
+Scrubbing Brush
+Silver Gloves
+Soaker Bucket
+Sponge
+Step Stool
+Storage Box
+Suit Bag
+Swing Bin
+Toilet Brush
+Toilet Brush Set
+Toilet Tidy
+Wash Up Basin
+Washing Bag
+Washing Basket
+Other
+

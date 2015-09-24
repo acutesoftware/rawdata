@@ -1,0 +1,41 @@
+;Soft Drinks
+Bundaberg Ginger Beer
+Bundaberg Lemon Lime Bitters
+Citrus Crush Orange
+Coca Cola
+Coca Cola - Caffeine Free
+Coca Cola - Diet
+Coca Cola - Diet Caffeine Free
+Cola
+Cola - Diet
+Creaming Soda
+Dr Pepper
+Dry Ginger Ale
+Dry Ginger Ale - Low Cal
+Fanta Orange
+Fruitipyne
+Ginger Ale
+Lemonade
+Lemonade - Diet
+Lemonade - Lo Cal
+Lift Lemon
+Lime
+Mountain Dew
+Orange
+Pasito
+Passionfruit Crush
+Passionfruit Crush - Diet
+Pepsi - Diet
+Pepsi - Diet Caffeine Free
+Pepsi - Regular
+Pepsi Max
+Pineapple
+Pub Draught Ginger Beer
+Pub Squash
+Pub Squash - Diet
+Royal Crown Cola
+Snow Cap
+Soda Water
+Tonic Water
+Variety Pack
+Other

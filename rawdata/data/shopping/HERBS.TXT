@@ -1,0 +1,15 @@
+;Herbs, Spices and Stocks
+Stock Cubes - chicken
+Stock Cubes - beef
+Stock Cubes - bacon
+Garlic
+Rosemary
+Gravox
+Salt
+Pepper
+Sauce - Tomato
+Sauce - Worcestershire
+Sauce - Steak
+Sauce - Tobasco
+Sauce - Mustard
+Sauce - Relish

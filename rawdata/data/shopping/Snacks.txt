@@ -1,0 +1,52 @@
+;Snacks
+Beef Jerky
+Burger Rings 100g
+Cashews - Honey Roasted
+Cashews - Salted
+Cashews - Unsalted
+Cheetos - Cheese Hoops
+Cheetos - Cheese/Bacon Balls
+Cheezels - Cheese
+Cheezels - Cheese/Bacon
+Cheezels - Real Cheese
+Chips - BBQ
+Chips - Cheese/Onion
+Chips - French Fries
+Chips - French Fries Salt Vinegar
+Chips - Herb Spice
+Chips - Honey Baked Ham
+Chips - Light BBQ Chicken
+Chips - Light Plain Salted
+Chips - Light Sour Cream/Chives
+Chips - Salt Vinegar
+Chips - Sour Cream/Onion
+Chips - Thin Plain
+Dip - Creamy Sweet Corn
+Dip - Salsa Chunky Medium
+Dip - Salsa Chunky Mild
+Dip - Salsa Hot
+Dip - Salsa Medium
+Dip - Salsa Mexican Bean
+Dip - Salsa Mild
+Dip - Salsa Sweet Chilli
+Dip - Salsa Tomato Medium
+Dip - Salsa Tomato Mild
+Macadamia Nuts - Natural
+Macadamia Nuts - Salted
+Mixed Nuts
+Peanuts - Honey Roasted
+Peanuts - Salted
+Peanuts - Sugar Coated
+Peanuts - Unsalted
+Peanuts - Beer
+Pistachio Nuts
+Prawn Crackers
+Rice Crackers
+Rice Snacks
+Smoked Almonds
+Twisties - Cheese
+Twisties - Chicken
+Twisties - Tangy Cheese Crunch
+Vegie Sticks
+Other
+

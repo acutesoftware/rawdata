@@ -1,0 +1,21 @@
+;Packet Soup
+Chicken
+Chicken Noodle
+Chicken/Corn
+Chicken/Korma
+Chicken/Mushroom
+Creamy Asparagus
+Creamy Celery
+Creamy Chicken
+Creamy Mushroom
+Creamy Pumpkin
+Minestrone
+Mushroom
+Pea/Ham
+Potato/Leek
+Pumpkin
+Spring Vegetable
+Tomato
+Vegetable
+Vegetable/Beef
+Other
