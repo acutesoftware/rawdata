@@ -172,7 +172,6 @@ class Sample(object):
                      
     
     def __str__(self):
-        #print('PRINT SAMPLE')
         res = 'Sample File = ' + self.fullname + '\n'
         for num, c in enumerate(self.cols):
             res += 'Column#' + str(num) + ' = ' + c + '\n'
