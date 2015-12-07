@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+# -*- coding: utf-8 -*-
 
 import os
 import random
@@ -130,14 +131,10 @@ class FunctionCalculator(object):
     """
     def __init__(self, func, params, test_id=1):
         self.test_id = 'math_test_' + str(test_id)
-        #if len(params) != func.num_terms:
-        #    assert('Error first parameter not equal to number of terms of function')
         self.params = params
         ans = 0
-        #for param_num, p in enumerate(self.params):
         for i in range(func.num_terms - 1):
             ans += func.mult[i] * params[i] ** func.expt[i]
-        #self.answer = '%.9f' %ans
         self.answer = str(ans)
 
     def __str__(self):
@@ -254,7 +251,7 @@ def get_list_words():
     with open(wordList) as f:
         return [line.strip().replace('_', ' ') for line in f if random.randrange(1,100) > 90]
 
-def get_list_dates(start_date=1985, end_date=2015):
+def get_list_dates(start_date=1985, end_date=2019):
     """
     picks a random year
     """
