@@ -4,9 +4,13 @@
 
 import os
 import random
+import logging
+
 import rawdata.generate
 data_fldr = os.path.abspath(os.path.dirname(os.path.abspath(__file__)) + os.sep + 'data' ) 
-    
+ 
+logging.basicConfig(filename='errors.log',level=logging.DEBUG,format='%(asctime)s %(message)s', datefmt='%m/%d/%Y %I:%M:%S %p')
+ 
 class TableWithErrors(object):
     """
     holds a table and manages the cleaning and 
@@ -50,7 +54,7 @@ class TableWithErrors(object):
         for _ in range(0, num):
             col = random.randint(0,len(self.tbl[0])-1)
             row = random.randint(1,len(self.tbl)-1)  # don't mess with header here
-            print('Adding error to col', col, ' row ', row)
+            logging.info('Adding error to col' +  str(col) + ' row ' + str(row))
             self.tbl[row][col] = self.glitch.random_error(self.tbl[row][col])
             
     def swap_columns(self, c1, c2):  
