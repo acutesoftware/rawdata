@@ -63,5 +63,3 @@ class TestCreate(unittest.TestCase):
         cntry_tbl = generate.TableGenerator(1, ['Code', 'Country'], ['STRING', 'STRING'])
         t12 = errors.TableWithErrors(cntry_tbl, '')
         t12.load_from_file(errors.data_fldr + os.sep + 'countries.csv')
-
-print('to run locally - import test_errors; unittest.main();')
