@@ -3,14 +3,23 @@
 # config.py     
 
 import os
+import sys
 
 fldrs = {}
 logs = {}
 params = {}
 
 # path for personal data location  (TODO - you need to modify this line below!)
+if sys.platform == 'linux':
+    if os.path.exists('/home/duncan'):
+        pers_fldr = '/home/duncan/AIKIF'
+        print('config.py : running locally on duncans PC!')
+    else:
+        pers_fldr = os.getcwd()        
+        print('config.py : running on CI build!')
+else:
+    pers_fldr = 'T:\\user\\AIKIF'
 
-pers_fldr = 'T:\\user\\AIKIF'
 
 fldrs['localPath'] = pers_fldr + os.sep 
 fldrs['log_folder'] = pers_fldr + os.sep + 'log' 
