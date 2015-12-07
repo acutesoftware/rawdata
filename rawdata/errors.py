@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+# -*- coding: utf-8 -*-
 # errors.py
 
 import os
@@ -74,6 +75,9 @@ class DataError(object):
         return self.fudge_string
     
     def random_error(self, orig):
+        """
+        choose one of the random error types already coded
+        """
         i = random.randint(1,3)
         if i == 1:
             return self._fixed_val()
@@ -83,12 +87,22 @@ class DataError(object):
             return self._add_spaces(orig)
     
     def _fixed_val(self):
+        """
+        return the fixed string specified at class instantiation
+        """
         return self.fudge_string
         
     def _blank_out(self):
+        """
+        blank out the data - useful for checking NULL values or
+        breaks in transmission
+        """
         return ''
         
     def _add_spaces(self, orig):
+        """
+        add spaces to start and end of columns
+        """
         if type(orig) is str:
             return ' ' + orig + '     '
         else:
