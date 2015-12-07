@@ -116,8 +116,6 @@ class TestContent(unittest.TestCase):
         tst1 = content.Samples(root_path)
         print('root_path = ', tst1.root_path)
         full_list = tst1.list()
-        #print(full_list)
-        #self.assertEqual(len(full_list) > 1, True)
+        print(full_list)
+        self.assertEqual(len(full_list) > 1, True)
         
-      
-print('to run locally - import test_errors; unittest.main();')

@@ -17,5 +17,3 @@ class TestGather(unittest.TestCase):
     def test_01_gather(self):
         self.assertEqual(len(gather.lookup_terms) > 2, True) 
 
-
-print('to run locally - import test_gather; unittest.main();')
