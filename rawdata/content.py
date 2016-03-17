@@ -10,7 +10,6 @@ data_fldr = os.path.abspath(os.path.dirname(os.path.abspath(__file__)) + os.sep 
 print('data_fldr = ', data_fldr)
 sample_xtn = '*.sample'
 
-    
 class DataFiles(object):
     """
     read data files from data subfolder to get lists
@@ -39,7 +38,6 @@ class DataFiles(object):
         self.lookup = []
         for root, _, files in os.walk(data_fldr):
             for f in files:
-                #print('DataFiles.init: f = ', f, 'root = ', root)
                 self.filelist.append([root + os.sep + f, root,f])
                 cols = self.get_all_columns(root + os.sep + f)
                 for c in cols:
@@ -73,7 +71,6 @@ class DataFiles(object):
             
     def get_sample(self, filename, col_name):
         set = self.get_collist_by_name(filename, col_name)
-        #print('lst = ', lst)
         return random.choice(list(set[0]))
     
     def get_collist_by_name(self, filename, col_name):
@@ -94,7 +91,7 @@ class DataFiles(object):
         line = ''
         res = []
         if os.path.exists(filename) is False:
-            return  None # []  # or should we return None?
+            return None
         try:
             with open(filename, 'r') as f:
                 line = f.readline()
@@ -111,8 +108,8 @@ class Samples(object):
     class to manage the list of sample files in /samples folder
     """
     def __init__(self, root_path):
-        self.sample_list = []  # filelist = [shortname, fullpath]
-        self.samples = []      # list of Sample objects
+        self.sample_list = []      # filelist = [shortname, fullpath]
+        self.samples = []          # list of Sample objects
         self.root_path = root_path # os.getcwd() + os.sep + 'samples'
         for root, _, files in os.walk(self.root_path):
             for basename in files:
@@ -125,7 +122,7 @@ class Samples(object):
     def __str__(self):
         txt = 'List of available sample definitions\n'
         for d in self.sample_list:
-            txt += d[0]  #.ljust(30) + d[1] + '\n'            
+            txt += d[0] 
         return txt    
     
     def get_sample_by_name(self, txt):
@@ -147,8 +144,6 @@ class Samples(object):
             res += d[0] + '\n'
         return res
 
-        
-        
 class Sample(object):
     """
     class to manage a single sample, read from 
@@ -159,7 +154,6 @@ class Sample(object):
         reads the .sample file passed and loads 
         to class.
         """
-        #print('INIT SAMPLE')
         self.fullname = fullname
         self.cols = []
         self.lists = []
@@ -169,8 +163,7 @@ class Sample(object):
         with open(fullname, 'r') as f:
             for line in f:
                 self._parse_line(line)
-                     
-    
+
     def __str__(self):
         res = 'Sample File = ' + self.fullname + '\n'
         for num, c in enumerate(self.cols):
@@ -181,8 +174,6 @@ class Sample(object):
         res += '\nDETAILS for generate\n'
         res += ' colLabels = [' + ','.join([c for c in self.col_labels]) + ']\n'
         res += ' colTypes  = [' + ','.join([c for c in self.col_types]) + ']\n'
-        
-        
         return res
       
     
@@ -200,4 +191,3 @@ class Sample(object):
                 details = parsed[1].strip('\n').split(',')
                 self.col_labels.append(details[0].strip(' '))
                 self.col_types.append(details[1].strip(' '))
-                
