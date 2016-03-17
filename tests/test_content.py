@@ -17,7 +17,6 @@ class TestContent(unittest.TestCase):
     def test_01_check_sample_datafiles(self):
         s = content.DataFiles()
         all_files = s.get_list()
-        #print(len(all_files))
         self.assertEqual(len(all_files) > 12, True)  # check for at least 12 data files
         #self.assertEqual(all_files[0][2],'countries.csv')
 
@@ -39,7 +38,6 @@ class TestContent(unittest.TestCase):
         fname = content.data_fldr + os.sep + 'finance' + os.sep + 'mining_copper_rent.csv'
         country_names_copper = s.get_collist_by_name(fname, 'Country Name')  # country code, Country Name
         self.assertEqual(len(country_names_copper[0]), 68)  # 68 countries mine copper
-        # print(country_names_copper)
         # [{'CHILE', 'AUSTRALIA', 'UNITED KINGDOM', 'Cuba', 'SOUTH AFRICA', 'INDONESIA', 
         #   'GUATEMALA', 'PHILIPPINES', 'NORWAY', 'ZIMBABWE', 'AUSTRIA', 'CYPRUS', 'CHINA', ...
     
@@ -57,7 +55,6 @@ class TestContent(unittest.TestCase):
         d = content.DataFiles()
         self.assertEqual(len(d.columns) > 1, True)
         
-        print(d.lookup[0:5])
         self.assertEqual('finance.mining_copper_rent.2002' in d.lookup, True)
         self.assertEqual('food.food_desc.Ref_Desc' in d.lookup, True)
         self.assertEqual('games.materials.name' in d.lookup, True)
@@ -66,8 +63,9 @@ class TestContent(unittest.TestCase):
     
     def test_09_datafile__str__(self):
         d = content.DataFiles()
-        print(d)
-    
+        self.assertEqual(len(str(d)), 6319)
+        self.assertEqual(str(d)[0:22], 'Data files read from :')
+        
     def test_10_datafile_get_list(self):
         d = content.DataFiles()
         list_1 = d.get_list()
@@ -83,6 +81,9 @@ class TestContent(unittest.TestCase):
         fname = content.data_fldr + os.sep + 'food' + os.sep + 'food_desc.csv'
         d = content.DataFiles()
         mysample = d.get_sample(fname, 'Long Desc')
+        print('mysample = ', mysample)
+        #self.assertEqual(mysample, '')
+        self.assertTrue(len(mysample) > 3)
     
     def test_13_datafile_get_all_columns(self):
         fname = content.data_fldr + os.sep + 'food' + os.sep + 'food_desc.csv'
@@ -94,13 +95,9 @@ class TestContent(unittest.TestCase):
         # check for dud file
         self.assertEqual(d.get_all_columns('FILE_NOT_FOUND.txt'), None)
         
-        
     def test_14_samples__str__(self):
         tst1 = content.Samples(root_path)
-        #print(tst1)
         self.assertEqual(str(tst1)[0:36], 'List of available sample definitions')
-    
-     
     
     def test_15_samples_get_sample_by_name(self):
         tst1 = content.Samples(root_path)
@@ -109,13 +106,14 @@ class TestContent(unittest.TestCase):
         
         s3 = tst1.get_sample_by_name('finance_transaction')
         self.assertEqual(len(str(s3)) > 50, True)
-        #print(s3)
         
         
     def test_16_samples_list(self):
         tst1 = content.Samples(root_path)
-        print('root_path = ', tst1.root_path)
+        #print('root_path = ', tst1.root_path)
         full_list = tst1.list()
-        print(full_list)
+        #print(full_list)
         self.assertEqual(len(full_list) > 1, True)
         
+if __name__ == '__main__':
+    unittest.main()
