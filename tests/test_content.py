@@ -114,6 +114,3 @@ class TestContent(unittest.TestCase):
         full_list = tst1.list()
         #print(full_list)
         self.assertEqual(len(full_list) > 1, True)
-        
-if __name__ == '__main__':
-    unittest.main()
