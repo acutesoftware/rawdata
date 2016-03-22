@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+# -*- coding: utf-8 -*-
 # location_data.py
 
 import requests
@@ -6,7 +8,13 @@ import os
 
 lst = ['Glenelg Jetty', 'Sydney Opera House', 'Uluru', 'New York,Central Park','Zimbabwe,Victoria Falls','1 King William St, Adelaide, Australia'] 
 
-
+lst = []
+with open(os.path.join(os.getcwd(),'..','..','..','test','list_names_to_lookup.txt')) as f:
+    for line in f:
+        lst.append(line.strip('\n'))
+        
+#print(lst)
+#exit(0)
 
 base_url = 'https://maps.googleapis.com/maps/api/geocode/json?'
 
@@ -17,7 +25,10 @@ if os.path.exists(raw_json_file):
 def main():
     res = '"search_term","result_num","gps_lat","gps_lng","formatted_address",\n'
     for name in lst:
-       res += lookup_address(name)
+        try:
+            res += lookup_address(name)
+        except Exception as ex:
+            print('missing data for ', name)
     with open('address.csv', 'w') as f:
         f.write(res)
     print('Done')
@@ -31,7 +42,16 @@ def lookup_address(nme):
 
     resp_json_payload = response.json()
     with open(raw_json_file, 'a') as f_raw:
-        pprint.pprint(resp_json_payload, stream=f_raw)
+        try:
+            pprint.pprint(resp_json_payload, stream=f_raw)
+        except Exception as ex:
+            #print('Whoops - cant pprint this one: ' + str(ex))
+            pass
+    
+    if len(resp_json_payload['results']) == 0:
+        csv_line += '"' + nme + '",'        
+        csv_line += '"0",\n'   
+        return csv_line
         
     for result_num,result in enumerate(resp_json_payload['results']):
         csv_line += '"' + nme + '",'        
