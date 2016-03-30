@@ -17,19 +17,19 @@ words = generate.get_list_words()
 places = generate.get_list_places()
 
 # Dairy
-custom_event = ['Sales Meeting', 'Workshop', 'Training']
+custom_event = ['Sales Meeting', 'Workshop', 'Training', 'Phone Hookup', 'Admin', 'Development work', 'Testing', 'Documentation']
 tpe_event = ['DATE', 'PEOPLE', 'PLACE', custom_event ]
 t_event = generate.TableGenerator(15,tpe_event, ['DATE', 'Name',   'Location', 'Details'])
 t_event.save_table(op_fldr + 'diary.csv')
 
 # Tasks
-custom_task = ['Write report', 'fix bug', 'work on documentation']
-t_task = generate.TableGenerator(8, ['PEOPLE', 'INT', custom_task], ['Assigned to', 'Priority', 'Task'])
+custom_task = ['Write report', 'fix bug', 'work on documentation', 'Add new feature', 'test new version', 'Demo to customer']
+t_task = generate.TableGenerator(8, ['PEOPLE', ['Hi', 'Med', 'Low'], custom_task], ['Assigned to', 'Priority', 'Task'])
 t_task.save_table(op_fldr + 'tasks.csv')
 
 # Contacts
-lbl_contact = ['Year_met', 'Customer_id', 'Age', 'Name', 'Country', 'Details', 'Amount']
-tpe_contact = ['DATE', 'STRING', 'INT', 'PEOPLE', 'PLACE', 'WORD', 'CURRENCY']
+lbl_contact = ['Year_met', 'Customer_id', 'Age', 'First Name', 'Last Name', 'Country', 'Amount']
+tpe_contact = ['DATE', 'STRING', 'INT', 'PEOPLE', 'PEOPLE', 'PLACE', 'CURRENCY']
 t_contact = generate.TableGenerator(50, tpe_contact, lbl_contact)
 t_contact.save_table(op_fldr + 'contacts.csv')
 
