@@ -168,5 +168,8 @@ class TestGenerate(unittest.TestCase):
         self.assertEqual(b, b'abcde')
         s2 = s.bytes_to_str(b)
         self.assertEqual(txt, s2)
-        print(s2)
+        #print(s2)
         
+    def test_12_get_dates(self):
+        t = generate.TableGenerator(9, ['DATE','YEAR'], ['Date of Birth','Year First Purchased'])
+        print(t)
