@@ -245,6 +245,26 @@ def load_lists(lst):
             results.append({'name': 'PLACE', 'lst': get_list_places()})
         if tpe == 'PEOPLE':
             results.append({'name': 'PEOPLE', 'lst': get_list_people()})
+            
+        #" ".join(str(x) for x in L)
+        if tpe == 'TEXT':
+            lst = []
+            txt = ''
+            all_words = get_list_words()
+            for j in range(1,500):   
+                for i in range(1,random.randint(1,10)+5):
+                    txt +=  random.choice(all_words)
+                    if random.randint(1,20) > 16:
+                        txt += '.\n'
+                    else:
+                        txt +=  ' ' + random.choice(all_words)
+                lst.append(txt)
+                txt = ''
+            #print('lst = ')
+            #for l in lst:
+            #    print('l = ', l)
+        results.append({'name': 'TEXT', 'lst': lst})
+            
     return results
          
 def get_list_words():
