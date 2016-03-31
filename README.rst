@@ -109,6 +109,21 @@ Other functions
         > 262  places :  ['Brazil', 'British Virgin Islands']
 
 
+List of Column Types (Table Generator)
+------------------------------------------
+'INT'      - returns a number
+'CURRENCY' - returns a currency that may have strings $ / pounds
+'STRING'   - returns a random string
+'WORD'     - returns a word from nouns.csv
+'DATE'     - returns a date
+'YEAR'     - returns a year. Both year and date can have ranges set via set_range()
+'PLACE'    - returns a location from country.csv
+'PEOPLE'   - returns a name from names.csv
+[list]     - pass any list to return a random choice from it
+                (e.g. my_colours = ['Blue', 'Green', 'Orange'] )
+                
+                
+
 
 More information is at https://github.com/acutesoftware/rawdata
 
