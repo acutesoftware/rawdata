@@ -153,36 +153,37 @@ class TableGenerator(Structure):
     def __init__(self, tot_rows, col_types, col_label):
         self.tot_rows = tot_rows
         self.col_types = col_types
-        col_label = col_label
+        self.col_label = col_label
         self.tbl = []
         s = StringGenerator()
         n = NumberGenerator()      
         # verify the col_types required and assign defaults to empty sets
-        cols = len(col_types)
+        self.cols = len(col_types)
         #colTypes = fill_colList_blanks(col_types, cols)
-        colTypes = col_types
+        self.colTypes = col_types
+        self.year_range = ['2010','2015']
         
         
-        print('Generating columns - ', colTypes)
-        wordLists = load_lists(colTypes)
+        print('Generating columns - ', self.colTypes)
+        wordLists = load_lists(self.colTypes)
         self.tbl.insert(0, col_label) # column headers
         for _ in range(0,tot_rows):
             thisRow = []
             txt = ''
-            for c in range(0, cols):
-                if colTypes[c] == 'INT':
+            for c in range(0, self.cols):
+                if self.colTypes[c] == 'INT':
                     txt = str(n.random_int())
-                elif colTypes[c] == 'STRING':
+                elif self.colTypes[c] == 'STRING':
                     txt = s.random_letters()
-                elif colTypes[c] == 'CURRENCY':
+                elif self.colTypes[c] == 'CURRENCY':
                     txt = n.random_currency(9, 499)
-                elif isinstance((colTypes[c]), (list, tuple)):
+                elif isinstance((self.colTypes[c]), (list, tuple)):
                     # getting random data from passed list
-                    txt = get_rand_text_from_list(colTypes[c])
+                    txt = get_rand_text_from_list(self.colTypes[c])
                 else:
                     for lst in wordLists:
                         if lst['name'] != 'INT':
-                            if lst['name'] == colTypes[c]:
+                            if lst['name'] == self.colTypes[c]:
                                 txt = get_rand_text_from_list(lst['lst'])
                 thisRow.append(txt)
             self.tbl.append(thisRow)
@@ -236,6 +237,8 @@ def load_lists(lst):
             results.append({'name': 'STRING', 'lst': get_list_string()})
         if tpe == 'WORD':
             results.append({'name': 'WORD', 'lst': get_list_words()})
+        if tpe == 'YEAR':
+            results.append({'name': 'YEAR', 'lst': get_list_years()})
         if tpe == 'DATE':
             results.append({'name': 'DATE', 'lst': get_list_dates()})
         if tpe == 'PLACE':
@@ -252,6 +255,12 @@ def get_list_words():
         return [line.strip().replace('_', ' ') for line in f if random.randrange(1,100) > 90]
 
 def get_list_dates(start_date=1985, end_date=2019):
+    """
+    picks a random date
+    """
+    return [str(i) + '-' + format(random.randint(1,12), '02d') + '-' + format(random.randint(1,30), '02d')  for i in range(start_date, end_date)]
+
+def get_list_years(start_date=1985, end_date=2019):
     """
     picks a random year
     """
