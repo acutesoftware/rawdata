@@ -1,0 +1,28 @@
+Material_name,Tensile strength_Mpa,Density_g_per_cm_cubed,Specific_strength_kN_m_per_kg ,Breaking length_km
+Concrete,12,2.3,5.22,0.44
+Rubber,15,0.92,16.3,1.66
+Copper,220,8.92,24.7,2.51
+Polypropylene,25-40,0.9,28-44,2.8-4.5
+Stainless steel (304),505,8,63.1,6.4
+Brass,580,8.55,67.8,6.91
+Nylon,78,1.13,69,7.04
+Oak,90,0.78-0.69,115-130,41609
+Inconel (X-750),1250,8.28,151,15.4
+Magnesium alloy,275,1.74,158,16.1
+Aluminium alloy (7075-T6),572,2.81,204,20.8
+Titanium,1300,4.51,288,29.4
+Bainite,2500,7.87,321,32.4
+Balsa,73,0.14,521,53.2
+Carbon-epoxy composite,1240,1.58,785,80
+Spider silk,1400,1.31,1069,109
+Silicon carbide fiber,3440,3.16,1088,110
+Glass fiber,3400,2.6,1307,133
+Basalt fiber,4840,2.7,1790,183
+1 ?m iron whiskers,14000,7.87,1800,183
+Vectran,2900,1.4,2071,211
+Carbon fiber (AS4),4300,1.75,2457,250
+Kevlar,3620,1.44,2514,256
+Dyneema (UHMWPE),3600,0.97,3711,378
+Zylon,5800,1.54,3766,384
+Carbon nanotube (see note below),62000,.037-1.34,46268-N/A,4716-N/A
+Colossal carbon tube,6900,0.116,59483,6066
