@@ -1,0 +1,7 @@
+type,name,cost_1_9,strength_1_9
+wood,pine,2,4
+wood,oak,4,5
+wood,plywood,3,6
+wood,chipboard,2,2
+metal,steel,5,8
+metal,iron,4,7
