@@ -1,44 +1,44 @@
-type,name,
-simple,wheel,
-simple,pulley,
-simple,inclined plane,
-simple,screw
-cutting,knife,
-cutting,scythe,
-cutting,sickle,
-cutting,saw-hand,
-cutting,saw-mitre,
-cutting,saw-jigsaw,
-cutting,saw-circular,
-cutting,drill,
-cutting,chisel,
-moving,hammer,
-moving,lever,
-moving,screwdriver,
-moving,pliers,
-moving,wrench,
-moving,spanner,
-chemical,blowtorch,
-chemical,lighter,
-measuring,ruler,
-measuring, ruler,
-measuring,glasses,
-measuring,set square,
-measuring,sensors,
-measuring,straightedge,
-measuring,theodolite,
-measuring,microscope,
-measuring,clock,
-measuring,phone,
-measuring,printer,
-shaping,mold,
-shaping,jig,
-shaping, trowel,
-fastening,welder,
-fastening,rivet gun,
-fastening,nail gun,
-fastening,glue gun,
-fastening,duct tape,
+type,name,avg_price,avg_weight_kg
+simple,wheel,100,10
+simple,pulley,200,10
+simple,inclined plane,10,15
+simple,screw,.1,.05
+cutting,knife,10,.3
+cutting,scythe,0,0
+cutting,sickle,0,0
+cutting,saw-hand,0,0
+cutting,saw-mitre,0,0
+cutting,saw-jigsaw,0,0
+cutting,saw-circular,0,0
+cutting,drill,0,0
+cutting,chisel,0,0
+moving,hammer,0,0
+moving,lever,0,0
+moving,screwdriver,0,0
+moving,pliers,0,0
+moving,wrench,0,0
+moving,spanner,0,0
+chemical,blowtorch,0,0
+chemical,lighter,0,0
+measuring,ruler,0,0
+measuring, ruler,0,0
+measuring,glasses,0,0
+measuring,set square,0,0
+measuring,sensors,0,0
+measuring,straightedge,0,0
+measuring,theodolite,0,0
+measuring,microscope,0,0
+measuring,clock,0,0
+measuring,phone,0,0
+measuring,printer,0,0
+shaping,mold,0,0
+shaping,jig,0,0
+shaping, trowel,0,0
+fastening,welder,0,0
+fastening,rivet gun,0,0
+fastening,nail gun,0,0
+fastening,glue gun,0,0
+fastening,duct tape,0,0
 
 
 
