@@ -114,3 +114,14 @@ class TestContent(unittest.TestCase):
         full_list = tst1.list()
         #print(full_list)
         self.assertEqual(len(full_list) > 1, True)
+
+    def test_17_data_building(self):
+        s = content.DataFiles()
+        fname = content.data_fldr + os.sep + 'building' + os.sep + 'tools.csv'
+        tool_list = s.get_collist_by_name(fname, 'name')
+        #print(tool_list)
+        self.assertTrue(len(tool_list[0]) > 10)
+        self.assertTrue('welder' in tool_list[0])
+        self.assertFalse('purple' in tool_list[0])
+        
+    
