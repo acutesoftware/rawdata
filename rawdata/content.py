@@ -81,10 +81,12 @@ class DataFiles(object):
                 cols = line.split(',')
                 if num == 0:
                     for col_num, col in enumerate(cols):
-                        if col.strip('"') == col_name:
+                        if col.strip('"').strip('\n') == col_name:
                             ndx = col_num
-    
-                res.append(cols[ndx].strip('"'))
+                #if 'tools.csv' in filename:
+                #    print(cols)
+                if line.strip('\n').strip('') != '':   # ignore blank lines
+                    res.append(cols[ndx].strip('"'))
         return [set(res)]            
 
     def get_all_columns(self, filename):
