@@ -124,4 +124,6 @@ class TestContent(unittest.TestCase):
         self.assertTrue('welder' in tool_list[0])
         self.assertFalse('purple' in tool_list[0])
         
-    
+        tool_types = s.get_collist_by_name(fname, 'type')
+        self.assertEqual(set(tool_types[0]),{'measuring', 'cutting', 'fastening', 'type', 'chemical', 'shaping', 'simple', 'moving'})
+        
