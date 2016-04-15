@@ -1,0 +1,9 @@
+action,material,cost_time,cost_material,method
+join,wood,0.4,.2,butt joint
+join,wood,0.6,.1,dovetail joint
+join,iron,0.5,0.1,weld
+cut,wood,0.4,0.04,hand saw
+cut,wood,0.1,0.1,mitre saw
+cut,iron,0.3,0.2,hacksaw
+cut,iron,0.1,0.04,drop saw
+
