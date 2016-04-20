@@ -6,7 +6,10 @@ import requests
 import pprint
 import os
 
-src_file = os.path.join(os.getcwd(),'..','..','..','test','list_names_to_lookup.txt')
+fldr = os.path.join(os.getcwd(),'..','..','..','test')
+#src_file = os.path.join(fldr,'list_names_to_lookup.txt')
+src_file = os.path.join(fldr,'list_names_to_lookup_CUT.txt')
+
 if os.path.exists(src_file):
     lst = []
     with open(src_file, 'r') as f:
@@ -19,7 +22,7 @@ else:
 
 base_url = 'https://maps.googleapis.com/maps/api/geocode/json?'
 
-raw_json_file = 'json_raw.txt'
+raw_json_file = os.path.join(fldr,'json_raw.txt')
 if os.path.exists(raw_json_file):
     os.remove(raw_json_file)
 
@@ -30,7 +33,7 @@ def main():
             res += lookup_address(name)
         except Exception as ex:
             print('missing data for ', name)
-    with open('address.csv', 'w') as f:
+    with open(os.path.join(fldr,'address.csv'), 'w') as f:
         f.write(res)
     print('Done')
 
