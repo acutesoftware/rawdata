@@ -6,14 +6,15 @@ import requests
 import pprint
 import os
 
-lst = ['Glenelg Jetty', 'Sydney Opera House', 'Uluru', 'New York,Central Park','Zimbabwe,Victoria Falls','1 King William St, Adelaide, Australia'] 
-
-"""
-lst = []
-with open(os.path.join(os.getcwd(),'..','..','..','test','list_names_to_lookup.txt')) as f:
-    for line in f:
-        lst.append(line.strip('\n'))
-"""        
+src_file = os.path.join(os.getcwd(),'..','..','..','test','list_names_to_lookup.txt')
+if os.path.exists(src_file):
+    lst = []
+    with open(src_file, 'r') as f:
+        for line in f:
+            lst.append(line.strip('\n'))
+else:
+    lst = ['Glenelg Jetty', 'Sydney Opera House', 'Uluru', 'New York,Central Park','Zimbabwe,Victoria Falls','1 King William St, Adelaide, Australia'] 
+     
 
 
 base_url = 'https://maps.googleapis.com/maps/api/geocode/json?'
