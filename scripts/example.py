@@ -8,6 +8,9 @@ root_fldr = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'rawda
 test_fldr = os.path.dirname(__file__) + os.sep + 'test_results'
 sys.path.insert(1, root_fldr)
 
+test_fldr = os.path.dirname(__file__) + os.sep + 'test_results'
+root_path = root_fldr + os.sep + 'samples'
+
 
 import generate
 import errors
@@ -65,7 +68,7 @@ for r in t2.tbl[0:4]:
     # [2002, 'Maire', 'Nauru', '295.10']
   
 print('Example using sample config files')
-s = content.Samples()
+s = content.Samples(root_path)
 f = s.get_sample_by_name('finance_transaction')
 print(f)
 
