@@ -7,8 +7,6 @@ import sys
 root_fldr = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'rawdata'))
 test_fldr = os.path.dirname(__file__) + os.sep + 'test_results'
 sys.path.insert(1, root_fldr)
-
-test_fldr = os.path.dirname(__file__) + os.sep + 'test_results'
 root_path = root_fldr + os.sep + 'samples'
 
 
