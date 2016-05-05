@@ -163,8 +163,6 @@ class TableGenerator(Structure):
         self.colTypes = col_types
         self.year_range = ['2010','2015']
         
-        
-        print('Generating columns - ', self.colTypes)
         wordLists = load_lists(self.colTypes)
         self.tbl.insert(0, col_label) # column headers
         for _ in range(0,tot_rows):
@@ -176,7 +174,7 @@ class TableGenerator(Structure):
                 elif self.colTypes[c] == 'STRING':
                     txt = s.random_letters()
                 elif self.colTypes[c] == 'CURRENCY':
-                    txt = n.random_currency(9, 499)
+                    txt = n.random_currency()
                 elif isinstance((self.colTypes[c]), (list, tuple)):
                     # getting random data from passed list
                     txt = get_rand_text_from_list(self.colTypes[c])
@@ -191,6 +189,12 @@ class TableGenerator(Structure):
 
     def __str__(self):
         txt = '\n'.join(','.join([col if type(col) is str else str(col) for col in row]) for row in self.tbl)
+        txt += '\ncolumn types\n'
+        for t in self.colTypes:
+            txt += str(t) + '\n'
+            
+        
+        
         return txt
 
     def get_column(self, ndx):
