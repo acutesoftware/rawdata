@@ -86,7 +86,7 @@ class DataFiles(object):
                 #if 'tools.csv' in filename:
                 #    print(cols)
                 if line.strip('\n').strip('') != '':   # ignore blank lines
-                    res.append(cols[ndx].strip('"'))
+                    res.append(cols[ndx].strip('\n').strip('"'))
         return [set(res)]            
 
     def get_all_columns(self, filename):
