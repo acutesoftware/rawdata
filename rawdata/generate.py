@@ -220,9 +220,9 @@ def load_lists(lst):
         l =  INT
         l =  ['Carved Statue', '1984 Volvo', '2 metre Ball of string']
     
-    lists_to_load = {l for l in lst}	# get unique list of types so only loading them once each
+    lists_to_load = {l for l in lst}    # get unique list of types so only loading them once each
     """
-    results = []	
+    results = []    
     lists_to_load = []
     for l in lst:
         #print(' l = ', l)
@@ -274,11 +274,20 @@ def get_list_words():
     with open(wordList) as f:
         return [line.strip().replace('_', ' ') for line in f if random.randrange(1,100) > 90]
 
-def get_list_dates(start_date=1985, end_date=2019):
+def get_list_dates(start_year=1985, end_year=2019, num_dates=10):
     """
     picks a random date
     """
-    return [str(i) + '-' + format(random.randint(1,12), '02d') + '-' + format(random.randint(1,30), '02d')  for i in range(start_date, end_date)]
+    res = []
+    d = 0
+    m = 0
+    
+    for _ in range(0,num_dates):
+        m = random.randint(1,12)
+        d = random.randint(1,30)
+        y = random.randint(start_year,end_year)
+        res.append(str(y) + '-' + format(m, '02d') + '-' + format(d, '02d'))
+    return res
 
 def get_list_years(start_date=1985, end_date=2019):
     """
