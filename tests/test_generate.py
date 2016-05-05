@@ -173,3 +173,19 @@ class TestGenerate(unittest.TestCase):
     def test_12_get_dates(self):
         t = generate.TableGenerator(9, ['DATE','YEAR'], ['Date of Birth','Year First Purchased'])
         print(t)
+        
+    
+    def test_13_more_dates(self):
+        d = generate.get_list_dates(start_year=2013, end_year=2016, num_dates=10000)
+        print(d[0:4])
+        self.assertEqual(len(d), 10000)
+        self.assertEqual(len(d[23]), 10)
+        self.assertEqual(d[0][4:5], '-')
+        self.assertEqual(d[0][7:8], '-')
+        self.assertTrue(min(d) > '2013-01-00')
+        self.assertTrue(max(d) < '2016-12-31')
+        
+        
+    
+if __name__ == '__main__':
+    unittest.main()        
