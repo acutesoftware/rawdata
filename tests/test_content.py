@@ -127,3 +127,26 @@ class TestContent(unittest.TestCase):
         tool_types = s.get_collist_by_name(fname, 'type')
         self.assertEqual(set(tool_types[0]),{'measuring', 'cutting', 'fastening', 'type', 'chemical', 'shaping', 'simple', 'moving'})
         
+
+        
+    def test_20_samples_person_consumer(self):
+        tst20 = content.Samples(root_path)
+        s20 = tst20.get_sample_by_name('person_consumer')
+        self.assertEqual(len(str(s20)) > 50, True)
+        #print(s20.cols)
+        #print(s20.lists)
+        self.assertEqual(len(s20.lists), 3)
+        self.assertEqual(s20.lists[0], 'date_range = [2015, 2017]')
+        self.assertEqual(s20.lists[1], 'amount_range = [2.50, 123.30]')
+        self.assertEqual(s20.lists[2], 'spending_type = [\'saves\',\'spends\']')
+        
+        self.assertEqual(len(s20.cols), 4)
+        self.assertEqual(s20.cols[0], 'Name, NAME, !random!')
+        self.assertEqual(s20.cols[1], 'Spend_type,WORD,spending_type')
+        self.assertEqual(s20.cols[2], 'Fav_hobby, WORD, !random!')
+        self.assertEqual(s20.cols[3], 'Location, PLACE, !random!')
+        
+        
+        
+        
+        
