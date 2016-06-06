@@ -1,0 +1,3 @@
+spending_type,effect_name,effect_value
+saves,cost,0.1
+spends,cost,-0.1
