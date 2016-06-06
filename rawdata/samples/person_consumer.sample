@@ -1,0 +1,22 @@
+# person_consumer.sample
+#
+# lines starting with # are ignored
+# lines starting with LIST: define a named list
+# lines starting with COLUMN: define a column_name
+
+#########################
+# Content definitions   #
+#########################
+
+LIST:date_range = [2015, 2017]
+LIST:amount_range = [2.50, 123.30]
+LIST:spending_type = ['saves','spends']
+
+#########################
+# Column definitions    #
+#########################
+# column_name, column_type, col_vals
+COLUMN:Name, NAME, !random!
+COLUMN:Spend_type,WORD,spending_type
+COLUMN:Fav_hobby, WORD, !random!
+COLUMN:Location, PLACE, !random!
