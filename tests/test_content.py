@@ -135,7 +135,7 @@ class TestContent(unittest.TestCase):
         self.assertEqual(len(str(s20)) > 50, True)
         #print(s20.cols)
         #print(s20.lists)
-        self.assertEqual(len(s20.lists), 3)
+        self.assertEqual(len(s20.lists), 4)
         self.assertEqual(s20.lists[0], 'date_range = [2015, 2017]')
         self.assertEqual(s20.lists[1], 'amount_range = [2.50, 123.30]')
         self.assertEqual(s20.lists[2], 'spending_type = [\'saves\',\'spends\']')
