@@ -5,6 +5,7 @@
 import os
 import random
 import fnmatch
+import ast
 
 data_fldr = os.path.abspath(os.path.dirname(os.path.abspath(__file__)) + os.sep + 'data' ) 
 print('data_fldr = ', data_fldr)
@@ -117,6 +118,7 @@ class Samples(object):
             for basename in files:
                 if fnmatch.fnmatch(basename, sample_xtn):
                     filename = os.path.join(root, basename)
+                    print('samples init - filename = ', filename)
                     self.sample_list.append([basename, filename])
                     self.samples.append(Sample(filename))
                 
@@ -171,7 +173,7 @@ class Sample(object):
         for num, c in enumerate(self.cols):
             res += 'Column#' + str(num) + ' = ' + c + '\n'
         for num, l in enumerate(self.lists):
-            res += 'List#' + str(num) + ' = ' + l + '\n'
+            res += 'List#' + str(num) + ' = ' + str(l) + '\n'
         
         res += '\nDETAILS for generate\n'
         res += ' colLabels = [' + ','.join([c for c in self.col_labels]) + ']\n'
@@ -185,10 +187,10 @@ class Sample(object):
         class objects.
         """
         if line[0] != '#':
-            parsed = line.split(':')
-            if parsed[0] == 'LIST':
-                self.lists.append(parsed[1].strip('\n'))
-            elif parsed[0] == 'COLUMN':
+            if line[0:4] == 'LIST':
+                self.lists.append(ast.literal_eval(line[5:].strip('\n')))
+            elif line[0:6] == 'COLUMN':
+                parsed = line.split(':')
                 self.cols.append(parsed[1].strip('\n'))
                 details = parsed[1].strip('\n').split(',')
                 self.col_labels.append(details[0].strip(' '))
