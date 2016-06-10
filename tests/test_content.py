@@ -96,7 +96,7 @@ class TestContent(unittest.TestCase):
         self.assertEqual(d.get_all_columns('FILE_NOT_FOUND.txt'), None)
 
 
-    """        
+      
     def test_14_samples__str__(self):
         tst1 = content.Samples(root_path)
         self.assertEqual(str(tst1)[0:36], 'List of available sample definitions')
@@ -137,7 +137,8 @@ class TestContent(unittest.TestCase):
         #print('s20.cols = ', s20.cols)
         print('s20.lists = ', s20.lists)
         self.assertEqual(len(s20.lists), 4)
-        self.assertEqual(s20.lists[0], 'date_range = [2015, 2017]')
+        self.assertEqual(s20.lists[0], {'date_range':[2015, 2017]})
+        """
         self.assertEqual(s20.lists[1], 'amount_range = [2.50, 123.30]')
         self.assertEqual(s20.lists[2], 'spending_type = [\'saves\',\'spends\']')
         
@@ -146,9 +147,9 @@ class TestContent(unittest.TestCase):
         self.assertEqual(s20.cols[1], 'Spend_type,WORD,spending_type')
         self.assertEqual(s20.cols[2], 'Fav_hobby, WORD, !random!')
         self.assertEqual(s20.cols[3], 'Location, PLACE, !random!')
+        """
 
 
-    """
         
     def test_21_random_person(self):
         tst21 = content.Samples(root_path)
@@ -157,7 +158,7 @@ class TestContent(unittest.TestCase):
         #print('s21.lists = ', s21.lists)
         person = {}
         for l in s21.lists:
-            print('s21.lists = ', l)
+            #print('s21.lists = ', l)
             for k,v in l.items():
                 person[k] = random.choice(v)
         
