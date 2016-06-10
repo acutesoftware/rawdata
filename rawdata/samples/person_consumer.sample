@@ -8,10 +8,10 @@
 # Content definitions   #
 #########################
 
-LIST:date_range = [2015, 2017]
-LIST:amount_range = [2.50, 123.30]
-LIST:spending_type = ['saves','spends']
-LIST:hobbies = ['movies','gym','woodwork','games','cooking','model trains']
+LIST:{'date_range':[2015, 2017]}
+LIST:{'amount_range': [2.50, 123.30]}
+LIST:{'spending_type': ['saves','spends']}
+LIST:{'hobbies': ['movies','gym','woodwork','games','cooking','model trains']}
 
 #########################
 # Column definitions    #
