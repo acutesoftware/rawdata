@@ -154,9 +154,12 @@ class TestContent(unittest.TestCase):
         tst21 = content.Samples(root_path)
         import random
         s21 = tst21.get_sample_by_name('person_consumer')
-        print('s21 = ', s21)
+        #print('s21.lists = ', s21.lists)
         person = {}
-        person['Spend_type'] = random.choice(s21.cols[1])
+        for l in s21.lists:
+            print('s21.lists = ', l)
+            for k,v in l.items():
+                person[k] = random.choice(v)
         
         print('person = ', person)
         
