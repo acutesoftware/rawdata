@@ -10,8 +10,8 @@
 # Content definitions   #
 #########################
 
-LIST:date_range = [2013, 2014]
-LIST:amount_range = [12.50, 738.99]
+LIST:{'date_range':[2013, 2014]}
+LIST:{'amount_range':[12.50, 738.99]}
 
 #########################
 # Column definitions    #
