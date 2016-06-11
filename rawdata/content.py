@@ -118,7 +118,6 @@ class Samples(object):
             for basename in files:
                 if fnmatch.fnmatch(basename, sample_xtn):
                     filename = os.path.join(root, basename)
-                    print('samples init - filename = ', filename)
                     self.sample_list.append([basename, filename])
                     self.samples.append(Sample(filename))
                 
