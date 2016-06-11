@@ -81,8 +81,6 @@ class TestContent(unittest.TestCase):
         fname = content.data_fldr + os.sep + 'food' + os.sep + 'food_desc.csv'
         d = content.DataFiles()
         mysample = d.get_sample(fname, 'Long Desc')
-        print('mysample = ', mysample)
-        #self.assertEqual(mysample, '')
         self.assertTrue(len(mysample) > 3)
     
     def test_13_datafile_get_all_columns(self):
@@ -112,16 +110,14 @@ class TestContent(unittest.TestCase):
         
     def test_16_samples_list(self):
         tst1 = content.Samples(root_path)
-        #print('root_path = ', tst1.root_path)
         full_list = tst1.list()
-        #print(full_list)
+        print('full_list = ', full_list)
         self.assertEqual(len(full_list) > 1, True)
 
     def test_17_data_building(self):
         s = content.DataFiles()
         fname = content.data_fldr + os.sep + 'building' + os.sep + 'tools.csv'
         tool_list = s.get_collist_by_name(fname, 'name')
-        #print(tool_list)
         self.assertTrue(len(tool_list[0]) > 10)
         self.assertTrue('welder' in tool_list[0])
         self.assertFalse('purple' in tool_list[0])
@@ -134,35 +130,32 @@ class TestContent(unittest.TestCase):
         tst20 = content.Samples(root_path)
         s20 = tst20.get_sample_by_name('person_consumer')
         self.assertEqual(len(str(s20)) > 50, True)
-        #print('s20.cols = ', s20.cols)
-        print('s20.lists = ', s20.lists)
         self.assertEqual(len(s20.lists), 4)
         self.assertEqual(s20.lists[0], {'date_range':[2015, 2017]})
-        """
-        self.assertEqual(s20.lists[1], 'amount_range = [2.50, 123.30]')
-        self.assertEqual(s20.lists[2], 'spending_type = [\'saves\',\'spends\']')
+        
+        self.assertEqual(s20.lists[1], {'amount_range':[2.50, 123.30]})
+        self.assertEqual(s20.lists[2], {'spending_type':['saves','spends']})
         
         self.assertEqual(len(s20.cols), 4)
         self.assertEqual(s20.cols[0], 'Name, NAME, !random!')
         self.assertEqual(s20.cols[1], 'Spend_type,WORD,spending_type')
         self.assertEqual(s20.cols[2], 'Fav_hobby, WORD, !random!')
         self.assertEqual(s20.cols[3], 'Location, PLACE, !random!')
-        """
+        
 
 
         
     def test_21_random_person(self):
         tst21 = content.Samples(root_path)
         import random
+        import pprint
         s21 = tst21.get_sample_by_name('person_consumer')
-        #print('s21.lists = ', s21.lists)
         person = {}
         for l in s21.lists:
-            #print('s21.lists = ', l)
             for k,v in l.items():
                 person[k] = random.choice(v)
         
-        print('person = ', person)
+        pprint.pprint(person)
         
     
     
