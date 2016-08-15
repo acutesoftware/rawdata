@@ -17,6 +17,10 @@ Raw Data
    :target: https://landscape.io/github/acutesoftware/rawdata/master
    :alt: Code Health    
 
+.. image:: https://codeclimate.com/github/acutesoftware/rawdata/badges/gpa.svg
+   :target: https://codeclimate.com/github/acutesoftware/rawdata
+   :alt: Code Climate
+ 
 .. image:: https://requires.io/github/acutesoftware/rawdata/requirements.svg?branch=master
      :target: https://requires.io/github/acutesoftware/rawdata/requirements/?branch=master
      :alt: Requirements Status
