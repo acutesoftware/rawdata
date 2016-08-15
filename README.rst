@@ -1,11 +1,14 @@
 =========================================
 Raw Data
 =========================================
-.. image:: https://travis-ci.org/acutesoftware/rawdata.svg?branch=master
+
+.. image:: https://api.travis-ci.org/repositories/acutesoftware/rawdata.svg
     :target: https://travis-ci.org/acutesoftware/rawdata
+    :alt: Build Status
 
 .. image:: https://coveralls.io/repos/acutesoftware/rawdata/badge.svg?branch=master&service=github
   :target: https://coveralls.io/github/acutesoftware/rawdata?branch=master
+  :alt: Coverage
    
 .. image:: https://badge.fury.io/py/rawdata.svg
     :target: http://badge.fury.io/py/rawdata 
