@@ -88,7 +88,7 @@ class DataFiles(object):
                 #    print(cols)
                 if line.strip('\n').strip('') != '':   # ignore blank lines
                     res.append(cols[ndx].strip('\n').strip('"'))
-        return [set(res)]            
+        return [set(res[1:])]              # dont return the heading column
 
     def get_all_columns(self, filename):
         line = ''
