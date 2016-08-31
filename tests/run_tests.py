@@ -27,6 +27,6 @@ def wipe_file(fname):
 
 print ('WIPING ALL TEST RESULTS - PRESS CTRL C TO STOP')
 
-time.sleep(5)
+time.sleep(4)
 wipe_file('random_table.csv')
 
