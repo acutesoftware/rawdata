@@ -24,20 +24,20 @@ class TestContent(unittest.TestCase):
         s = content.DataFiles()
         data_file = content.data_fldr + os.sep + 'games' + os.sep + 'skills.csv'
         col1 = s.get_collist_by_name(data_file, 'type' )
-        self.assertEqual(col1, [{'buff', 'change', 'build', 'type', 'info', 'gather', 'attack', 'heal'}])
+        self.assertEqual(col1, [{'buff', 'change', 'build', 'info', 'gather', 'attack', 'heal'}])
         
     def test_03_read_list(self):
         s = content.DataFiles()
         fname = content.data_fldr + os.sep + 'food' + os.sep + 'food_desc.csv'
         food_list = s.get_collist_by_name(fname, 'Long_Desc')
-        self.assertEqual(len(food_list[0]), 1114)
+        self.assertEqual(len(food_list[0]), 1113)
     
     def test_04_read_data_copper(self):
         # get list of countries from copper production
         s = content.DataFiles()
         fname = content.data_fldr + os.sep + 'finance' + os.sep + 'mining_copper_rent.csv'
         country_names_copper = s.get_collist_by_name(fname, 'Country Name')  # country code, Country Name
-        self.assertEqual(len(country_names_copper[0]), 68)  # 68 countries mine copper
+        self.assertEqual(len(country_names_copper[0]), 67)  # 68 countries mine copper
         # [{'CHILE', 'AUSTRALIA', 'UNITED KINGDOM', 'Cuba', 'SOUTH AFRICA', 'INDONESIA', 
         #   'GUATEMALA', 'PHILIPPINES', 'NORWAY', 'ZIMBABWE', 'AUSTRIA', 'CYPRUS', 'CHINA', ...
     
@@ -123,7 +123,7 @@ class TestContent(unittest.TestCase):
         self.assertFalse('purple' in tool_list[0])
         
         tool_types = s.get_collist_by_name(fname, 'type')
-        self.assertEqual(set(tool_types[0]),{'measuring', 'cutting', 'fastening', 'type', 'chemical', 'shaping', 'simple', 'moving'})
+        self.assertEqual(set(tool_types[0]),{'measuring', 'cutting', 'fastening', 'chemical', 'shaping', 'simple', 'moving'})
 
         
     def test_20_samples_person_consumer(self):
