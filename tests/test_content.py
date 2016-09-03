@@ -19,6 +19,7 @@ class TestContent(unittest.TestCase):
         all_files = s.get_list()
         self.assertEqual(len(all_files) > 12, True)  # check for at least 12 data files
         #self.assertEqual(all_files[0][2],'countries.csv')
+        #print(all_files)
 
     def test_02_get_collist(self):
         s = content.DataFiles()
@@ -59,6 +60,9 @@ class TestContent(unittest.TestCase):
         self.assertEqual('food.food_desc.Ref_Desc' in d.lookup, True)
         self.assertEqual('games.materials.name' in d.lookup, True)
         self.assertEqual('.countries.country_code' in d.lookup, True)  # this should be moved
+        #print('d.columns = ', d.columns)
+        
+
     
     
     def test_09_datafile__str__(self):
@@ -70,6 +74,10 @@ class TestContent(unittest.TestCase):
         d = content.DataFiles()
         list_1 = d.get_list()
         list_2 = d.get_list(True)
+        
+        #print('list1 = ', list_1)
+        #print('list2 = ', list_2)
+        
     
     def test_11_datafile_get_list_fullname(self):
         d = content.DataFiles()
@@ -94,7 +102,7 @@ class TestContent(unittest.TestCase):
         self.assertEqual(d.get_all_columns('FILE_NOT_FOUND.txt'), None)
 
 
-      
+     
     def test_14_samples__str__(self):
         tst1 = content.Samples(root_path)
         self.assertEqual(str(tst1)[0:36], 'List of available sample definitions')
@@ -111,7 +119,7 @@ class TestContent(unittest.TestCase):
     def test_16_samples_list(self):
         tst1 = content.Samples(root_path)
         full_list = tst1.list()
-        print('full_list = ', full_list)
+        #print('full_list = ', full_list)
         self.assertEqual(len(full_list) > 1, True)
 
     def test_17_data_building(self):
@@ -125,7 +133,20 @@ class TestContent(unittest.TestCase):
         tool_types = s.get_collist_by_name(fname, 'type')
         self.assertEqual(set(tool_types[0]),{'measuring', 'cutting', 'fastening', 'chemical', 'shaping', 'simple', 'moving'})
 
+    def test_18_get_list_columns(self):
+        s = content.DataFiles()
+        cols_world = s.get_list_columns('world')
+        #print('cols_world = ', len(cols_world), cols_world)
+        self.assertTrue('world.country.CountryCode' in cols_world)
+        self.assertTrue('world.country.Latest agricultural census' in cols_world)
         
+        cols_building = s.get_list_columns('building')
+        #print('cols_building = ', len(cols_building), cols_building)
+        self.assertTrue('building.tools.name' in cols_building)
+        self.assertTrue('building.materials_specific_strength.Tensile strength_Mpa' in cols_building)
+        self.assertTrue('building.actions.cost_time' in cols_building)
+        
+         
     def test_20_samples_person_consumer(self):
         tst20 = content.Samples(root_path)
         s20 = tst20.get_sample_by_name('person_consumer')
