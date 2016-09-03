@@ -147,7 +147,15 @@ class TestContent(unittest.TestCase):
         cols_multiple = s.get_list_columns('material')
         self.assertTrue('games.materials.drop_rate' in cols_multiple)
         self.assertTrue('building.materials_specific_strength.Material_name' in cols_multiple)
-     
+        
+        cols_multiple2 = s.get_list_columns('desc')
+        self.assertTrue('countries.country_desc' in cols_multiple2)
+        self.assertTrue('games.materials.description' in cols_multiple2)
+        self.assertTrue('games.monsters.desc' in cols_multiple2)
+        self.assertTrue('games.skills.description' in cols_multiple2)
+        self.assertTrue('food.food_desc.NDB_No' in cols_multiple2)
+        
+   
     def test_20_samples_person_consumer(self):
         tst20 = content.Samples(root_path)
         s20 = tst20.get_sample_by_name('person_consumer')
