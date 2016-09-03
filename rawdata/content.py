@@ -64,6 +64,17 @@ class DataFiles(object):
         else:
             return self.filelist
             
+    def get_list_columns(self, filter=''):
+        """
+        retrieve a list of all columns in the datafiles folder
+        with optional filter
+        """
+        res = []
+        for r in self.columns:
+            if filter in r[4]:
+                res.append(r[4])
+        return res
+
     def get_list_fullname(self):
         lst = []
         for row in self.filelist:
