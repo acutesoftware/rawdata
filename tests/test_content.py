@@ -136,17 +136,18 @@ class TestContent(unittest.TestCase):
     def test_18_get_list_columns(self):
         s = content.DataFiles()
         cols_world = s.get_list_columns('world')
-        #print('cols_world = ', len(cols_world), cols_world)
         self.assertTrue('world.country.CountryCode' in cols_world)
         self.assertTrue('world.country.Latest agricultural census' in cols_world)
         
         cols_building = s.get_list_columns('building')
-        #print('cols_building = ', len(cols_building), cols_building)
         self.assertTrue('building.tools.name' in cols_building)
         self.assertTrue('building.materials_specific_strength.Tensile strength_Mpa' in cols_building)
         self.assertTrue('building.actions.cost_time' in cols_building)
         
-         
+        cols_multiple = s.get_list_columns('material')
+        self.assertTrue('games.materials.drop_rate' in cols_multiple)
+        self.assertTrue('building.materials_specific_strength.Material_name' in cols_multiple)
+     
     def test_20_samples_person_consumer(self):
         tst20 = content.Samples(root_path)
         s20 = tst20.get_sample_by_name('person_consumer')
