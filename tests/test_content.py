@@ -136,6 +136,7 @@ class TestContent(unittest.TestCase):
     def test_18_get_list_columns(self):
         s = content.DataFiles()
         cols_world = s.get_list_columns('world')
+        print('cols_world = ', cols_world)
         self.assertTrue('world.country.CountryCode' in cols_world)
         self.assertTrue('world.country.Latest agricultural census' in cols_world)
         
@@ -149,7 +150,7 @@ class TestContent(unittest.TestCase):
         self.assertTrue('building.materials_specific_strength.Material_name' in cols_multiple)
         
         cols_multiple2 = s.get_list_columns('desc')
-        self.assertTrue('countries.country_desc' in cols_multiple2)
+        self.assertTrue('.countries.country_desc' in cols_multiple2)
         self.assertTrue('games.materials.description' in cols_multiple2)
         self.assertTrue('games.monsters.desc' in cols_multiple2)
         self.assertTrue('games.skills.description' in cols_multiple2)
