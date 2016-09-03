@@ -107,7 +107,7 @@ class DataFiles(object):
         if os.path.exists(filename) is False:
             return None
         try:
-            with open(filename, 'r') as f:
+            with open(filename, 'r', encoding='utf-8', errors='ignore' ) as f:
                 line = f.readline()
                 cols = line.split(',')
                 for col in cols:
