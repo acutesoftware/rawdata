@@ -84,7 +84,7 @@ class DataFiles(object):
     def get_sample(self, filename, col_name):
         set = self.get_collist_by_name(filename, col_name)
         return random.choice(list(set[0]))
-    
+        
     def get_collist_by_name(self, filename, col_name):
         with open(filename) as f:
             ndx = 0
@@ -100,6 +100,36 @@ class DataFiles(object):
                 if line.strip('\n').strip('') != '':   # ignore blank lines
                     res.append(cols[ndx].strip('\n').strip('"'))
         return [set(res[1:])]              # dont return the heading column
+        
+    def get_filtered_sample(self, filename, col_name, filter_col_id, filter_val_list):
+        """
+        retrieve a random sample from a data file under the col_name
+        but filter on another column
+        """
+        res = self.get_filtered_collist_by_name(filename, col_name, filter_col_id, filter_val_list)
+        return random.choice(res)
+        
+    def get_filtered_collist_by_name(self, filename, col_name, filter_col_id, filter_val_list):
+        with open(filename) as f:
+            ndx = 0
+            res = []
+            for num, line in enumerate(f):
+                cols = line.split(',')
+                if num == 0:
+                    for col_num, col in enumerate(cols):
+                        if col.strip('"').strip('\n') == col_name:
+                            ndx = col_num
+                else:
+                    if line.strip('\n').strip('') != '':   # ignore blank lines
+                    
+                        if cols[filter_col_id].strip('"').strip('\n') in filter_val_list:
+                            #print('MATCH')
+                            #print('cols[filter_col_id] = ', cols[filter_col_id])
+                            #print('filter_val_list     = ', filter_val_list)
+                            #print('cols[ndx] = ', cols[ndx].strip('\n').strip('"'))
+                            res.append(cols[ndx].strip('\n').strip('"'))
+        return [set(res)]       
+    
 
     def get_all_columns(self, filename):
         line = ''
