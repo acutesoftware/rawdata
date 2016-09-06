@@ -63,7 +63,24 @@ class TestContent(unittest.TestCase):
         #print('d.columns = ', d.columns)
         
 
-    
+    def test_06_get_filtered_sample(self):
+        d = content.DataFiles()
+        fname = os.path.join(content.data_fldr,'computer','hardware', 'hard drive.csv')
+        all_hard_drive_names = d.get_collist_by_name(fname, 'Size_MBytes') 
+        self.assertEqual(len(all_hard_drive_names[0]), 73) 
+        
+        hard_drive_names_2014 = d.get_filtered_collist_by_name(fname, 'Size_MBytes', 2, ['2014']) 
+        self.assertEqual(len(hard_drive_names_2014[0]), 2) 
+        self.assertTrue('3000000' in hard_drive_names_2014[0]) 
+        self.assertTrue('4000000' in hard_drive_names_2014[0]) 
+
+
+        hard_drive_names_2004_2006 = d.get_filtered_collist_by_name(fname, 'Size_MBytes', 2, ['2004','2005','2006']) 
+        self.assertEqual(len(hard_drive_names_2004_2006[0]), 7) 
+        self.assertTrue('81900' in hard_drive_names_2004_2006[0]) 
+        self.assertTrue('320000' in hard_drive_names_2004_2006[0]) 
+
+        
     
     def test_09_datafile__str__(self):
         d = content.DataFiles()
@@ -94,7 +111,6 @@ class TestContent(unittest.TestCase):
     def test_13_datafile_get_all_columns(self):
         fname = content.data_fldr + os.sep + 'food' + os.sep + 'food_desc.csv'
         d = content.DataFiles()
-        #print(d.get_all_columns(fname))
         self.assertEqual(len(d.get_all_columns(fname)), 14)
         self.assertEqual(d.get_all_columns(fname)[0], 'NDB_No')
         
@@ -119,7 +135,6 @@ class TestContent(unittest.TestCase):
     def test_16_samples_list(self):
         tst1 = content.Samples(root_path)
         full_list = tst1.list()
-        #print('full_list = ', full_list)
         self.assertEqual(len(full_list) > 1, True)
 
     def test_17_data_building(self):
@@ -136,7 +151,6 @@ class TestContent(unittest.TestCase):
     def test_18_get_list_columns(self):
         s = content.DataFiles()
         cols_world = s.get_list_columns('world')
-        print('cols_world = ', cols_world)
         self.assertTrue('world.country.CountryCode' in cols_world)
         self.assertTrue('world.country.Latest agricultural census' in cols_world)
         
@@ -186,7 +200,7 @@ class TestContent(unittest.TestCase):
             for k,v in l.items():
                 person[k] = random.choice(v)
         
-        pprint.pprint(person)
+        #pprint.pprint(person)
         
     
     
