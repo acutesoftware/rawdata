@@ -92,10 +92,6 @@ class TestContent(unittest.TestCase):
         list_1 = d.get_list()
         list_2 = d.get_list(True)
         
-        #print('list1 = ', list_1)
-        self.assertTrue(len(str(list_1)) > 50)
-        #print('list2 = ', list_2)
-        
         self.assertEqual(len(list_1),111)
         self.assertEqual(len(list_2),111)
         
