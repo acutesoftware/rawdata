@@ -199,6 +199,7 @@ class TestContent(unittest.TestCase):
         for l in s21.lists:
             for k,v in l.items():
                 person[k] = random.choice(v)
+        self.assertTrue(len(s21.lists) > 2)
         
         #pprint.pprint(person)
         
