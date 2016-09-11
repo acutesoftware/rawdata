@@ -168,11 +168,17 @@ class TestGenerate(unittest.TestCase):
         self.assertEqual(b, b'abcde')
         s2 = s.bytes_to_str(b)
         self.assertEqual(txt, s2)
-        #print(s2)
         
     def test_12_get_dates(self):
         t = generate.TableGenerator(9, ['DATE','YEAR'], ['Date of Birth','Year First Purchased'])
-        print(t)
+        #print('test_12_get_dates = ', t)
+        self.assertEqual(t.tot_rows, 9)
+        self.assertEqual(t.col_label, ['Date of Birth','Year First Purchased'])
+        self.assertEqual(t.col_types, ['DATE','YEAR'])
+        self.assertEqual(len(t.tbl[1][0]), 10)   # 10 character date in yyyy-mm-dd format
+        self.assertEqual(len(str(t.tbl[1][1])), 4)   # 4 character year in yyyy format
+        self.assertTrue(str(t.tbl[1][1])[0:2] > '18')  # default year starts from 1900ish
+        
         
     
     def test_13_more_dates(self):
