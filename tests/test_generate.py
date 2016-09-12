@@ -24,7 +24,6 @@ class TestGenerate(unittest.TestCase):
 
     def test_02_random_currency(self):
         n2 = generate.NumberGenerator()
-        #print(n2.random_currency())
         self.assertEqual(len(n2.random_currency(1,100)) > 2, True)
         n3 = generate.NumberGenerator(cents='Normal')
         
@@ -69,9 +68,6 @@ class TestGenerate(unittest.TestCase):
         s = generate.StringGenerator()
         self.assertEqual(len(s.unicode_to_ascii('ABCDEF')), 6)
 
-
-
-    
     def test_05_generate_password(self):
         s = generate.StringGenerator()
         self.assertEqual(len(s.generate_password(6)), 8)  # 8 char min enforced
@@ -93,7 +89,6 @@ class TestGenerate(unittest.TestCase):
         self.assertEqual(t.tbl[0][4], 'Quote') 
         self.assertEqual(t.tbl[0][5], 'Score') 
         self.assertEqual(t.tbl[0][6], 'Balance') 
-        #print(t)
         t.save_table('random_table.csv')
         self.assertEqual(os.path.exists('random_table.csv'), True)
         
@@ -109,10 +104,8 @@ class TestGenerate(unittest.TestCase):
     def test_08_function_generator(self):
         rng_mult = [-9999,9999]
         rng_expt = [0,999]
-        #rng = [-2,9]
         f1 = generate.FunctionGenerator(rng_mult, rng_expt, num_terms=3)
         f2 = generate.FunctionGenerator(rng_mult, rng_expt)
-        #print(f2)
         self.assertEqual(len(str(f2)) > 5, True) 
         self.assertEqual('a' in f1.equation, True) 
         self.assertEqual('b' in f1.equation, True) 
@@ -124,7 +117,6 @@ class TestGenerate(unittest.TestCase):
         self.assertEqual(f1.expt[0] >= rng_expt[0], True) 
         self.assertEqual(f1.expt[0] < rng_expt[1]+1, True) 
         
-        #print(f1)
     def test_09_function_answer(self):
         """
         Set the max and min ranges for randomisation the same
@@ -146,7 +138,6 @@ class TestGenerate(unittest.TestCase):
         self.assertEqual(c3.answer, '16.6816')
         c4 = generate.FunctionCalculator(f3, [-2,-66,4543.1118])
         self.assertEqual(c4.answer, '8720')
-        #print(c3)
         
         
     def test_10_function_calculator(self):
@@ -158,8 +149,7 @@ class TestGenerate(unittest.TestCase):
             n = generate.NumberGenerator()
             params = [n.random_int(i,i+5), n.random_int(i,i+5), n.random_int(i,i+5)]
             c = generate.FunctionCalculator(f2, params, i)
-            #print(c)
- 
+  
     def test_11_convert_str_and_bytes(self):
         txt = 'abcde'
         self.assertEqual(txt, 'abcde')
@@ -171,7 +161,6 @@ class TestGenerate(unittest.TestCase):
         
     def test_12_get_dates(self):
         t = generate.TableGenerator(9, ['DATE','YEAR'], ['Date of Birth','Year First Purchased'])
-        #print('test_12_get_dates = ', t)
         self.assertEqual(t.tot_rows, 9)
         self.assertEqual(t.col_label, ['Date of Birth','Year First Purchased'])
         self.assertEqual(t.col_types, ['DATE','YEAR'])
@@ -183,7 +172,6 @@ class TestGenerate(unittest.TestCase):
     
     def test_13_more_dates(self):
         d = generate.get_list_dates(start_year=2013, end_year=2016, num_dates=10000)
-        print(d[0:4])
         self.assertEqual(len(d), 10000)
         self.assertEqual(len(d[23]), 10)
         self.assertEqual(d[0][4:5], '-')
