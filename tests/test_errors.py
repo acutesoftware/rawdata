@@ -29,6 +29,9 @@ class TestCreate(unittest.TestCase):
     def test_03_error_add_spaces(self):
         e = errors.DataError('')
         self.assertEqual(e._add_spaces('AAA'),' AAA     ')
+        
+        self.assertEqual(e._add_spaces(3.111),' 3.111     ')
+        
 
     def test_03_error_add_random(self):
         # not sure what error will occur, but ensure input string is different
