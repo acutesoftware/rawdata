@@ -22,7 +22,7 @@ setup(
           'nose >= 1.0',
     ],
     classifiers = [
-    'Development Status :: 3 - Alpha',
+    'Development Status :: 4 - Beta',
     'Environment :: Web Environment',
     'Programming Language :: Python :: 3',
     'Programming Language :: Python :: 3.4',
