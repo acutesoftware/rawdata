@@ -31,6 +31,7 @@ class TestCreate(unittest.TestCase):
         self.assertEqual(e._add_spaces('AAA'),' AAA     ')
         
         self.assertEqual(e._add_spaces(3.111),' 3.111     ')
+        self.assertEqual(e._add_spaces(3).strip(' '),'3')
         self.assertNotEqual(e._add_spaces(3),'3')
         
 
