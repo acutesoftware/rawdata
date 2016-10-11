@@ -31,6 +31,7 @@ class TestCreate(unittest.TestCase):
         self.assertEqual(e._add_spaces('AAA'),' AAA     ')
         
         self.assertEqual(e._add_spaces(3.111),' 3.111     ')
+        self.assertNotEqual(e._add_spaces(3),'3')
         
 
     def test_03_error_add_random(self):
