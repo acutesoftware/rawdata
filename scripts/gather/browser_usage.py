@@ -10,6 +10,8 @@ import json
 import cgi
 import urllib.parse as urlparse
 from os.path import expanduser
+#from datetime import datetime
+import time
 
 import rawdata.config as mod_cfg
 
@@ -22,7 +24,9 @@ op_folder = mod_cfg.fldrs['pers_data']
 
 def TEST():
     """ self test for browser agent """
-    browser = Browser(browser_data_path, op_folder, 'Chrome')
+    dte = time.strftime("%Y-%m-%d", time.localtime())
+    #dte = str(datetime.fromtimestamp(t).strftime("%Y-%m-%d %H:%M:%S"))
+    browser = Browser(browser_data_path, op_folder, 'Chrome', dte=dte)
     browser.get_passwords()
     browser.get_browser_history_chrome()
     browser.get_browser_bookmarks_chrome()
@@ -33,12 +37,12 @@ class Browser(object):
     """
     base class for browser
     """
-    def __init__(self, browser_data_path, op_folder, name='Chrome', ):
+    def __init__(self, browser_data_path, op_folder, name, dte ):
         self.browser_data_path = browser_data_path
         self.op_folder = op_folder
-        self.bookmarks_file = self.op_folder + os.sep + 'chrome_bookmarks.csv'
-        self.history_file = self.op_folder + os.sep + 'chrome_history.csv'
-        self.password_op = self.op_folder + os.sep + 'PASSWORDS.csv'
+        self.bookmarks_file = self.op_folder + os.sep + 'chrome_bookmarks_' + dte + '.csv'
+        self.history_file = self.op_folder + os.sep + 'chrome_history_' + dte + '.csv'
+        self.password_op = self.op_folder + os.sep + 'PASSWORDS_' + dte + '.csv'
         self.num_bookmarks = 0
         self.num_folders = 0
         self.num_history = 0
@@ -106,15 +110,10 @@ class Browser(object):
         bookmark_data = json.load(json_file)
         op = codecs.open(self.bookmarks_file, 'w', encoding='utf-8')
         op.write('"Full Folder","Title","URL","Date Added"\n')
-        #print('exporting bookmarks...')
         
         def format_bookmark(base_folder, entry, delim = ',', qu='"'):
             """ 
             Extract fields into a formatted string 
-            try:
-                print('\n\nformat_bookmark = ', entry)
-            except:
-                print('cant export folder : ')
             """
             res = qu + base_folder + qu + delim
             res += qu + entry['name'] + qu + delim
@@ -292,8 +291,9 @@ class Browser(object):
         Doesn't decode password, though tried several methods
         """
         #print("RAW = ", str(raw))
+        import base64
         v1 = str(raw)
-        #  v2 = base64.b64decode("".join(b for b in raw))
+        #v2 = base64.b64decode("".join(str(b) for b in raw))
 
         #password = "".join(map(chr, row[5]))
         #password = row[5].decode("windows-1252")
