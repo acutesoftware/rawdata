@@ -92,8 +92,8 @@ class TestContent(unittest.TestCase):
         list_1 = d.get_list()
         list_2 = d.get_list(True)
         
-        self.assertEqual(len(list_1),111)
-        self.assertEqual(len(list_2),111)
+        self.assertTrue(len(list_1) > 111)
+        self.assertTrue(len(list_2) > 111)
         
     
     def test_11_datafile_get_list_fullname(self):
