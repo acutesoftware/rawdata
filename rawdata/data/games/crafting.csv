@@ -1,0 +1,6 @@
+crafting action,uses, outputs, profession,level, tools, time, cost
+fire, any(coal,wood,solar), heat, None, 0, flint, 0, 0
+smelt copper,[copper ore,fire], copper bar, blacksmith, 2, furnace, 1, 0
+smelt iron,[iron ore,fire], iron bar, blacksmith, 3, furnace, 1, 0
+smelt gold,[gold ore,fire], gold bar, blacksmith, 4, furnace, 1, 0
+cook toast, bread, toast, cooking, 1, fire, 1, 0
