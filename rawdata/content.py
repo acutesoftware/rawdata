@@ -203,6 +203,7 @@ class Sample(object):
         self.lists = []
         self.col_types = []     # list for generate function
         self.col_labels = []    # list for generate function
+        self.col_source = []    # list for generate function
         
         with open(fullname, 'r') as f:
             for line in f:
@@ -216,8 +217,9 @@ class Sample(object):
             res += 'List#' + str(num) + ' = ' + str(l) + '\n'
         
         res += '\nDETAILS for generate\n'
-        res += ' colLabels = [' + ','.join([c for c in self.col_labels]) + ']\n'
-        res += ' colTypes  = [' + ','.join([c for c in self.col_types]) + ']\n'
+        res += ' col labels  = [' + ','.join([c for c in self.col_labels]) + ']\n'
+        res += ' col types   = [' + ','.join([c for c in self.col_types]) + ']\n'
+        res += ' col sources = [' + ','.join([c for c in self.col_source]) + ']\n'
         return res
       
     
@@ -230,8 +232,11 @@ class Sample(object):
             if line[0:4] == 'LIST':
                 self.lists.append(ast.literal_eval(line[5:].strip('\n')))
             elif line[0:6] == 'COLUMN':
+                
                 parsed = line.split(':')
+                print('_parse_line: cols = ', parsed)
                 self.cols.append(parsed[1].strip('\n'))
                 details = parsed[1].strip('\n').split(',')
                 self.col_labels.append(details[0].strip(' '))
                 self.col_types.append(details[1].strip(' '))
+                self.col_source.append(details[2].strip(' '))
