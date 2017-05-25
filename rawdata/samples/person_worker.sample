@@ -1,0 +1,19 @@
+# person_worker.sample
+#
+# lines starting with # are ignored
+# lines starting with LIST: define a named list
+# lines starting with COLUMN: define a column_name
+
+#########################
+# Content definitions   #
+#########################
+
+LIST:{'skill_type': ['Python','Java', 'Go', 'C++', 'Network', 'Database Admin', 'Node JS']}
+
+#########################
+# Column definitions    #
+#########################
+# column_name, column_type, col_vals
+COLUMN:Name, NAME, !random!
+COLUMN:Best_skill, WORD, skill_type
+COLUMN:Location, PLACE, !random!
