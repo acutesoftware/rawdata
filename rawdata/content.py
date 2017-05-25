@@ -234,7 +234,7 @@ class Sample(object):
             elif line[0:6] == 'COLUMN':
                 
                 parsed = line.split(':')
-                print('_parse_line: cols = ', parsed)
+                #print('_parse_line: cols = ', parsed)
                 self.cols.append(parsed[1].strip('\n'))
                 details = parsed[1].strip('\n').split(',')
                 self.col_labels.append(details[0].strip(' '))
