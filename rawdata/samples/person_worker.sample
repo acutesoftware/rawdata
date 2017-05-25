@@ -9,6 +9,7 @@
 #########################
 
 LIST:{'skill_type': ['Python','Java', 'Go', 'C++', 'Network', 'Database Admin', 'Node JS']}
+LIST:{'hours_avail': ['AM', 'PM', 'All']}
 
 #########################
 # Column definitions    #
