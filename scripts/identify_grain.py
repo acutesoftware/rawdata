@@ -34,13 +34,27 @@ def identify_grain_csv(fname):
     """
     grain = ''
     tbl = load_to_array(fname)
-    c = get_counts_by_col(tbl)
-    for k,v in c.items():
-        print(k,v)
+    header_row = tbl[0]
+    num_rows = len(tbl) - 1  # ignore the header
+
+    print('header = ', header_row)
+    print('num rows = ', num_rows)
         
+    col_counts = get_counts_by_col(tbl)
+    for k,v in col_counts.items():
+        #print(k,v)
+        if v == num_rows:
+            print('Grain match!')
+            grain += header_row[k] + ', '
     
     
-    return grain
+    # check all combos here
+    
+    
+    if grain == '':
+        grain = 'Not sure  '
+
+    return grain[:-2]  # trim last 2 chars for trailing commas in mult cols
     
 def get_counts_by_col(tbl):
     """
@@ -57,9 +71,9 @@ def get_counts_by_col(tbl):
 
     print('col_vals = ', str(col_vals)[0:400])
     
-    for r in tbl[1:]:
-        for col_num, c in enumerate(r):
-            cnt[col_num] += 1
+    #for r in tbl[1:]:
+    #    for col_num, c in enumerate(r):
+    #        cnt[col_num] += 1
         
     return cnt
     
