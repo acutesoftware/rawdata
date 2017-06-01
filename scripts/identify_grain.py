@@ -61,7 +61,14 @@ def identify_grain_csv(fname):
     
     
     # check all combos here
-    #dual_col_counts = get_dual_col_counts(tbl)
+    dual_col_counts = get_dual_col_counts(tbl)
+    #print(dual_col_counts)
+    for k,v in dual_col_counts.items():
+        #print(k,v)
+        if v == num_rows:
+            #print('Grain match!')
+            grain += '\ndual col: ' + k + '  '
+    
     
     if grain == '':
         grain = 'Not sure  '
@@ -70,7 +77,7 @@ def identify_grain_csv(fname):
     
 def get_counts_by_col(tbl):
     """
-    get counts by all permutations of a table
+    get counts by single column of a table
     """
     cnt = {}
     col_vals = {}
@@ -89,5 +96,39 @@ def get_unique_vals(tbl, col_num):
     for r in tbl[1:]:
         vals.append(r[col_num])
     return list(set(vals))
+ 
+ 
+ 
+def get_dual_col_counts(tbl):
+    """
+    get counts by 2 cols of a table
+        Grain of grain_year.csv is :  DATE, Total Amount,
+        dual col: DATE,Total Amount
+        dual col: Total Amount,DATE
+        Grain of grain_person_location.csv is :
+        dual col: Contractor,Location
+        dual col: Location,Contractor    
+    """
+    cnt = {}
+    col_vals = {}
+    #print('get_counts_by_col(tbl)  = ', tbl[0:5])
+    for col_num1, c1 in enumerate(tbl[0]):
+        for col_num2, c2 in enumerate(tbl[0]):
+            if col_num1 != col_num2:
+                col_vals[tbl[0][col_num1] + ',' + tbl[0][col_num2]] = get_unique_vals2(tbl, col_num1,col_num2)
+                cnt[tbl[0][col_num1] + ',' + tbl[0][col_num2]] = len(col_vals[tbl[0][col_num1] + ',' + tbl[0][col_num2]])
+                
+    return cnt
+ 
+def get_unique_vals2(tbl, col_num1, col_num2):
+    """
+    returns a set of unique values in col_num of tbl
+    """
+    vals = []
+    for r in tbl[1:]:
+        vals.append(r[col_num1] + r[col_num2] )
+    return list(set(vals))
+ 
+ 
  
 main()
