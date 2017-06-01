@@ -15,11 +15,22 @@ for f in onlyfiles:
 
 
 def main():
+    """
+    Sample output with single column checks is below
+    Grain of grain_person_year.csv is :  Total Amount
+    Grain of grain_person_project_year.csv is :  Not sure
+    Grain of grain_person.csv is :  Contractor, Total Amount
+    Grain of grain_year.csv is :  DATE, Total Amount
+    Grain of grain_person_location.csv is :  Not sure
+    """
     for f in csv_files:
         res = identify_grain_csv(f)
         print('Grain of ' + f + ' is : ', res)
     
 def load_to_array(name):
+    """
+    reads into list of lists - should use AIKIF cls_datatable
+    """
     arr = []
     with open (name, 'r') as f:
         for row in f:
@@ -37,19 +48,20 @@ def identify_grain_csv(fname):
     header_row = tbl[0]
     num_rows = len(tbl) - 1  # ignore the header
 
-    print('header = ', header_row)
-    print('num rows = ', num_rows)
-        
+    #print('header = ', header_row)
+    #print('num rows = ', num_rows)
+     
+    # check for single grain col
     col_counts = get_counts_by_col(tbl)
     for k,v in col_counts.items():
         #print(k,v)
         if v == num_rows:
-            print('Grain match!')
+            #print('Grain match!')
             grain += header_row[k] + ', '
     
     
     # check all combos here
-    
+    #dual_col_counts = get_dual_col_counts(tbl)
     
     if grain == '':
         grain = 'Not sure  '
@@ -66,15 +78,6 @@ def get_counts_by_col(tbl):
     for col_num, c in enumerate(tbl[0]):
         col_vals[tbl[0][col_num]] = get_unique_vals(tbl, col_num)
         cnt[col_num] = len(col_vals[tbl[0][col_num]])
-        
-    
-
-    print('col_vals = ', str(col_vals)[0:400])
-    
-    #for r in tbl[1:]:
-    #    for col_num, c in enumerate(r):
-    #        cnt[col_num] += 1
-        
     return cnt
     
  
