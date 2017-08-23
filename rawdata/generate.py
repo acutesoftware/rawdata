@@ -191,7 +191,8 @@ class TableGenerator(Structure):
         txt = '\n'.join(','.join([col if type(col) is str else str(col) for col in row]) for row in self.tbl)
         txt += '\ncolumn types\n'
         for t in self.colTypes:
-            txt += str(t) + '\n'
+            #txt += str(t) + '\n'
+            pass
             
         
         

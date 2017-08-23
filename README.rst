@@ -135,6 +135,41 @@ List of Column Types (Table Generator)
                     
                     
 
+                    
+
+Function Generator
+---------------------------------------------
+
+Use the FunctionGenerator object to run calculations over a set of parameters
+
+.. code:: python
+
+    PARAMETERS:
+        func    : FunctionGenerator() object
+        params  : [3, 4, 1] # list with ONE value per term (x,y,z...) 
+        test_id : optional integer for naming when logging
+        
+    USAGE:
+        f = FunctionGenerator(mult_range=[-9,9], exp_range=[0,5], num_terms=3)
+        print(f)
+        for i in range(5):
+            c = FunctionCalculator(f, [n.random_int(), n.random_int(), n.random_int()], i)
+            print(c)
+            
+    RETURNS:
+        Equation   : 7x^5 -1x^4 -6x^1
+        Parameters : 1,4,7 => answer     : -249.000000000
+        Parameters : 8,8,0 => answer     : 225280.000000000
+        Parameters : 4,3,5 => answer     : 7087.000000000
+        Parameters : 1,8,2 => answer     : -4089.000000000
+        Parameters : 7,3,8 => answer     : 117568.000000000    
+
+
+
+
+
+                    
+                    
 
 More information is at https://github.com/acutesoftware/rawdata
 
