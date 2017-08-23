@@ -18,12 +18,12 @@ def main():
     """
     generate a large number of people with random attributes
     """
-    #persons = make_random_set_of_persons(3)
-    #pprint.pprint(persons)
+    persons = make_random_set_of_persons(15)
+    pprint.pprint(persons)
    
     # V2 - not working yet
-    workers = make_random_set_of_workers(5)
-    pprint.pprint(workers)
+    #workers = make_random_set_of_workers(5)
+    #pprint.pprint(workers)
     
 def make_random_set_of_persons(num_persons=5):    
     s = content.Samples(root_path)
