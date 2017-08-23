@@ -1,8 +1,19 @@
 hobby_name,effect_name,effect_value
-movies,cost,0.05
-gym,cost,0.06
-woodwork,cost,0.08
-internet,cost,0.01
-games,cost,0.04
-cookingcost,0.03
-model trains,0.07
+movies,cost,0.5
+movies,fun,0.7
+gym,cost,0.6
+gym,self improvement,0.7
+woodwork,cost,0.8
+woodwork,profit,0.3
+internet,cost,0.1
+internet,fun,0.8
+games,cost,0.4
+games,fun,0.8
+cooking,cost,0.3
+cooking,profit,0.4
+walking,cost,0.0
+walking,self improvement,0.6
+exercise,cost,0.0
+exercise,self improvement,0.6
+model trains,cost,0.7
+
