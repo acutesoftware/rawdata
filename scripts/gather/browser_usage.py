@@ -10,8 +10,7 @@ import json
 import cgi
 import urllib.parse as urlparse
 from os.path import expanduser
-#from datetime import datetime
-import time
+
 
 import rawdata.config as mod_cfg
 
