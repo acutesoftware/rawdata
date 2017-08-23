@@ -9,9 +9,6 @@ root_fldr = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'rawda
 sys.path.insert(1, root_fldr)
 
 import generate
-import errors
-import content
-import events
 
 op_fldr = os.getcwd() + os.sep
 years = ['2012', '2013', '2014', '2015', '2016', '2017']
