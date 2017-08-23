@@ -33,6 +33,6 @@ fldrs['public_data_path'] = core_folder + os.sep + 'data'
 fldrs['program_path'] = os.path.abspath(core_folder + os.sep + 'aikif') 
 
 # user defined parameters 
-params['rawdata_version'] = '0.0.9'
+params['rawdata_version'] = '0.1.0'
 params['rawdata_deploy'] = 'DEV'
 
