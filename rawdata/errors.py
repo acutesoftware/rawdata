@@ -6,7 +6,6 @@ import os
 import random
 import logging
 
-import rawdata.generate
 data_fldr = os.path.abspath(os.path.dirname(os.path.abspath(__file__)) + os.sep + 'data' ) 
  
 logging.basicConfig(filename='errors.log',level=logging.DEBUG,format='%(asctime)s %(message)s', datefmt='%m/%d/%Y %I:%M:%S %p')
