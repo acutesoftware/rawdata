@@ -140,7 +140,9 @@ List of Column Types (Table Generator)
 Function Generator
 ---------------------------------------------
 
-Use the FunctionGenerator object to run calculations over a set of parameters
+Use the FunctionGenerator object to generate a polynomial function
+and then run calculations with the FunctionCalculator class over a 
+set of parameters
 
 .. code:: python
 
