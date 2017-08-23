@@ -8,9 +8,6 @@ root_fldr = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'rawda
 sys.path.insert(1, root_fldr)
 
 import generate
-import errors
-import content
-import events
 
 op_fldr = generate.dat_fldr + os.sep
 words = generate.get_list_words()
