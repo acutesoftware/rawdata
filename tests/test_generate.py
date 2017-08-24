@@ -149,6 +149,7 @@ class TestGenerate(unittest.TestCase):
             n = generate.NumberGenerator()
             params = [n.random_int(i,i+5), n.random_int(i,i+5), n.random_int(i,i+5)]
             c = generate.FunctionCalculator(f2, params, i)
+            print(c)
   
     def test_11_convert_str_and_bytes(self):
         txt = 'abcde'
