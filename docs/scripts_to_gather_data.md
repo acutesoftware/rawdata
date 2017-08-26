@@ -10,10 +10,11 @@ package, though included for reference.
 Use Google to find a list of locations by name and return the 
 Geo coordinates and full address details.
 
+Steps:
 
-Step 1 - download the location(s) matching that name
-Step 2 - extract the JSON information relating to address
-Step 3 - save data as flat CSV file
+ - download the location(s) matching that name<BR>
+ - extract the JSON information relating to address<BR>
+ - save data as flat CSV file<BR>
 
 
 Example output
