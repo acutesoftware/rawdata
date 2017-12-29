@@ -1,8 +1,47 @@
-Sport_Name,
-Soccer, 
-Football, 
-Rugby, 
-Cricket, 
-Netball,
-Cricket,
-Baseball,
+Sport Type, Sport_Name, Score system
+Athletics, Cross country running,Time
+Athletics, High jump, Distance (height)
+Athletics, Long jump, Distance (length)
+Athletics, Pole vault,Distance (height)
+Athletics, Running x 100m, Time
+Athletics, Running x 200m, Time
+Athletics, Running x 400m, Time
+Athletics, Running x 800m, Time
+Athletics, Throwing - Discus, Distance (length)
+Athletics, Throwing - hammer, Distance (length)
+Athletics, Throwing - javelin, Distance (length)
+Athletics, Throwing - shot put, Distance (length)
+Ball sports,Association football,	Goals
+Ball sports,Australian rules football,Points
+Ball sports,Basketball,	Points
+Ball sports,Bocce,	Points
+Ball sports,Bowling,	Points
+Ball sports,Field hockey,	Goals
+Ball sports,Fistball,	Points and sets
+Ball sports,Gaelic football,	Points and goals (3 points per goal)
+Ball sports,Golf,	Par (score)
+Ball sports,Gridiron football,	Points
+Ball sports,Hurling,	Points (goals)
+Ball sports,Lacrosse (field and box), Goals
+Ball sports,Netball,	Goals
+Ball sports,Rugby league,	Points
+Ball sports,Rugby union,	Points
+Ball sports,Team handball,	Goals
+Ball sports,Volleyball,	Points and sets
+Ball sports,Water polo,	Goals
+Bat and ball sports,Baseball	,	Runs
+Bat and ball sports,Cricket	,	Runs
+Bat and ball sports,Rounders	,	Rounders
+Bat and ball sports,Softball	,	Runs
+Racquet sports,Badminton	,	Points and games
+Racquet sports,Racquetball	,	Points and games
+Racquet sports,Squash	,	Points and games
+Racquet sports,Table tennis	,	Points and games
+Racquet sports,Tennis	,	Points; games and sets
+Other sports,Auto racing, Time
+Other sports,Boxing	,	Points (if time expires)
+Other sports,Curling	,	Points
+Other sports,Fencing	,	Touches
+Other sports,Ice hockey	,	Goals
+Other sports,Polo	,	Goals
+Other sports,Roller derby	,	Points
