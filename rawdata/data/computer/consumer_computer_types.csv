@@ -1,0 +1,14 @@
+type,build,OS,known_as,
+Computer,PC,Windows,Windows PC,
+Computer,PC,Linux,Linux Box,
+Computer,Apple,IOS,Apple Mac,
+Mobile,Tablet,Android,Tablet,
+Mobile,Tablet,Apple,iPad
+Mobile,Phone,Android,Android Phone,
+Mobile,Phone,Apple,iPhone,
+Mobile,Phone,Blackberry,Blackberry,
+Mobile,Phone,Windows,Windows Phone,
+Embedded,RasbPI,Linux,Raspberry PI,
+Embedded,Arduino,Firmware,Arduino,
+
+
