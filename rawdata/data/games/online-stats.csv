@@ -1,0 +1,4 @@
+Site,URL_for_player,
+Steam Games,http://steamcommunity.com/id/{{STEAM_NAME}}/,
+PUBG,https://pubgtracker.com/,
+Overwatch,https://overwatchtracker.com/search?name={{BATTLE_NET_NAME}},
