@@ -64,7 +64,7 @@ for r in t2.tbl[0:4]:
     # [1985, 'Rena', 'Samoa', '$90.95']
     # [1998, 'Gary', 'Sri Lanka', '$9.10']
     # [2002, 'Maire', 'Nauru', '295.10']
-  
+
 print('Example using sample config files')
 s = content.Samples(root_path)
 f = s.get_sample_by_name('finance_transaction')
@@ -72,7 +72,7 @@ print(f)
 
 t3 = generate.TableGenerator(6, tpe, lbl)
 print(t3)
-   
+
 # created table containing 7 rows
 # ['Date', 'Details', 'Location', 'Amount']
 # [2014, 'jack benny', 'Bermuda', '+$459.99']
@@ -80,7 +80,7 @@ print(t3)
 # [1994, 'horace mann', 'Hong Kong', '463.95']
 # [1988, 'culex pipiens', 'The West', '-$462.00']
 # [2010, 'family convolvulaceae', 'Central Asia', '-136.00']
-# [2009, 'grappling', 'Pitcairn', '-$83.00']    
+# [2009, 'grappling', 'Pitcairn', '-$83.00']
 
 # print('DATA FILES')
 # d = content.DataFiles()
@@ -95,3 +95,12 @@ d = content.DataFiles()
 for row in d.lookup:
     print(row)
 
+# Create a very wide table
+
+colLabel = ['DATE', 'name', 'password', 'Born',  'Quote', 'Score',  'Balance']
+colTypes = ['DATE', 'PEOPLE', 'STRING', 'PLACE', 'WORD',  'INT', 'CURRENCY']
+for n in range(8,300):
+    colLabel.append('COL' + str(n))
+    colTypes.append('INT')
+t = generate.TableGenerator(10, colTypes, colLabel)
+t.save_table('wide_table.csv')
