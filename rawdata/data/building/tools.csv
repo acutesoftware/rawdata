@@ -34,13 +34,11 @@ measuring,printer,0,0
 shaping,mold,0,0
 shaping,jig,0,0
 shaping, trowel,0,0
+shaping, pipe bender, 0,0
 fastening,welder,0,0
 fastening,rivet gun,0,0
 fastening,nail gun,0,0
 fastening,glue gun,0,0
 fastening,duct tape,0,0
-
-
-
-
-
+fastening,gravity,0,0
+fastening,bury pole end,0,0
