@@ -7,3 +7,32 @@ Carpenter,0.5,0.4,
 Landscaping,0.4,0.1,
 Concreter,0.5,0.4,
 Bricklayer,0.5,0.4,
+Admin
+Manager
+Sales
+Labourer | work on construction sites
+Construction | Stone Mason | make bricks, cut stone, make walls, buildings, large castles
+Craft | Artist |
+Craft | Engineer |
+Craft | Leatherworker | make jackets and armour, twine, belts, bags 
+Craft | Mechanic | fix and build anything mechanical
+Craft | Plastic Worker |
+Craft | Steel worker | Need forge, bench, anvil. makes armour, bolts, etc
+Craft | Tailor | make clothes, bags, tents, bandages, curtins, cushions
+Craft | Wood Worker | fine woodworking
+Food | Angler |
+Food | Brewer |
+Food | Cook |
+Food | Diver |
+Food | Farmer |
+Food | Hunter |
+Food | Wait Staff |
+Health | Chemist |
+Health | Doctor |
+Health | Nurse |
+Learning | Researcher |
+Learning | Student |
+Learning | Teacher |
+Order | Guard |
+Order | Police Officer |
+Order | Soldier |
