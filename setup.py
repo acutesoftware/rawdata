@@ -25,7 +25,7 @@ setup(
     'Development Status :: 4 - Beta',
     'Environment :: Web Environment',
     'Programming Language :: Python :: 3',
-    'Programming Language :: Python :: 3.4',
+    'Programming Language :: Python :: 3.7',
     'Intended Audience :: Developers',
     'Natural Language :: English',
     'Operating System :: OS Independent',
