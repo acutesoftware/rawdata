@@ -308,6 +308,13 @@ def get_list_places():
     with open(places) as f:
         return [line.split(',')[1].strip().strip('"').title() for line in f]
 
+def get_fantasy_name():
+    pre = ['Al', 'El', 'Prom', 'Wec', 'Plab', 'Son', 'Isa', 'Wol']
+    post = ['form', 'lest', 'gorn', 'sed', 'ard', 'stand', 'kite']
+
+    return random.choice(pre) + random.choice(post)
+
+
 def get_list_people():
     """
     chooses a random name from names.csv
